@@ -1,0 +1,21 @@
+binding: user.agent=safari
+Compiling module com.onthepitch.frontend.gwt.startpage.StartPoint
+   Computing all possible rebind results for 'com.onthepitch.frontend.gwt.startpage.client.StartPoint.Injection'
+      Rebinding com.onthepitch.frontend.gwt.startpage.client.StartPoint.Injection
+         Invoking generator com.google.gwt.inject.rebind.GinjectorGenerator
+            [WARN] No gin modules are annotated on Ginjector interface com.onthepitch.frontend.gwt.startpage.client.StartPoint$Injection, did you forget the @GinModules annotation?
+   Unification traversed 20546 fields and methods and 1993 types. 1960 are considered part of the current module and 1960 had all of their fields and methods traversed.
+   Warnings in com/google/gwt/emul/java/util/Arrays.java
+      [WARN] Line 1782: [unusable-by-js] Type of parameter 'd1' in 'int Arrays.1methodref$compare$Type.compare(long, long)' is not usable by but exposed to JavaScript.
+      [WARN] Line 1782: [unusable-by-js] Type of parameter 'd2' in 'int Arrays.1methodref$compare$Type.compare(long, long)' is not usable by but exposed to JavaScript.
+   [WARN] Suppress "[unusable-by-js]" warnings by adding a `@SuppressWarnings("unusable-by-js")` annotation to the corresponding member.
+   Compiling 1 permutation
+      Compiling permutation 0...
+      Linking per-type JS with 1939 new/changed types.
+      Source Maps Enabled
+   Compile of permutations succeeded
+   Compilation succeeded -- 52,186s
+Linking into /home/ilya/NetCracker project/frontend/gwt/target/gwt-1.0-SNAPSHOT/com.onthepitch.frontend.gwt.startpage.StartPoint/compile-2/war/startpoint; Writing extras to /home/ilya/NetCracker project/frontend/gwt/target/gwt-1.0-SNAPSHOT/com.onthepitch.frontend.gwt.startpage.StartPoint/compile-2/extras/startpoint
+   Link succeeded
+   Linking succeeded -- 0,993s
+56,588s total -- Compile completed
