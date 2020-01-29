@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="container">
-    <div th:if="${not #lists.isEmpty(posts)}">
+    <div th:if="${not #lists.isEmpty(clubs)}">
         <h2>Post List</h2>
         <table class="table table-striped">
             <tr>
@@ -29,21 +29,21 @@
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <tr th:each="post : ${posts}">
-                <td th:text="${post.post_id}"></td>
-                <td th:text="${post.user_id}"></td>
-                <td th:text="${post.header}"></td>
-                <td th:text="${post.text}"></td>
-                <td th:text="${post.created_at}"></td>
-                <td><a th:href="${'/post/show/' + post.post_id}">View</a> </td>
-                <td><a th:href="${'/post/edit/' + post.post_id}">Edit</a> </td>
-                <td><a th:href="${'/post/delete/' + post.post_id}">Delete</a> </td>
+            <tr th:each="club : ${clubs}">
+                <td th:text="${club.club_id}"></td>
+                <td th:text="${club.club_name}"></td>
+                <td th:text="${club.logo}"></td>
+                <td th:text="${club.stadium}"></td>
+                <td th:text="${club.club_info}"></td>
+                <td><a th:href="${'/club/show/' + club.club_id}">View</a> </td>
+                <td><a th:href="${'/club/edit/' + club.club_id}">Edit</a> </td>
+                <td><a th:href="${'/club/delete/' + club.club_id}">Delete</a> </td>
             </tr>
         </table>
     </div>
     <div class="row">
         <div class="col-sm-3">
-            <a href="/post/new">New Post</a>
+            <a href="/club/new">New Club</a>
         </div>
     </div>
 </div>

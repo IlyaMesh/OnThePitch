@@ -46,27 +46,6 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <runTarget>index.html</runTarget>
-                    <copyWebapp>true</copyWebapp>
-                    <hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
-                    <workDir>${project.build.directory}/${project.build.finalName}</workDir>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 
 </project>

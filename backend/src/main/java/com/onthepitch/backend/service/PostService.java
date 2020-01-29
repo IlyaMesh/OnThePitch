@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface PostService {
     public List<Post> listAll();
 
-    Optional<Post> getById(Long id);
+    Post getById(Long id);
 
     Post saveOrUpdate(Post post);
 

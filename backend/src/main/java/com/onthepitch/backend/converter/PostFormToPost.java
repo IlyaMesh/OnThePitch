@@ -4,8 +4,12 @@ import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.model.Post;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.util.Date;
+
+@Component
 public class PostFormToPost implements Converter<PostForm, Post> {
     @Override
     public Post convert(PostForm postForm) {
@@ -16,7 +20,7 @@ public class PostFormToPost implements Converter<PostForm, Post> {
         post.setUser_id(postForm.getUser_id());
         post.setHeader(postForm.getHeader());
         post.setText(postForm.getText());
-        post.setCreated_at(postForm.getCreated_at());
+        post.setCreated_at(new Date());
         return post;
     }
 }

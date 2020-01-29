@@ -4,7 +4,9 @@ package com.onthepitch.backend.converter;
 import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.model.Post;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PostToPostForm implements Converter<Post, PostForm> {
     @Override
     public PostForm convert(Post post) {

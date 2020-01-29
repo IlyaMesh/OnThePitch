@@ -1,5 +1,7 @@
 package com.onthepitch.backend.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +12,8 @@ import java.util.Date;
 @Entity
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POSTS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POST_SEQ")
+    @SequenceGenerator(sequenceName = "POSTS_SEC",allocationSize = 1,name = "POST_SEQ")
     private Long post_id;
     private Long user_id;
     private String header;
