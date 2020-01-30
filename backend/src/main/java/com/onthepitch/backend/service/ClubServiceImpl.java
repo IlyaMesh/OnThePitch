@@ -4,12 +4,12 @@ import com.onthepitch.backend.commands.ClubForm;
 import com.onthepitch.backend.converter.ClubFormToClub;
 import com.onthepitch.backend.dao.ClubRepository;
 import com.onthepitch.backend.model.Club;
-import com.onthepitch.backend.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClubServiceImpl implements ClubService {
@@ -32,7 +32,7 @@ public class ClubServiceImpl implements ClubService {
 
     @Override
     public Club getById(Long id) {
-        return clubRepository.findOne(id);
+        return clubRepository.findById(id).get();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ClubServiceImpl implements ClubService {
 
     @Override
     public void delete(Long id) {
-    clubRepository.delete(id);
+    clubRepository.deleteById(id);
     }
 
     @Override

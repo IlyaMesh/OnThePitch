@@ -31,7 +31,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post getById(Long id) {
-        return postRepository.findOne(id);
+        return postRepository.findById(id).get();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void delete(Long id) {
-        postRepository.delete(id);
+        postRepository.deleteById(id);
     }
 
     @Override
