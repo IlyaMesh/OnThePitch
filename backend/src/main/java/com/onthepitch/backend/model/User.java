@@ -26,14 +26,23 @@ public class User {
     private String user_password;
     private String email;
     private String user_pic;
-    private Boolean is_moderator;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    private Boolean active;
     private Date registration_time;
     private Long club_id;
 
-//    @ElementCollection(targetClass = Role.class,fetch = FetchType.EAGER)
-//    @CollectionTable(name = "user_role",joinColumns = @JoinColumn(name="user_id"))
-//    @Enumerated(EnumType.STRING)
-//    private Set<Role> roles;
+    @ElementCollection(targetClass = Role.class,fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role",joinColumns = @JoinColumn(name="user_id"))
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles;
     public User() {
     }
 
@@ -77,12 +86,12 @@ public class User {
         this.user_pic = user_pic;
     }
 
-    public Boolean getIs_moderator() {
-        return is_moderator;
+    public Boolean getActive() {
+        return active;
     }
 
-    public void setIs_moderator(Boolean is_moderator) {
-        this.is_moderator = is_moderator;
+    public void setActive(Boolean is_moderator) {
+        this.active = is_moderator;
     }
 
     public Date getRegistration_time() {
