@@ -2,6 +2,7 @@ package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.model.Post;
+import com.onthepitch.backend.model.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,5 +16,5 @@ public interface PostService {
 
     void delete(Long id);
 
-    Post saveOrUpdatePostForm(PostForm productForm);
+    Post saveOrUpdatePostForm(PostForm productForm, User user);
 }

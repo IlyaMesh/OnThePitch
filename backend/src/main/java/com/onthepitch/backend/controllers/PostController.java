@@ -2,14 +2,18 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.converter.PostToPostForm;
+import com.onthepitch.backend.dao.PostRepository;
 import com.onthepitch.backend.model.Post;
+import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +22,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
 public class PostController {
     private PostService postService;
 
+    @Autowired
+    private PostRepository postRepository;
     private PostToPostForm postToPostForm;
 
     @Autowired
@@ -41,14 +48,16 @@ public class PostController {
 //        return "redirect:/post/list";
 //    }
 
-    @RequestMapping({"/post/list", "/post"})
-    public String listProducts(Model model){
-        model.addAttribute("posts", postService.listAll());
+    @GetMapping({"/post/list", "/post"})
+    public String listProducts(Map<String,Object> model){
+        Iterable<Post> posts = postRepository.findAll();
+        model.put("posts", posts);
         return "post/list";
     }
 
     @RequestMapping("/post/show/{id}")
     public String getProduct(@PathVariable String id, Model model){
+
         model.addAttribute("post", postService.getById(Long.valueOf(id)));
         return "post/show";
     }
@@ -69,13 +78,13 @@ public class PostController {
     }
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public String saveOrUpdateProduct(@Valid PostForm postForm, BindingResult bindingResult){
+    public String saveOrUpdateProduct(@AuthenticationPrincipal User user, @Valid PostForm postForm, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
             return "post/postform";
         }
 
-        Post savedProduct = postService.saveOrUpdatePostForm(postForm);
+        Post savedProduct = postService.saveOrUpdatePostForm(postForm,user);
 
         return "redirect:/post/show/" + savedProduct.getPost_id();
     }

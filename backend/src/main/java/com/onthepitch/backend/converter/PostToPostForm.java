@@ -12,7 +12,7 @@ public class PostToPostForm implements Converter<Post, PostForm> {
     public PostForm convert(Post post) {
         PostForm postForm = new PostForm();
         postForm.setPost_id(post.getPost_id());
-        postForm.setUser_id(post.getUser_id());
+        postForm.setUser(post.getAuthor());
         postForm.setHeader(post.getHeader());
         postForm.setText(post.getText());
         postForm.setCreated_at(post.getCreated_at());

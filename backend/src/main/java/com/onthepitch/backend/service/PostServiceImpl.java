@@ -4,6 +4,7 @@ import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.converter.PostFormToPost;
 import com.onthepitch.backend.dao.PostRepository;
 import com.onthepitch.backend.model.Post;
+import com.onthepitch.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +47,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Post saveOrUpdatePostForm(PostForm postForm) {
+    public Post saveOrUpdatePostForm(PostForm postForm, User user) {
+        postForm.setUser(user);
         Post savedPost = saveOrUpdate(postFormToPost.convert(postForm));
         System.out.println("Saved product id+ "+savedPost.getPost_id());
         return savedPost;

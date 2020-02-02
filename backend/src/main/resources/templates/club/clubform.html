@@ -17,18 +17,15 @@
 <body>
 <div class="container">
 
-    <h2>Post Details</h2>
+    <h2>Club Details</h2>
     <div>
         <form class="form-horizontal" th:object="${clubForm}" th:action="@{/club}" method="post">
 
-            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-                <p th:text="#{form.hasErrors}">Error Message</p>
-            </div>
 
             <input type="hidden" th:field="*{club_id}"/>
 
             <div class="form-group" th:class="${#fields.hasErrors('club_name')} ? 'form-group has-error' : 'form-group'">
-                <label class="col-sm-2 control-label">User Id:</label>
+                <label class="col-sm-2 control-label">Club name:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" th:field="*{club_name}" th:errorclass="has-error"/>
 
@@ -41,7 +38,7 @@
             </div>
 
             <div class="form-group" th:class="${#fields.hasErrors('logo')} ? 'form-group has-error' : 'form-group'">
-                <label class="col-sm-2 control-label">Header:</label>
+                <label class="col-sm-2 control-label">Logo:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" th:field="*{logo}" th:errorclass="has-error"/>
 
@@ -54,7 +51,7 @@
             </div>
 
             <div class="form-group" th:class="${#fields.hasErrors('stadium')} ? 'form-group has-error' : 'form-group'">
-                <label class="col-sm-2 control-label">Text:</label>
+                <label class="col-sm-2 control-label">Stadium:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" th:field="*{stadium}" th:errorclass="has-error"/>
 
@@ -66,7 +63,7 @@
                 </div>
             </div>
             <div class="form-group" th:class="${#fields.hasErrors('club_info')} ? 'form-group has-error' : 'form-group'">
-                <label class="col-sm-2 control-label">Text:</label>
+                <label class="col-sm-2 control-label">Club info:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" th:field="*{club_info}" th:errorclass="has-error"/>
 

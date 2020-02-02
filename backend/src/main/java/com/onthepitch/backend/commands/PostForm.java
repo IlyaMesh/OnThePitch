@@ -1,10 +1,14 @@
 package com.onthepitch.backend.commands;
 
+import com.onthepitch.backend.model.User;
+
 import java.util.Date;
 
 public class PostForm {
     private Long post_id;
-    private Long user_id;
+    private User user;
+
+
     private String header;
     private String text;
     private Date created_at;
@@ -17,12 +21,12 @@ public class PostForm {
         this.post_id = post_id;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getHeader() {

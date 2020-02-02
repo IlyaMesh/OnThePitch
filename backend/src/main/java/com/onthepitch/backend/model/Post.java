@@ -3,9 +3,12 @@ package com.onthepitch.backend.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import java.util.Date;
 
@@ -15,13 +18,16 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POST_SEQ")
     @SequenceGenerator(sequenceName = "POSTS_SEC",allocationSize = 1,name = "POST_SEQ")
     private Long post_id;
-    private Long user_id;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_ID",referencedColumnName = "USER_ID")
+    private User author;
+//    private Long user_id;
     private String header;
     private String text;
     private Date created_at;
 
-    public Post(Long user_id, String header, String text, Date created_at) {
-        this.user_id = user_id;
+    public Post(User author, String header, String text, Date created_at) {
+        this.author = author;
         this.header = header;
         this.text = text;
         this.created_at = created_at;
@@ -29,12 +35,14 @@ public class Post {
 
     public Post() {
     }
-
+    public String getAuthorName(){
+        return author != null ? author.getUsername() : "<none>";
+    }
     @Override
     public String toString() {
         return "Post{" +
                 "post_id=" + post_id +
-                ", user_id=" + user_id +
+                ", author=" + author.toString() +
                 ", header='" + header + '\'' +
                 ", text='" + text + '\'' +
                 ", created_at=" + created_at +
@@ -49,12 +57,12 @@ public class Post {
         this.post_id = post_id;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     public String getHeader() {
