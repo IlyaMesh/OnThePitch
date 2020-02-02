@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/post/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/post/show.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/commands/PostForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/commands/PostForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/PostFormToPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/PostFormToPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/PostToPostForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/PostToPostForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/club/clubform.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/club/clubform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/club/postform.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/post/postform.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +238,7 @@
       <workItem from="1580496240395" duration="376000" />
       <workItem from="1580584053335" duration="1420000" />
       <workItem from="1580634895873" duration="8783000" />
-      <workItem from="1580650211602" duration="622000" />
+      <workItem from="1580650211602" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="Example of post class(db almost connected)">
       <created>1580246270949</created>
@@ -284,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580467761141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ManyToOne dependency added">
+      <created>1580651034182</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580651034183</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +287,8 @@
     <MESSAGE value="CRUD for clubs created" />
     <MESSAGE value="Spring Security added(login need to be fixed)" />
     <MESSAGE value="Spring Security added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring Security added" />
+    <MESSAGE value="ManyToOne dependency added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ManyToOne dependency added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="278" y="66" width="802" height="678" key="#Assign_Data_Sources" timestamp="1580412715770">
@@ -331,10 +323,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="416" y="40" width="526" height="728" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1366.728@0.40.1366.728" timestamp="1580329081527" />
-    <state x="70" y="40" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1580650980209">
+    <state x="70" y="40" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1580651031984">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="70" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1580650980209" />
+    <state x="70" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1580651031984" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl" timestamp="1580376323749">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
