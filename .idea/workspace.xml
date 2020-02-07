@@ -2,7 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/OnThePitch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/LeagueRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/SeasonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/League.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Match.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Season.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/EndpointProviderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/EndpointProviderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/JsonExtractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/RestClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/RestClientServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/SoccerDataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/SoccerDataServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/TokenProviderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/TokenProviderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/parser/SeasonParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/parser/SeasonParserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/parser/SeasonParserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/frontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/gwt.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/qulice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-module/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test-module/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-module/target/test-module-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/test-module/target/test-module-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-module/test-module.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +73,12 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="ILYA: schema" type="3abd1b6a:OraImplModel$Schema" />
+        <item name="C##MAINUSER: schema" type="3abd1b6a:OraImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="ILYA: schema" type="3abd1b6a:OraImplModel$Schema" />
+        <item name="C##MAINUSER: schema" type="3abd1b6a:OraImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
@@ -44,9 +89,9 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Enum" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -54,9 +99,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -73,6 +124,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="oracle" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelOrder2" value="2" />
@@ -90,11 +145,12 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Facets" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -202,7 +258,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@71798a09" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -239,6 +305,10 @@
       <workItem from="1580584053335" duration="1420000" />
       <workItem from="1580634895873" duration="8783000" />
       <workItem from="1580650211602" duration="897000" />
+      <workItem from="1580972381179" duration="4251000" />
+      <workItem from="1580977354049" duration="781000" />
+      <workItem from="1581059525224" duration="20706000" />
+      <workItem from="1581103042571" duration="2061000" />
     </task>
     <task id="LOCAL-00001" summary="Example of post class(db almost connected)">
       <created>1580246270949</created>
@@ -291,9 +361,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="ManyToOne dependency added" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="278" y="66" width="802" height="678" key="#Assign_Data_Sources" timestamp="1580412715770">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="391" y="37" width="802" height="678" key="#Assign_Data_Sources" timestamp="1581075182904">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="391" y="37" key="#Assign_Data_Sources/0.0.1920.1040@0.0.1920.1040" timestamp="1581075182904" />
     <state x="278" y="66" width="802" height="678" key="#Assign_Data_Sources/0.40.1366.728@0.40.1366.728" timestamp="1580412715770" />
     <state x="391" y="64" width="576" height="682" key="#EntryPoint" timestamp="1580283791678">
       <screen x="0" y="40" width="1366" height="728" />
@@ -307,18 +378,24 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="139" y="272" width="1079" height="266" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog/0.40.1366.728@0.40.1366.728" timestamp="1580333075295" />
-    <state x="241" y="90" width="802" height="678" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580409156387">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="913" y="257" width="802" height="678" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581103068617">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="913" y="257" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581103068617" />
     <state x="241" y="90" width="802" height="678" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1366.728@0.40.1366.728" timestamp="1580409156387" />
     <state x="399" y="210" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580155156328">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="399" y="210" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1580155156328" />
-    <state x="647" y="192" width="462" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1580641982651">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="909" y="217" width="462" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1581105212853">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="909" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581105212853" />
     <state x="647" y="192" width="462" height="576" key="#com.intellij.ide.util.MemberChooser/0.40.1366.728@0.40.1366.728" timestamp="1580641982651" />
+    <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1580975102378">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580975102378" />
     <state x="416" y="40" width="526" height="728" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580329081527">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
@@ -327,65 +404,84 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="70" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1580651031984" />
-    <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl" timestamp="1580376323749">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="655" y="174" width="426" height="485" key="FileChooserDialogImpl" timestamp="1581062210937">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581062210937" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1580376323749" />
-    <state width="1310" height="213" key="GridCell.Tab.0.bottom" timestamp="1580644388022">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581103703554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703554" />
     <state width="1310" height="213" key="GridCell.Tab.0.bottom/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1310" height="213" key="GridCell.Tab.0.center" timestamp="1580644388022">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581103703554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703554" />
     <state width="1310" height="213" key="GridCell.Tab.0.center/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1310" height="213" key="GridCell.Tab.0.left" timestamp="1580644388021">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581103703554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703554" />
     <state width="1310" height="213" key="GridCell.Tab.0.left/0.40.1366.728@0.40.1366.728" timestamp="1580644388021" />
-    <state width="1310" height="213" key="GridCell.Tab.0.right" timestamp="1580644388022">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581103703554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703554" />
     <state width="1310" height="213" key="GridCell.Tab.0.right/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1310" height="213" key="GridCell.Tab.1.bottom" timestamp="1580644388023">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.1.bottom" timestamp="1581103703555">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703555" />
     <state width="1310" height="213" key="GridCell.Tab.1.bottom/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1310" height="213" key="GridCell.Tab.1.center" timestamp="1580644388023">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.1.center" timestamp="1581103703555">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703555" />
     <state width="1310" height="213" key="GridCell.Tab.1.center/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1310" height="213" key="GridCell.Tab.1.left" timestamp="1580644388022">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.1.left" timestamp="1581103703555">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703555" />
     <state width="1310" height="213" key="GridCell.Tab.1.left/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1310" height="213" key="GridCell.Tab.1.right" timestamp="1580644388023">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="282" key="GridCell.Tab.1.right" timestamp="1581103703555">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581103703555" />
     <state width="1310" height="213" key="GridCell.Tab.1.right/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1310" height="213" key="GridCell.Tab.2.bottom" timestamp="1580644388024">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1581103551992">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581103551992" />
     <state width="1310" height="213" key="GridCell.Tab.2.bottom/0.40.1366.728@0.40.1366.728" timestamp="1580644388024" />
-    <state width="1310" height="213" key="GridCell.Tab.2.center" timestamp="1580644388024">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1581103551991">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581103551991" />
     <state width="1310" height="213" key="GridCell.Tab.2.center/0.40.1366.728@0.40.1366.728" timestamp="1580644388024" />
-    <state width="1310" height="213" key="GridCell.Tab.2.left" timestamp="1580644388023">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1581103551991">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581103551991" />
     <state width="1310" height="213" key="GridCell.Tab.2.left/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1310" height="213" key="GridCell.Tab.2.right" timestamp="1580644388024">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1581103551991">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581103551991" />
     <state width="1310" height="213" key="GridCell.Tab.2.right/0.40.1366.728@0.40.1366.728" timestamp="1580644388024" />
-    <state x="216" y="62" width="926" height="685" key="Maven.ArtifactSearchDialog" timestamp="1580195429345">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1581077405299">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1581077405299" />
+    <state x="304" y="31" width="926" height="685" key="Maven.ArtifactSearchDialog" timestamp="1581063966986">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="304" y="31" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581063966986" />
     <state x="216" y="62" width="926" height="685" key="Maven.ArtifactSearchDialog/0.40.1366.728@0.40.1366.728" timestamp="1580195429345" />
-    <state x="166" y="40" width="1026" height="728" key="SettingsEditor" timestamp="1580287408325">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="233" y="0" width="1026" height="728" key="SettingsEditor" timestamp="1580977132636">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="233" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580977132636" />
     <state x="166" y="40" width="1026" height="728" key="SettingsEditor/0.40.1366.728@0.40.1366.728" timestamp="1580287408325" />
     <state width="200" height="461" key="SqlResolveConfigurable" timestamp="1580287390743">
       <screen x="0" y="40" width="1366" height="728" />
@@ -395,13 +491,26 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="278" y="140" width="802" height="529" key="Vcs.Push.Dialog.v2/0.40.1366.728@0.40.1366.728" timestamp="1580467769338" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581059552422">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581059552421" />
+    <state x="457" y="319" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1580975026938">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="457" y="319" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1580975026938" />
     <state x="125" y="163" width="1241" height="605" key="new project wizard" timestamp="1580158110438">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="125" y="163" width="1241" height="605" key="new project wizard/0.40.1366.728@0.40.1366.728" timestamp="1580158110438" />
-    <state x="342" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580635976078">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1580975284926">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580975284926" />
+    <state x="481" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1581065845798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="481" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581065845798" />
     <state x="342" y="89" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1580635976078" />
   </component>
   <component name="XDebuggerManager">
@@ -451,6 +560,91 @@
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/PostFormToPost.java</url>
           <line>23</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/SoccerDataServiceImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
