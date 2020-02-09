@@ -2,6 +2,7 @@ package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.model.Match;
 
+import java.util.Date;
 import java.util.List;
 
 public interface MatchService {
@@ -11,4 +12,5 @@ public interface MatchService {
 
     Match saveOrUpdate(Match match);
 
+    List<Match> getNonUpdatedMatches(Date date);
 }

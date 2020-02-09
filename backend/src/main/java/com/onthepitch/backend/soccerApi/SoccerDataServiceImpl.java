@@ -10,6 +10,7 @@ import com.onthepitch.backend.service.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -57,5 +58,13 @@ public class SoccerDataServiceImpl implements SoccerDataService {
     public Match save(Match match) {
         matchService.saveOrUpdate(match);
         return match;
+    }
+
+    @Override
+    public void updateAll() {
+        //check if this season ended - upload new teams,matches and seaons. Update all matches results
+        //first: matches
+        List<Match> nonUpdatedMatches = matchService.getNonUpdatedMatches(new Date());
+
     }
 }

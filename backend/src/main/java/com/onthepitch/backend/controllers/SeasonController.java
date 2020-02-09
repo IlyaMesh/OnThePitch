@@ -15,7 +15,7 @@ import java.util.List;
 public class SeasonController {
     @Autowired
     public SoccerDataService soccerDataService;
-
+    //TODO подгружать счеты уже состоявшихся матчей(на случай переноса даты обновлять).Сделать все это в фоновом режиме на главной стр, на ней отображать ближайшие матчи из топ лиг
     @GetMapping("/competitions/{id}/seasons")
     public List<Season> leagueSeasons(@PathVariable String id){
         List<Season> seasons = soccerDataService.seasons(Integer.parseInt(id));

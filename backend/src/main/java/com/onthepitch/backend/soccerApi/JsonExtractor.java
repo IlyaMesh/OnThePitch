@@ -28,12 +28,12 @@ public class JsonExtractor {
         return element.getAsString();
     }
 
-    public int extractInt(JsonObject json, String name) {
+    public Integer extractInt(JsonObject json, String name) {
         if (!json.has(name))
-            return 0;
+            return null;
         JsonElement element = json.get(name);
         if (element.isJsonNull())
-            return 0;
+            return null;
         return element.getAsInt();
     }
 

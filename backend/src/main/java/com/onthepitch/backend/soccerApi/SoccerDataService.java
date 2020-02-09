@@ -21,4 +21,6 @@ public interface SoccerDataService {
     List<Match> matches(int parseInt);
 
     Match save(Match match);
+
+    void updateAll();
 }

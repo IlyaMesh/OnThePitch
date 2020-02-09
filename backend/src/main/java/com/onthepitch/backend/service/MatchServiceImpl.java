@@ -10,6 +10,7 @@ import com.onthepitch.backend.soccerApi.parser.MatchParserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class MatchServiceImpl implements MatchService {
@@ -38,5 +39,11 @@ public class MatchServiceImpl implements MatchService {
     public Match saveOrUpdate(Match match) {
         matchRepository.save(match);
         return match;
+    }
+
+    @Override
+    public List<Match> getNonUpdatedMatches(Date date) {
+        List<Match> matchesNeedToBeUpdatet = matchRepository.findMatchesNeedToBeUpdatet(date);
+        return null;
     }
 }

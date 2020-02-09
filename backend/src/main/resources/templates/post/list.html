@@ -16,6 +16,29 @@
 </head>
 <body>
 <div class="container">
+    <div th:if="${not #lists.isEmpty(matches)}">
+        <h2>Matches info</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Home team</th>
+                <th>Away team</th>
+                <th>Home team scored</th>
+                <th>Away team scored</th>
+                <th>Match time</th>
+                <th>League</th>
+            </tr>
+            <tr th:each="match : ${matches}">
+                <td th:text="${match.homeTeam.club_name}"></td>
+                <td th:text="${match.awayTeam.club_name}"></td>
+                <td th:text="${match.homeTeamScored}"></td>
+                <td th:text="${match.awayTeamScored}"></td>
+                <td th:text="${match.matchTime}"></td>
+                <td th:text="${match.league.league_title}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="container">
     <div th:if="${not #lists.isEmpty(posts)}">
         <h2>Post List</h2>
         <table class="table table-striped">

@@ -22,15 +22,26 @@ public class Match {
     private Integer homeTeamPenalties;
     @Column(name = "AWAY_TEAM_PENALTIES")
     private Integer awayTeamPenalties;
-    private Date match_time;
+    private Date matchTime;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "LEAGUE_ID",referencedColumnName = "LEAGUE_ID")
     private League league;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "SEASON_ID",referencedColumnName = "SEASON_ID")
     private Season season;
+    @Column(name = "LAST_UPDATED")
+    private Date lastUpdated;
+
 
     public Match() {
+    }
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 
     public Long getMatch_id() {
@@ -89,12 +100,12 @@ public class Match {
         this.awayTeamPenalties = awayTeamPenalties;
     }
 
-    public Date getMatch_time() {
-        return match_time;
+    public Date getMatchTime() {
+        return matchTime;
     }
 
-    public void setMatch_time(Date match_time) {
-        this.match_time = match_time;
+    public void setMatchTime(Date match_time) {
+        this.matchTime = match_time;
     }
 
     public League getLeague() {

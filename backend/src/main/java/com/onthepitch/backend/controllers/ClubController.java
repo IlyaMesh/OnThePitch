@@ -30,10 +30,10 @@ public class ClubController {
         this.clubService = clubService;
     }
 
-    @RequestMapping("/")
-    public String redirToList() {
-        return "redirect:/club/list";
-    }
+//    @RequestMapping("/")
+//    public String redirToList() {
+//        return "redirect:/club/list";
+//    }
 
     @RequestMapping({"/club/list", "/club"})
     public String listProducts(Model model) {

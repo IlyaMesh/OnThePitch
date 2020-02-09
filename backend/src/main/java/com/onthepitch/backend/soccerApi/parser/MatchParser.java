@@ -9,7 +9,6 @@ import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Season;
 import com.onthepitch.backend.soccerApi.JsonExtractor;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +24,23 @@ public class MatchParser {
         return parseMatches(json);
     }
 
+    public Match getMatchInfo(String jsonString){
+        JsonElement element = parser.parse(jsonString);
+        JsonObject json = element.getAsJsonObject();
+        JsonObject match = extractor.extractJson(json,"match");
+        if(!parseStatus(match).equals("FINISHED")){
+            return null;
+        }
+        Match matchWrapper = new Match();
+        matchWrapper.setMatch_id((long) parseId(match));
+        matchWrapper.setHomeTeamScored(extractor.extractInt(parseTeamScore(match),"homeTeam"));
+        matchWrapper.setAwayTeamScored(extractor.extractInt(parseTeamScore(match),"awayTeam"));
+        matchWrapper.setHomeTeamPenalties(extractor.extractInt(parseTeamPenalties(match),"homeTeam"));
+        matchWrapper.setAwayTeamPenalties(extractor.extractInt(parseTeamPenalties(match),"awayTeam"));
+
+        return matchWrapper;
+    }
+
     private List<Match> parseMatches(JsonObject json) {
         List<Match> matches = new ArrayList<>();
         //Integer id = extractor.extractInt(json, "id");
@@ -37,7 +53,7 @@ public class MatchParser {
 
     private Match parseMatch(JsonObject item, Integer compId) {
         Match match = new Match();
-        match.setMatch_id((long) parseId(item));//приедтся тянуть сбда зависимости на клубы чтобы их сразу здесь добавлять
+        match.setMatch_id((long) parseId(item));
         Club homeTeam = new Club();
         homeTeam.setClub_id((long) parseIdHomeClub(item));
         match.setHomeTeam(homeTeam);
@@ -48,8 +64,8 @@ public class MatchParser {
         match.setAwayTeamScored(extractor.extractInt(parseTeamScore(item),"awayTeam"));
         match.setHomeTeamPenalties(extractor.extractInt(parseTeamPenalties(item),"homeTeam"));
         match.setAwayTeamPenalties(extractor.extractInt(parseTeamPenalties(item),"awayTeam"));
-        match.setMatch_time(parseMatchDay(item));
-
+        match.setMatchTime(parseMatchDay(item));
+        match.setLastUpdated(new Date());
         League league = new League();
         league.setLeague_id((long)compId);
         match.setLeague(league);
@@ -96,5 +112,7 @@ public class MatchParser {
     private JsonObject parseSeason(JsonObject jsonObject){
         return extractor.extractJson(jsonObject,"season");
     }
+
+    private String parseStatus(JsonObject jsonObject){ return extractor.extractString(jsonObject,"status");}
 
 }
