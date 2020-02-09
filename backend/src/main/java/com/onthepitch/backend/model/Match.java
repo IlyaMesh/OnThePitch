@@ -7,8 +7,6 @@ import java.util.Date;
 @Table(name = "MATCHES")
 public class Match {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "MATCH_SEQ")
-    @SequenceGenerator(sequenceName = "MATCH_SEC",allocationSize = 1,name="MATCH_SEQ")
     private Long match_id;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="HOME_TEAM_ID",referencedColumnName = "CLUB_ID")

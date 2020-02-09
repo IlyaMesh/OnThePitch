@@ -10,5 +10,5 @@ public interface EndpointProviderService {
 
  String getTeams(int competitionId);
 
-
+String getSeasonMatches(int competitionId);
 }

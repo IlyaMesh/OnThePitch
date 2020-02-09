@@ -71,9 +71,7 @@ public class SeasonParser {
         return extractor.extractInt(json, "numberOfAvailableSeasons");
     }
 
-    private String parseName(JsonObject json) {
-        return extractor.extractString(json, "name");
-    }
+
 
     private String parsePlan(JsonObject json) {
         return extractor.extractString(json, "plan");

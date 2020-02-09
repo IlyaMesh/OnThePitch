@@ -4,6 +4,10 @@ import com.onthepitch.backend.commands.ClubForm;
 import com.onthepitch.backend.converter.ClubFormToClub;
 import com.onthepitch.backend.dao.ClubRepository;
 import com.onthepitch.backend.model.Club;
+import com.onthepitch.backend.soccerApi.EndpointProviderService;
+import com.onthepitch.backend.soccerApi.RestClientService;
+import com.onthepitch.backend.soccerApi.parser.ClubParserService;
+import com.onthepitch.backend.soccerApi.parser.SeasonParserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +17,12 @@ import java.util.Optional;
 
 @Service
 public class ClubServiceImpl implements ClubService {
+    @Autowired
+    private ClubParserService parser;
+    @Autowired
+    private EndpointProviderService endpointProviderService;
+    @Autowired
+    private RestClientService restClientService;
 
     private ClubRepository clubRepository;
     private ClubFormToClub clubFormToClub;
@@ -51,5 +61,13 @@ public class ClubServiceImpl implements ClubService {
         Club savedClub = saveOrUpdate(clubFormToClub.convert(clubForm));
         System.out.println("Saved product id+ "+savedClub.getClub_id());
         return savedClub;
+    }
+
+    @Override
+    public List<Club> getFromApi(Long id) {
+        String endpoint = endpointProviderService.getTeams(Math.toIntExact(id));
+        String s = restClientService.get(endpoint);
+        List<Club> clubs = parser.toClubs(s);
+        return clubs;
     }
 }

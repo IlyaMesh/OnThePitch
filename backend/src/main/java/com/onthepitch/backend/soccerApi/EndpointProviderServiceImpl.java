@@ -27,4 +27,10 @@ public class EndpointProviderServiceImpl implements EndpointProviderService {
         return getCompetition(competitionId) + "teams/";
     }
 
+    @Override
+    public String getSeasonMatches(int competitionId) {
+        return getCompetition(competitionId)+"matches?season=2019";
+    }
+
+
 }

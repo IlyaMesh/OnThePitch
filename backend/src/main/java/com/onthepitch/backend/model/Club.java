@@ -11,8 +11,6 @@ import javax.persistence.Table;
 @Table(name = "CLUBS")
 public class Club {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "CLUBS_SEQ")
-    @SequenceGenerator(sequenceName = "CLUB_SEC",allocationSize = 1,name = "CLUBS_SEQ")
     private Long club_id;
     private String club_name;
     private String logo;
