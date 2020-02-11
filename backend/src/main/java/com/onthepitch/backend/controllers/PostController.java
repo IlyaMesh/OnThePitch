@@ -2,8 +2,10 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.converter.PostToPostForm;
+import com.onthepitch.backend.dao.CommentRepository;
 import com.onthepitch.backend.dao.MatchRepository;
 import com.onthepitch.backend.dao.PostRepository;
+import com.onthepitch.backend.model.Comment;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
@@ -40,6 +42,8 @@ public class PostController {
     @Autowired
     private MatchRepository matchRepository;
     @Autowired
+    private CommentRepository commentRepository;
+    @Autowired
     public SoccerDataService soccerDataService;
 
     private PostToPostForm postToPostForm;
@@ -67,8 +71,10 @@ public class PostController {
         Date to = Date.from(LocalDate.now().plusDays(5).atStartOfDay(ZoneId.systemDefault()).toInstant());
         List<Match> matches = matchRepository.findMatchesByMatchTimeBetween(from, to);
         Iterable<Post> posts = postRepository.findAll();
+        List<Comment> comments = (List<Comment>) commentRepository.findAll();
         model.put("posts", posts);
         model.put("matches", matches);
+        model.put("comments",comments);
         return "post/list";
     }
 
