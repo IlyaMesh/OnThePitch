@@ -1,11 +1,9 @@
 package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.dao.MatchRepository;
-import com.onthepitch.backend.model.Club;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.soccerApi.EndpointProviderService;
 import com.onthepitch.backend.soccerApi.RestClientService;
-import com.onthepitch.backend.soccerApi.parser.ClubParserService;
 import com.onthepitch.backend.soccerApi.parser.MatchParserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +33,13 @@ public class MatchServiceImpl implements MatchService {
         return matches;
     }
 
+    private Match getMatch(int match_id){
+        String match = endpointProviderService.getMatch(match_id);
+        String s = restClientService.get(match);
+        Match match1 = parser.getMatch(s);
+        return match1;
+    }
+
     @Override
     public Match saveOrUpdate(Match match) {
         matchRepository.save(match);
@@ -42,8 +47,30 @@ public class MatchServiceImpl implements MatchService {
     }
 
     @Override
-    public List<Match> getNonUpdatedMatches(Date date) {
-        List<Match> matchesNeedToBeUpdatet = matchRepository.findMatchesNeedToBeUpdatet(date);
-        return null;
+    public void updateMatches() throws InterruptedException {
+        Date date = new Date();
+        List<Match> matchesNeedToBeUpdated = matchRepository.findMatchesNeedToBeUpdated(date);//матчи из бд, взять их айдишники и найти каждый матч через api, данные обновить
+        int i =0;
+        for(Match match: matchesNeedToBeUpdated){
+            if(i == 8){
+                Thread.sleep(1002);
+                i=0;
+            }
+            Long match_id = match.getMatch_id();
+            Match matchInfo = getMatch(Math.toIntExact(match_id));
+            if(matchInfo == null)
+                continue;
+            match.setHomeTeamScored(matchInfo.getHomeTeamScored());
+            match.setAwayTeamScored(matchInfo.getAwayTeamScored());
+            match.setAwayTeamPenalties(matchInfo.getAwayTeamPenalties());
+            match.setHomeTeamPenalties(matchInfo.getHomeTeamPenalties());
+            match.setMatchTime(matchInfo.getMatchTime());
+            match.setLastUpdated(date);
+            matchRepository.save(match);
+            String t = "";
+            i++;
+        }
+
+
     }
 }

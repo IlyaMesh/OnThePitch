@@ -45,4 +45,11 @@ public class MatchParserServiceImpl implements MatchParserService {
         }
         return matches;
     }
+
+    @Override
+    public Match getMatch(String json) {
+        return matchParser.getMatchInfo(json);
+    }
+
+
 }

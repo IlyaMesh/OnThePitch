@@ -61,10 +61,10 @@ public class SoccerDataServiceImpl implements SoccerDataService {
     }
 
     @Override
-    public void updateAll() {
+    public void updateAll() throws InterruptedException {
         //check if this season ended - upload new teams,matches and seaons. Update all matches results
         //first: matches
-        List<Match> nonUpdatedMatches = matchService.getNonUpdatedMatches(new Date());
+         matchService.updateMatches();
 
     }
 }

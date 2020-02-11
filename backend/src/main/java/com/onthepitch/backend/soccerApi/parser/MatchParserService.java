@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface MatchParserService {
     List<Match> toMatches(String json);
+
+    Match getMatch(String json);
 }

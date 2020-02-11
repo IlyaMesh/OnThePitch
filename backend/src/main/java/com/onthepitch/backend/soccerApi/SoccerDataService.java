@@ -22,5 +22,5 @@ public interface SoccerDataService {
 
     Match save(Match match);
 
-    void updateAll();
+    void updateAll() throws InterruptedException;
 }

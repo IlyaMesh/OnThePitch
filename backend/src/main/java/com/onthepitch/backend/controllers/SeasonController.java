@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -35,7 +36,7 @@ public class SeasonController {
     }
     @GetMapping("/competitions/{id}/matches")
     public List<Match> getMatches(@PathVariable String id){
-        List<Match> matches = soccerDataService.matches(Integer.parseInt(id));
+        List<Match> matches = new ArrayList<>();
         for(Match match: matches){
             soccerDataService.save(match);
         }

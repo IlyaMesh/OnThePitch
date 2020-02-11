@@ -17,5 +17,5 @@ public interface MatchRepository extends CrudRepository<Match,Long> {
     List<Match> findMatchesByMatchTimeBetween(Date from, Date to);
 
     @Query(value = "SELECT m FROM Match m where m.lastUpdated < m.matchTime and m.matchTime<:today")
-    List<Match> findMatchesNeedToBeUpdatet(@Param("today")Date today);
+    List<Match> findMatchesNeedToBeUpdated(@Param("today")Date today);
 }

@@ -12,5 +12,5 @@ public interface MatchService {
 
     Match saveOrUpdate(Match match);
 
-    List<Match> getNonUpdatedMatches(Date date);
+    void updateMatches() throws InterruptedException;
 }

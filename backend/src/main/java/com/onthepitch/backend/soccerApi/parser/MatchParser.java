@@ -31,12 +31,14 @@ public class MatchParser {
         if(!parseStatus(match).equals("FINISHED")){
             return null;
         }
+
         Match matchWrapper = new Match();
         matchWrapper.setMatch_id((long) parseId(match));
         matchWrapper.setHomeTeamScored(extractor.extractInt(parseTeamScore(match),"homeTeam"));
         matchWrapper.setAwayTeamScored(extractor.extractInt(parseTeamScore(match),"awayTeam"));
         matchWrapper.setHomeTeamPenalties(extractor.extractInt(parseTeamPenalties(match),"homeTeam"));
         matchWrapper.setAwayTeamPenalties(extractor.extractInt(parseTeamPenalties(match),"awayTeam"));
+        matchWrapper.setMatchTime(parseMatchDay(match));
 
         return matchWrapper;
     }

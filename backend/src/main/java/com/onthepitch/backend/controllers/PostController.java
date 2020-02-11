@@ -60,7 +60,7 @@ public class PostController {
     }
 
     @GetMapping({"/post/list", "/post"})
-    public String listProducts(Map<String, Object> model) {
+    public String listProducts(Map<String, Object> model) throws InterruptedException {
         soccerDataService.updateAll();
         // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
         Date from = Date.from(LocalDate.now().minusDays(3).atStartOfDay(ZoneId.systemDefault()).toInstant());
