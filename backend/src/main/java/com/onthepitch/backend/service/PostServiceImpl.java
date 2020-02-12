@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -32,7 +31,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post getById(Long id) {
-        return postRepository.findById(id).get();
+        return postRepository.findById(id).orElse(null);
     }
 
     @Override

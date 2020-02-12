@@ -8,6 +8,7 @@ import java.util.List;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POST_SEQ")
+    @SequenceGenerator(sequenceName = "POSTS_SEC",allocationSize = 1,name = "POST_SEQ")
     private Long comment_id;
     @ManyToOne
     @JoinColumn(name = "USER_ID")

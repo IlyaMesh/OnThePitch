@@ -4,4 +4,6 @@ import com.onthepitch.backend.model.Comment;
 
 public interface CommentService {
     void SaveOrUpdate(Comment comment);
+
+    Comment getById(Long id);
 }

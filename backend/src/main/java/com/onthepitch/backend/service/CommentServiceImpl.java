@@ -5,6 +5,8 @@ import com.onthepitch.backend.model.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class CommentServiceImpl implements CommentService {
     @Autowired
@@ -12,5 +14,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void SaveOrUpdate(Comment comment) {
         commentRepository.save(comment);
+    }
+
+    @Override
+    public Comment getById(Long id) {
+        return commentRepository.findById(id).orElse(null);
     }
 }

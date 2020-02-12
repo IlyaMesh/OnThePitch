@@ -68,9 +68,10 @@ public class PostController {
         soccerDataService.updateAll();
         // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
         Date from = Date.from(LocalDate.now().minusDays(3).atStartOfDay(ZoneId.systemDefault()).toInstant());
-        Date to = Date.from(LocalDate.now().plusDays(5).atStartOfDay(ZoneId.systemDefault()).toInstant());
-        List<Match> matches = matchRepository.findMatchesByMatchTimeBetween(from, to);
+        Date to = Date.from(LocalDate.now().plusDays(3).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
         Iterable<Post> posts = postRepository.findAll();
+        //отображать только комменты на посты, а под ними просто список их комментов
         List<Comment> comments = (List<Comment>) commentRepository.findAll();
         model.put("posts", posts);
         model.put("matches", matches);

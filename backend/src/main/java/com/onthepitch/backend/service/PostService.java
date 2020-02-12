@@ -5,7 +5,6 @@ import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface PostService {
     public List<Post> listAll();
