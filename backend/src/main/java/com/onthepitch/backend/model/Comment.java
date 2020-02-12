@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "USER_COMMENT")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POST_SEQ")
