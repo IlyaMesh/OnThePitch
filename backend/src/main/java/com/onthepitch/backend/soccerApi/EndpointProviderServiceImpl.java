@@ -13,28 +13,38 @@ public class EndpointProviderServiceImpl implements EndpointProviderService {
 
 
     private String getCompetitions() {
-        return BASE_URL + "competitions/";
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(BASE_URL).append("competitions/");
+        return stringBuilder.toString();
     }
 
     @Override
     public String getCompetition(int competitionId) {
-        return getCompetitions() + competitionId + "/";
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getCompetitions()).append(competitionId).append("/");
+        return stringBuilder.toString();
     }
 
 
     @Override
     public String getTeams(int competitionId) {
-        return getCompetition(competitionId) + "teams/";
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getCompetition(competitionId)).append("teams/");
+        return stringBuilder.toString();
     }
 
     @Override
     public String getSeasonMatches(int competitionId) {
-        return getCompetition(competitionId)+"matches?season=2019";
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getCompetition(competitionId)).append("matches?season=2019");
+        return stringBuilder.toString();
     }
 
     @Override
     public String getMatch(int matchId) {
-        return BASE_URL+"matches/"+matchId;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(BASE_URL).append("matches/").append(matchId);
+        return stringBuilder.toString();
     }
 
 

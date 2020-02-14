@@ -20,4 +20,10 @@ public class CommentServiceImpl implements CommentService {
     public Comment getById(Long id) {
         return commentRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void delete(Long id) {
+        commentRepository.deleteById(id);
+    }
+
 }

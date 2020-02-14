@@ -67,7 +67,7 @@ public class PostController {
     public String listProducts(Map<String, Object> model) throws InterruptedException {
         soccerDataService.updateAll();
         // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
-        Date from = Date.from(LocalDate.now().minusDays(3).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date from = Date.from(LocalDate.now().minusDays(5).atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date to = Date.from(LocalDate.now().plusDays(3).atStartOfDay(ZoneId.systemDefault()).toInstant());
         List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
         Iterable<Post> posts = postRepository.findAll();

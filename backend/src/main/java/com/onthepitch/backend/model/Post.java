@@ -2,15 +2,9 @@ package com.onthepitch.backend.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -22,6 +16,8 @@ public class Post {
     @JoinColumn(name = "USER_ID",referencedColumnName = "USER_ID")
     private User author;
 //    private Long user_id;
+    @OneToMany(mappedBy = "post",cascade = CascadeType.REMOVE,orphanRemoval = true)
+    private List<Comment> comments;
     private String header;
     private String text;
     private Date created_at;

@@ -58,4 +58,10 @@ public class CommentController {
         commentService.SaveOrUpdate(comment);
         return "post/list";
     }
+
+    @RequestMapping("/comment/delete/{id}")
+    public String delete(@PathVariable String id) {
+        commentService.delete(Long.valueOf(id));
+        return "redirect:/post/list";
+    }
 }
