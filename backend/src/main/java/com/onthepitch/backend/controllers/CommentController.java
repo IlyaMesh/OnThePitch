@@ -7,7 +7,7 @@ import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.service.CommentService;
 import com.onthepitch.backend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+//import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,23 +41,23 @@ public class CommentController {
 //        commentService.SaveOrUpdate(comment);
         return "comment/add";
     }
-    @RequestMapping(value = "/comment", method = RequestMethod.POST)
-    public String saveComment(@AuthenticationPrincipal User user,@Valid CommentForm commentForm){
-        Comment comment = new Comment();
-        Long idNote = commentForm.getNote_id();
-        comment.setAuthor(user);
-        if(postService.getById(idNote)!=null){
-        comment.setPost(postService.getById(idNote));
-        }
-        //если это комментарий на комментарий
-        if(commentService.getById(idNote)!=null){
-            Comment rootComment = commentService.getById(idNote);
-            comment.setReplyTo(rootComment);
-        }
-        comment.setText(commentForm.getText());
-        commentService.SaveOrUpdate(comment);
-        return "post/list";
-    }
+   // @RequestMapping(value = "/comment", method = RequestMethod.POST)
+//    public String saveComment(@AuthenticationPrincipal User user,@Valid CommentForm commentForm){
+//        Comment comment = new Comment();
+//        Long idNote = commentForm.getNote_id();
+//        comment.setAuthor(user);
+//        if(postService.getById(idNote)!=null){
+//        comment.setPost(postService.getById(idNote));
+//        }
+//        //если это комментарий на комментарий
+//        if(commentService.getById(idNote)!=null){
+//            Comment rootComment = commentService.getById(idNote);
+//            comment.setReplyTo(rootComment);
+//        }
+//        comment.setText(commentForm.getText());
+//        commentService.SaveOrUpdate(comment);
+//        return "post/list";
+//    }
 
     @RequestMapping("/comment/delete/{id}")
     public String delete(@PathVariable String id) {

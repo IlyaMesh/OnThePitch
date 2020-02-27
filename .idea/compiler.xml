@@ -7,15 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="qulice" />
+        <module name="shared" />
         <module name="backend" />
-        <module name="test-module" />
         <module name="gwt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="business" target="8" />
       <module name="model" target="8" />
+      <module name="shared" target="1.8" />
       <module name="test" target="8" />
+      <module name="test-module" target="1.8" />
       <module name="untitled" target="8" />
       <module name="webrest" target="8" />
     </bytecodeTargetLevel>

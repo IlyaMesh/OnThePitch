@@ -8,9 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>gwt</artifactId>
-
     <properties>
         <gwt.version>2.8.2</gwt.version>
         <gin.version>2.1.2</gin.version>
@@ -18,6 +16,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--  Основной модуль GWT  -->
         <dependency>
             <groupId>com.google.gwt</groupId>
@@ -33,16 +36,22 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.gwt.inject</groupId>
-            <artifactId>gin</artifactId>
-            <version>${gin.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>${guice.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.fusesource.restygwt</groupId>
+            <artifactId>restygwt</artifactId>
+            <version>2.2.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.13</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -64,8 +73,11 @@
                     <copyWebapp>true</copyWebapp>
                     <hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
                     <workDir>${project.build.directory}/${project.build.finalName}</workDir>
+                    <gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
                 </configuration>
+
             </plugin>
+
         </plugins>
     </build>
 

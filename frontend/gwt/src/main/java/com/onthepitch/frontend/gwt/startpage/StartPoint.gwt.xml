@@ -10,8 +10,10 @@
     <inherits name="com.google.gwt.logging.Logging"/>
     <inherits name="com.google.gwt.user.theme.clean.Clean"/>
     <inherits name="com.google.gwt.inject.Inject"/>
-    <inherits name="com.google.gwt.inject.Inject"/>
+    <inherits name="org.fusesource.restygwt.RestyGWT"/>
+    <inherits name="com.onthepitch.shared.Shared"/>
     <!-- Specify the app entry point class. -->
     <entry-point class='com.onthepitch.frontend.gwt.startpage.client.StartPoint'/>
+
     <source path='client'/>
 </module>

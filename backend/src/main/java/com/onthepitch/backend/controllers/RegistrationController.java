@@ -4,7 +4,7 @@ import com.onthepitch.backend.dao.UserRepo;
 import com.onthepitch.backend.model.Role;
 import com.onthepitch.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +16,8 @@ import java.util.Map;
 public class RegistrationController {
     @Autowired
     private UserRepo userRepo;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
 
 //    @Autowired
 //    public void setUserRepo(UserRepo userRepo) {
@@ -39,7 +39,7 @@ public class RegistrationController {
         }
 
         user.setActive(true);
-        user.setUser_password(passwordEncoder.encode(user.getUser_password()));
+        //user.setUser_password(passwordEncoder.encode(user.getUser_password()));
         user.setRoles(Collections.singleton(Role.USER));
         userRepo.save(user);
         return "redirect:/login";

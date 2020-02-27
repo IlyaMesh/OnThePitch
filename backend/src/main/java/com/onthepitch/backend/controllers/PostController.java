@@ -12,26 +12,18 @@ import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.service.PostService;
 import com.onthepitch.backend.soccerApi.SoccerDataService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+//import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Controller
 public class PostController {
@@ -58,26 +50,27 @@ public class PostController {
         this.postService = postService;
     }
 
-    @RequestMapping("/")
-    public String redirToList() {
-        return "redirect:/post/list";
-    }
+//    @RequestMapping("/")
+//    public String redirToList() {
+//        return "redirect:/post/list";
+//    }
 
-    @GetMapping({"/post/list", "/post"})
-    public String listProducts(Map<String, Object> model) throws InterruptedException {
-        soccerDataService.updateAll();
-        // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
-        Date from = Date.from(LocalDate.now().minusDays(5).atStartOfDay(ZoneId.systemDefault()).toInstant());
-        Date to = Date.from(LocalDate.now().plusDays(3).atStartOfDay(ZoneId.systemDefault()).toInstant());
-        List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
-        Iterable<Post> posts = postRepository.findAll();
-        //отображать только комменты на посты, а под ними просто список их комментов
-        List<Comment> comments = (List<Comment>) commentRepository.findAll();
-        model.put("posts", posts);
-        model.put("matches", matches);
-        model.put("comments",comments);
-        return "post/list";
-    }
+//    @GetMapping({"/post/list", "/post"})
+//    public String listProducts(Map<String, Object> model) throws InterruptedException {
+//        soccerDataService.updateAll();
+//        // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
+//        Date from = Date.from(LocalDate.now().minusDays(4).atStartOfDay(ZoneId.systemDefault()).toInstant());
+//        Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
+//        List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
+//        Iterable<Post> posts = postRepository.findAll();
+//        //отображать только комменты на посты, а под ними просто список их комментов
+//        List<Comment> comments = (List<Comment>) commentRepository.findAll();
+//        model.put("posts", posts);
+//        model.put("matches", matches);
+//        model.put("comments",comments);
+//        return "post/list";
+//    }
+
 
     @RequestMapping("/post/show/{id}")
     public String getProduct(@PathVariable String id, Model model) {
@@ -101,17 +94,17 @@ public class PostController {
         return "post/postform";
     }
 
-    @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public String saveOrUpdateProduct(@AuthenticationPrincipal User user, @Valid PostForm postForm, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            return "post/postform";
-        }
-
-        Post savedProduct = postService.saveOrUpdatePostForm(postForm, user);
-
-        return "redirect:/post/show/" + savedProduct.getPost_id();
-    }
+//    @RequestMapping(value = "/post", method = RequestMethod.POST)
+//    public String saveOrUpdateProduct(@AuthenticationPrincipal User user, @Valid PostForm postForm, BindingResult bindingResult) {
+//
+//        if (bindingResult.hasErrors()) {
+//            return "post/postform";
+//        }
+//
+//        Post savedProduct = postService.saveOrUpdatePostForm(postForm, user);
+//
+//        return "redirect:/post/show/" + savedProduct.getPost_id();
+//    }
 
     @RequestMapping("/post/delete/{id}")
     public String delete(@PathVariable String id) {

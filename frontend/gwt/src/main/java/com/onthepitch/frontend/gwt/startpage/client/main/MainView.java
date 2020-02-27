@@ -42,6 +42,8 @@ public class MainView extends Composite {
      * Beutifull span.
      */
     private final SpanView spanview;
+
+   // private final PostView postView;
     /**
      * Constructor which create a view according to markup from MainView.ui.xml.
      * @param binder Ui binder for this view.
@@ -53,10 +55,12 @@ public class MainView extends Composite {
             final MainViewUiBinder binder,
             final TableView tableview,
             final SpanView spanview
-    ) {
+         //   final PostView postView
+            ) {
         this.binder = binder;
         this.tableview = tableview;
         this.spanview = spanview;
+       // this.postView = postView;
     }
 
     /**
@@ -67,6 +71,7 @@ public class MainView extends Composite {
         super.initWidget(this.binder.createAndBindUi(this));
         this.tableview.init();
         this.spanview.init();
+       // this.postView.init();
         return this;
     }
 
@@ -91,6 +96,13 @@ public class MainView extends Composite {
         this.workspace.add(this.spanview);
         this.title.setInnerText(this.spanview.getName());
     }
+
+//    @UiHandler("buttonPost")
+//    public void onPostButton(final ClickEvent event) {
+//        this.workspace.clear();
+//        this.workspace.add(this.postView);
+//        this.title.setInnerText(this.postView.getName());
+//    }
 
     /**
      * Interface for autoimplementation of our view.
