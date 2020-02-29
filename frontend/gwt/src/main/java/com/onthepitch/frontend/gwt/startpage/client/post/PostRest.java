@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface PostRest extends RestService {
     @POST
-    @Path("/post/list")
-    void showPosts(MethodCallback<PostResult> callback);
+    @Path("/posts")
+    void showPosts(MethodCallback<List<PostResult>> callback);
 }

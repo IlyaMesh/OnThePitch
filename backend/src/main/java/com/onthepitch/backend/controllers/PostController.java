@@ -55,21 +55,21 @@ public class PostController {
 //        return "redirect:/post/list";
 //    }
 
-//    @GetMapping({"/post/list", "/post"})
-//    public String listProducts(Map<String, Object> model) throws InterruptedException {
-//        soccerDataService.updateAll();
-//        // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
-//        Date from = Date.from(LocalDate.now().minusDays(4).atStartOfDay(ZoneId.systemDefault()).toInstant());
-//        Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
-//        List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
-//        Iterable<Post> posts = postRepository.findAll();
-//        //отображать только комменты на посты, а под ними просто список их комментов
-//        List<Comment> comments = (List<Comment>) commentRepository.findAll();
-//        model.put("posts", posts);
-//        model.put("matches", matches);
-//        model.put("comments",comments);
-//        return "post/list";
-//    }
+    @GetMapping({"/post/list", "/post"})
+    public String listProducts(Map<String, Object> model) throws InterruptedException {
+        soccerDataService.updateAll();
+        // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
+        Date from = Date.from(LocalDate.now().minusDays(4).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
+        Iterable<Post> posts = postRepository.findAll();
+        //отображать только комменты на посты, а под ними просто список их комментов
+        List<Comment> comments = (List<Comment>) commentRepository.findAll();
+        model.put("posts", posts);
+        model.put("matches", matches);
+        model.put("comments",comments);
+        return "post/list";
+    }
 
 
     @RequestMapping("/post/show/{id}")

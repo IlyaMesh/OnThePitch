@@ -2,45 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gwt_user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gwt_user__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.ui.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/shared.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/Shared.gwt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/PostResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/login/LoginView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/login/LoginView.ui.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/login/UserRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/matches/MatchesRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/matches/MatchesView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/matches/MatchesView.ui.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/LoginResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/MatchesResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/UserResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/MvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/gwt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/StartPoint.gwt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/StartPoint.gwt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/StartPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/main/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/main/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/main/MainView.ui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/main/MainView.ui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.ui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.ui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/span/SpanView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/span/SpanView.ui.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/table/TableView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/table/TableView.ui.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/src/main/java/com/onthepitch/testmodule/HelloWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/target/classes/com/onthepitch/testmodule/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module/target/test-module-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +155,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -280,7 +276,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@393623a0" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@596ce26e" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -340,7 +336,10 @@
       <workItem from="1582699025401" duration="449000" />
       <workItem from="1582783978534" duration="4738000" />
       <workItem from="1582789624023" duration="17063000" />
-      <workItem from="1582826865455" duration="3269000" />
+      <workItem from="1582826865455" duration="3534000" />
+      <workItem from="1582915117252" duration="6192000" />
+      <workItem from="1582958443668" duration="2772000" />
+      <workItem from="1582970949875" duration="20167000" />
     </task>
     <task id="LOCAL-00001" summary="Example of post class(db almost connected)">
       <created>1580246270949</created>
@@ -426,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581542102081</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="GWT getting data from backend(Spring security off)">
+      <created>1582832358701</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1582832358701</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +451,9 @@
     <MESSAGE value="Comments added" />
     <MESSAGE value="Comments added(need to fix id generator)" />
     <MESSAGE value="Password encoder added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Password encoder added" />
+    <MESSAGE value="GWT getting data from backend" />
+    <MESSAGE value="GWT getting data from backend(Spring security off)" />
+    <option name="LAST_COMMIT_MESSAGE" value="GWT getting data from backend(Spring security off)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="391" y="37" width="802" height="678" key="#Assign_Data_Sources" timestamp="1581491587250">
@@ -475,10 +483,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="399" y="210" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1580155156328" />
-    <state x="909" y="217" width="462" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1582803254144">
+    <state x="909" y="217" width="462" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1583002929476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="909" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582803254144" />
+    <state x="909" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583002929476" />
     <state x="647" y="192" width="462" height="576" key="#com.intellij.ide.util.MemberChooser/0.40.1366.728@0.40.1366.728" timestamp="1580641982651" />
     <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582785639648">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -501,75 +509,75 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582787139494" />
-    <state x="98" y="0" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1582832300948">
+    <state x="98" y="0" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1582832357026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="98" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300948" />
+    <state x="98" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582832357026" />
     <state x="70" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1580651031984" />
-    <state x="655" y="174" width="426" height="485" key="FileChooserDialogImpl" timestamp="1582826944072">
+    <state x="655" y="174" width="426" height="485" key="FileChooserDialogImpl" timestamp="1582995538826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582826944072" />
+    <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582995538826" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1580376323749" />
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1583005911691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
     <state width="1310" height="213" key="GridCell.Tab.0.bottom/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1583005911691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
     <state width="1310" height="213" key="GridCell.Tab.0.center/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1583005911691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
     <state width="1310" height="213" key="GridCell.Tab.0.left/0.40.1366.728@0.40.1366.728" timestamp="1580644388021" />
-    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1583005911691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
     <state width="1310" height="213" key="GridCell.Tab.0.right/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1582832300996">
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1583005990643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300996" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990643" />
     <state width="1310" height="213" key="GridCell.Tab.1.bottom/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1583005990643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990643" />
     <state width="1310" height="213" key="GridCell.Tab.1.center/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1583005990642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990642" />
     <state width="1310" height="213" key="GridCell.Tab.1.left/0.40.1366.728@0.40.1366.728" timestamp="1580644388022" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1582832300995">
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1583005990643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300995" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990643" />
     <state width="1310" height="213" key="GridCell.Tab.1.right/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1582832300996">
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1583005873596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300996" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583005873596" />
     <state width="1310" height="213" key="GridCell.Tab.2.bottom/0.40.1366.728@0.40.1366.728" timestamp="1580644388024" />
-    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1582832300996">
+    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1583005873596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300996" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583005873596" />
     <state width="1310" height="213" key="GridCell.Tab.2.center/0.40.1366.728@0.40.1366.728" timestamp="1580644388024" />
-    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1582832300996">
+    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1583005873595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300996" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583005873595" />
     <state width="1310" height="213" key="GridCell.Tab.2.left/0.40.1366.728@0.40.1366.728" timestamp="1580644388023" />
-    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1582832300996">
+    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1583005873596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582832300996" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583005873596" />
     <state width="1310" height="213" key="GridCell.Tab.2.right/0.40.1366.728@0.40.1366.728" timestamp="1580644388024" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1581077405299">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -580,19 +588,19 @@
     </state>
     <state x="304" y="31" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581063966986" />
     <state x="216" y="62" width="926" height="685" key="Maven.ArtifactSearchDialog/0.40.1366.728@0.40.1366.728" timestamp="1580195429345" />
-    <state x="233" y="0" width="1026" height="728" key="SettingsEditor" timestamp="1582810634991">
+    <state x="233" y="0" width="1026" height="728" key="SettingsEditor" timestamp="1582989788176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="233" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582810634991" />
+    <state x="233" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582989788176" />
     <state x="166" y="40" width="1026" height="728" key="SettingsEditor/0.40.1366.728@0.40.1366.728" timestamp="1580287408325" />
     <state width="200" height="461" key="SqlResolveConfigurable" timestamp="1580287390743">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state width="200" height="461" key="SqlResolveConfigurable/0.40.1366.728@0.40.1366.728" timestamp="1580287390742" />
-    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1581542110556">
+    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1582832471750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581542110556" />
+    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582832471750" />
     <state x="278" y="140" width="802" height="529" key="Vcs.Push.Dialog.v2/0.40.1366.728@0.40.1366.728" timestamp="1580467769338" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1581443527393">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -631,10 +639,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580975284926" />
-    <state x="481" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1581065845798">
+    <state x="481" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1583003100233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="481" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581065845798" />
+    <state x="481" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583003100233" />
     <state x="342" y="89" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1580635976078" />
   </component>
   <component name="XDebuggerManager">
@@ -942,83 +950,63 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="202" />
+          <line>36</line>
+          <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="204" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="208" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="209" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="210" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="211" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="235" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="236" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java</url>
           <line>51</line>
-          <option name="timeStamp" value="212" />
+          <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="213" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="238" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="215" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java</url>
           <line>53</line>
-          <option name="timeStamp" value="222" />
+          <option name="timeStamp" value="239" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java</url>
@@ -1027,6 +1015,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
+          <line>33</line>
+          <properties class="com.onthepitch.backend.controllers.MessageController">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="227" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

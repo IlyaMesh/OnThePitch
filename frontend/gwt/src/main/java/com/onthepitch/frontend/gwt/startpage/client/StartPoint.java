@@ -27,7 +27,7 @@ public class StartPoint implements EntryPoint {
     {
         Defaults.setServiceRoot("http://127.0.0.1:8080");
         RootPanel.get().add(this.injection.getMainView().init());
-        RootPanel.get().add(this.injection.getPostView().init());
+        //RootPanel.get().add(this.injection.getPostView().init());
     }
 
     /**
@@ -42,7 +42,7 @@ public class StartPoint implements EntryPoint {
          */
         MainView getMainView();
 
-        PostView getPostView();
+       // PostView getPostView();
 
     }
 

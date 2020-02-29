@@ -7,8 +7,7 @@
 
     <g:HTMLPanel>
         <span ui:field="title"/>
-        <g:Button ui:field="buttonTable">Show me a table!</g:Button>
-        <g:Button ui:field="buttonSpan">Show me a lot of span!</g:Button>
+<!--        <g:Button ui:field="buttonLogin">Login</g:Button>-->
         <g:HTMLPanel ui:field="workspace"/>
     </g:HTMLPanel>
 

@@ -3,6 +3,12 @@ package com.onthepitch.backend.model;
 //import org.springframework.security.core.GrantedAuthority;
 //import org.springframework.security.core.userdetails.UserDetails;
 
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -21,11 +27,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "SITE_USERS")
-public class User //implements UserDetails
+public class User implements UserDetails
          {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "USERS_SEQ")
-    @SequenceGenerator(sequenceName = "USER_SEC",allocationSize = 1,name = "USERS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USERS_SEQ")
+    @SequenceGenerator(sequenceName = "USER_SEC", allocationSize = 1, name = "USERS_SEQ")
     private Long user_id;
     private String username;
     private String user_password;
@@ -44,10 +50,11 @@ public class User //implements UserDetails
     private Date registration_time;
     private Long club_id;
 
-    @ElementCollection(targetClass = Role.class,fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role",joinColumns = @JoinColumn(name="user_id"))
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
     public User() {
     }
 
@@ -59,39 +66,39 @@ public class User //implements UserDetails
         this.user_id = user_id;
     }
 
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return getRoles();
-//    }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return getRoles();
+    }
 
-//    @Override
-//    public String getPassword() {
-//        return user_password;
-//    }
+    @Override
+    public String getPassword() {
+        return user_password;
+    }
 
     public String getUsername() {
         return username;
     }
 
-//    @Override
-//    public boolean isAccountNonExpired() {
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean isAccountNonLocked() {
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean isCredentialsNonExpired() {
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean isEnabled() {
-//        return getActive();
-//    }
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return getActive();
+    }
 
     public void setUsername(String username) {
         this.username = username;
