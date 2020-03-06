@@ -20,6 +20,10 @@ public class MatchServiceImpl implements MatchService {
     private RestClientService restClientService;
     @Autowired
     private MatchRepository matchRepository;
+    @Autowired
+    private SeasonService seasonService;
+    @Autowired
+    private LeagueService leagueService;
     @Override
     public List<Match> loadFinished(int id) {
         return null;
@@ -71,6 +75,12 @@ public class MatchServiceImpl implements MatchService {
             i++;
         }
 
+
+    }
+
+    @Override
+    public List<Match> getMatchesInLeagueAndCurrentSeason(Long league_id) {
+        return matchRepository.findMatchesThatGone(leagueService.getById(league_id),seasonService.loadCurrent(Math.toIntExact(league_id)));
 
     }
 }

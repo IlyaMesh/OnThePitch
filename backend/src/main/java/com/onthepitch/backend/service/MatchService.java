@@ -13,4 +13,6 @@ public interface MatchService {
     Match saveOrUpdate(Match match);
 
     void updateMatches() throws InterruptedException;
+
+    List<Match> getMatchesInLeagueAndCurrentSeason(Long league_id);
 }

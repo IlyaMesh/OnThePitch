@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Core Online Tutorial - List Products</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(standings)}">
+        <h2>Matches info</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>№</th>
+                <th>Club</th>
+                <th>MP</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>Pts</th>
+                <th>GS</th>
+                <th>GA</th>
+            </tr>
+            <tr th:each="standing : ${standings}">
+                <td>#</td>
+                <td th:text="${standing.club.club_name}"></td>
+                <td th:text="${standing.matchesPlayed}"></td>
+                <td th:text="${standing.wins}"></td>
+                <td th:text="${standing.draws}"></td>
+                <td th:text="${standing.loses}"></td>
+                <td th:text="${standing.points}"></td>
+                <td th:text="${standing.goalsScored}"></td>
+                <td th:text="${standing.goalsAgainst}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

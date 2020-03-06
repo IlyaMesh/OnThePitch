@@ -10,9 +10,10 @@ import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.service.PostService;
+import com.onthepitch.backend.service.StandingsService;
 import com.onthepitch.backend.soccerApi.SoccerDataService;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -37,6 +38,8 @@ public class PostController {
     private CommentRepository commentRepository;
     @Autowired
     public SoccerDataService soccerDataService;
+    @Autowired
+    public StandingsService standingsService;
 
     private PostToPostForm postToPostForm;
 
@@ -57,7 +60,7 @@ public class PostController {
 
     @GetMapping({"/post/list", "/post"})
     public String listProducts(Map<String, Object> model) throws InterruptedException {
-        soccerDataService.updateAll();
+        //soccerDataService.updateAll();
         // List<Match> matches = matchRepository.findUpcomingMatches(new Date());
         Date from = Date.from(LocalDate.now().minusDays(4).atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -71,7 +74,11 @@ public class PostController {
         return "post/list";
     }
 
-
+    @GetMapping("/post/standings/{id}")
+    public String getStandings(@PathVariable String id,Model model){
+        model.addAttribute("standings",standingsService.getStandings(Long.valueOf(id)));
+        return "post/standings";
+    }
     @RequestMapping("/post/show/{id}")
     public String getProduct(@PathVariable String id, Model model) {
 
@@ -94,17 +101,17 @@ public class PostController {
         return "post/postform";
     }
 
-//    @RequestMapping(value = "/post", method = RequestMethod.POST)
-//    public String saveOrUpdateProduct(@AuthenticationPrincipal User user, @Valid PostForm postForm, BindingResult bindingResult) {
-//
-//        if (bindingResult.hasErrors()) {
-//            return "post/postform";
-//        }
-//
-//        Post savedProduct = postService.saveOrUpdatePostForm(postForm, user);
-//
-//        return "redirect:/post/show/" + savedProduct.getPost_id();
-//    }
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    public String saveOrUpdateProduct(@AuthenticationPrincipal User user, @Valid PostForm postForm, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return "post/postform";
+        }
+
+        Post savedProduct = postService.saveOrUpdatePostForm(postForm, user);
+
+        return "redirect:/post/show/" + savedProduct.getPost_id();
+    }
 
     @RequestMapping("/post/delete/{id}")
     public String delete(@PathVariable String id) {

@@ -91,7 +91,7 @@ public class SeasonParser {
 
 
     private int parseCurrentMatchDay(JsonObject json) {
-        return extractor.extractInt(json, "currentMatchday");
+        return 0;
     }
 
     private LocalDateTime parseLastUpdated(JsonObject json) {

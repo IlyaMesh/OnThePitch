@@ -1,7 +1,6 @@
 package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.dao.SeasonRepository;
-import com.onthepitch.backend.model.League;
 import com.onthepitch.backend.model.Season;
 import com.onthepitch.backend.soccerApi.EndpointProviderService;
 import com.onthepitch.backend.soccerApi.RestClientService;
@@ -28,9 +27,10 @@ public class SeasonServiceImpl implements SeasonService {
 
     @Override
     public Season loadCurrent(int id) {
-        List<Season> seasons = load(id);
+       // List<Season> seasons = load(id);
+        List<Season> seasonsByLeague = seasonRepository.findSeasonsByLeague(leagueService.getById((long) id));
         Date today = new Date();
-        return seasons.stream()
+        return seasonsByLeague.stream()
                 .filter(season -> season.getStart_date().before(today) && season.getEnd_date().after(today)).findFirst().get();
     }
 
@@ -57,4 +57,5 @@ public class SeasonServiceImpl implements SeasonService {
     public Season getById(Long id) {
         return seasonRepository.findById(id).get();
     }
+
 }

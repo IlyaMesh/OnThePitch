@@ -36,7 +36,8 @@ public class SeasonController {
     }
     @GetMapping("/competitions/{id}/matches")
     public List<Match> getMatches(@PathVariable String id){
-        List<Match> matches = new ArrayList<>();
+        //List<Match> matches = new ArrayList<>();
+        List<Match> matches = soccerDataService.matches(Integer.parseInt(id));
         for(Match match: matches){
             soccerDataService.save(match);
         }
