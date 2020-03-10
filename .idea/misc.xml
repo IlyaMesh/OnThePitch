@@ -5,7 +5,9 @@
     <file type="gwt" url="file://$PROJECT_DIR$/backend" />
     <file type="gwt" url="file://$PROJECT_DIR$/frontend/gwt" />
     <file type="gwt" url="file://$PROJECT_DIR$/shared" />
+    <file type="web" url="file://$PROJECT_DIR$/backend" />
     <file type="web" url="file://$PROJECT_DIR$/frontend/gwt" />
+    <file type="web" url="file://$PROJECT_DIR$/frontend/vaadin" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -18,6 +20,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/frontend/vaadin/pom.xml" />
+        <option value="$PROJECT_DIR$/shared/pom.xml" />
         <option value="$PROJECT_DIR$/test-module/pom.xml" />
       </set>
     </option>

@@ -18,6 +18,7 @@
       <module name="test" target="8" />
       <module name="test-module" target="8" />
       <module name="untitled" target="8" />
+      <module name="VueJs" target="1.8" />
       <module name="webrest" target="8" />
     </bytecodeTargetLevel>
   </component>

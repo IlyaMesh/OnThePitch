@@ -56,14 +56,18 @@ public class MatchServiceImpl implements MatchService {
         List<Match> matchesNeedToBeUpdated = matchRepository.findMatchesNeedToBeUpdated(date);//матчи из бд, взять их айдишники и найти каждый матч через api, данные обновить
         int i =0;
         for(Match match: matchesNeedToBeUpdated){
-            if(i == 8){
-                Thread.sleep(1002);
+            if(i == 9){
+                Thread.sleep(60001);
                 i=0;
             }
             Long match_id = match.getMatch_id();
             Match matchInfo = getMatch(Math.toIntExact(match_id));
-            if(matchInfo == null)
+            if(matchInfo == null){
+                i++;
                 continue;
+
+            }
+
             match.setHomeTeamScored(matchInfo.getHomeTeamScored());
             match.setAwayTeamScored(matchInfo.getAwayTeamScored());
             match.setAwayTeamPenalties(matchInfo.getAwayTeamPenalties());
