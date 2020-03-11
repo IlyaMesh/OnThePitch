@@ -8,19 +8,21 @@ import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.soccerApi.SoccerDataService;
 import com.onthepitch.shared.model.MatchesResult;
 import com.onthepitch.shared.model.PostResult;
+import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class MainController {
 
     private PostRepository postRepository;
@@ -37,27 +39,31 @@ public class MainController {
         this.matchRepository = matchRepository;
     }
 
-    @PostMapping("/posts")
-    @CrossOrigin
-    public List<PostResult> listPosts() {
+    @GetMapping("/posts")
+    public List<Post> listPosts() {
 
-        Iterable<Post> posts = postRepository.findAll();
+        List<Post> posts =
+                StreamSupport.stream(postRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
         List<PostResult> postResults = new ArrayList<>();
-        for(Post post:posts){
-            postResults.add( new PostResult(
-                post.getPost_id(),
-                post.getAuthorName(),
-                post.getHeader(),
-                post.getText(),
-                post.getCreated_at()
-        ));
-        }
+//        for(Post post:posts){
+//            postResults.add( new PostResult(
+//                post.getPost_id(),
+//                post.getAuthorName(),
+//                post.getHeader(),
+//                post.getText(),
+//                post.getCreated_at()
+//        ));
+//        }
 
-        return postResults;
+        return posts;
+    }
+    @PostMapping("/posts")
+    public void addPost(@RequestBody Post post){
+        postRepository.save(post);
     }
 
     @PostMapping("/matches")
-    @CrossOrigin
     public List<MatchesResult> listMatches(){
         try{
         soccerDataService.updateAll();}
@@ -68,22 +74,22 @@ public class MainController {
         Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
         List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
         List<MatchesResult> matchesResults =  new ArrayList<MatchesResult>();
-        for(Match match : matches){
-            matchesResults.add( new MatchesResult(
-                    match.getMatch_id(),
-                    match.getHomeTeam().getClub_id(),
-                    match.getHomeTeam().getClub_name(),
-                    match.getAwayTeam().getClub_id(),
-                    match.getAwayTeam().getClub_name(),
-                    match.getHomeTeamScored(),
-                    match.getAwayTeamScored(),
-                    match.getHomeTeamPenalties(),
-                    match.getAwayTeamPenalties(),
-                    match.getMatchTime(),
-                    match.getLeague().getLeague_id(),
-                    match.getLeague().getLeague_title()
-            ));
-        }
+//        for(Match match : matches){
+//            matchesResults.add( new MatchesResult(
+//                    match.getMatch_id(),
+//                    match.getHomeTeam().getClub_id(),
+//                    match.getHomeTeam().getClub_name(),
+//                    match.getAwayTeam().getClub_id(),
+//                    match.getAwayTeam().getClub_name(),
+//                    match.getHomeTeamScored(),
+//                    match.getAwayTeamScored(),
+//                    match.getHomeTeamPenalties(),
+//                    match.getAwayTeamPenalties(),
+//                    match.getMatchTime(),
+//                    match.getLeague().getLeague_id(),
+//                    match.getLeague().getLeague_title()
+//            ));
+//        }
         return matchesResults;
     }
 

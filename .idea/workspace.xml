@@ -1,30 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="Standing added">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/commands/StandingsTeam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/StandingsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/StandingsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/post/standings.html" afterDir="false" />
+    <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="Angular added, connection with REST added too">
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/node/node.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/node/npm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/node/npm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-form/post-form.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-form/post-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-form/post-form.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-form/post-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-list/post-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-list/post-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-list/post-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-list/post-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/post-service.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/post-service.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/SeasonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/MatchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/MatchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/SeasonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/SeasonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/parser/SeasonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/soccerApi/parser/SeasonParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/shared.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/shared.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/classes/LICENCE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/shared.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/angularModule.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,17 +156,18 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="ts.external.directory.path" value="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\shared\src\main\java\com\onthepitch\shared" />
-      <recent name="$PROJECT_DIR$/backend/src/main/resources/templates/post" />
-      <recent name="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage" />
-      <recent name="$PROJECT_DIR$/backend/webrest/src/main/resources" />
-      <recent name="$PROJECT_DIR$/backend" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/gwt/src/main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\post-list" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\model" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\shared\src\main\java\com\onthepitch\shared" />
+      <recent name="$PROJECT_DIR$/backend/src/main/resources/templates/post" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.EntryPoint">
@@ -403,6 +437,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/frontend/angularModule/src/main/angular/node_modules/karma/config.tpl.js" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -420,7 +459,8 @@
     <MESSAGE value="GWT getting data from backend" />
     <MESSAGE value="GWT getting data from backend(Spring security off)" />
     <MESSAGE value="Standing added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Standing added" />
+    <MESSAGE value="Angular added, connection with REST added too" />
+    <option name="LAST_COMMIT_MESSAGE" value="Angular added, connection with REST added too" />
   </component>
   <component name="WindowStateProjectService">
     <state x="391" y="37" width="802" height="678" key="#Assign_Data_Sources" timestamp="1581491587250">
@@ -476,10 +516,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582787139494" />
-    <state x="30" y="40" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1583490585846">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state x="98" y="0" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1583958790038">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="98" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582832357026" />
+    <state x="98" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583958790038" />
     <state x="30" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1583490585846" />
     <state width="834" height="442" key="Diff.GoToChangePopup" timestamp="1583488863452">
       <screen x="0" y="40" width="1366" height="728" />
@@ -494,45 +534,45 @@
     </state>
     <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582995538826" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1583136051488" />
-    <state width="1320" height="169" key="GridCell.Tab.0.bottom" timestamp="1583490251918">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1583958849129">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583958849129" />
     <state width="1320" height="169" key="GridCell.Tab.0.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1320" height="169" key="GridCell.Tab.0.center" timestamp="1583490251918">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1583958849129">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
+    <state width="1877" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583958849129" />
     <state width="1320" height="169" key="GridCell.Tab.0.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1320" height="169" key="GridCell.Tab.0.left" timestamp="1583490251917">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1583958849129">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
+    <state width="1877" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583958849129" />
     <state width="1320" height="169" key="GridCell.Tab.0.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251917" />
-    <state width="1320" height="169" key="GridCell.Tab.0.right" timestamp="1583490251918">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1583958849129">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583005911691" />
+    <state width="1877" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583958849129" />
     <state width="1320" height="169" key="GridCell.Tab.0.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1320" height="169" key="GridCell.Tab.1.bottom" timestamp="1583490251935">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1583958844375">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990643" />
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583958844375" />
     <state width="1320" height="169" key="GridCell.Tab.1.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
-    <state width="1320" height="169" key="GridCell.Tab.1.center" timestamp="1583490251931">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1583958844374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990643" />
+    <state width="1877" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583958844374" />
     <state width="1320" height="169" key="GridCell.Tab.1.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251931" />
-    <state width="1320" height="169" key="GridCell.Tab.1.left" timestamp="1583490251919">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1583958844374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990642" />
+    <state width="1877" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583958844374" />
     <state width="1320" height="169" key="GridCell.Tab.1.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251919" />
-    <state width="1320" height="169" key="GridCell.Tab.1.right" timestamp="1583490251935">
-      <screen x="0" y="40" width="1366" height="728" />
+    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1583958844374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583005990643" />
+    <state width="1877" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583958844374" />
     <state width="1320" height="169" key="GridCell.Tab.1.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
     <state width="1298" height="213" key="GridCell.Tab.2.bottom" timestamp="1583317542677">
       <screen x="0" y="40" width="1366" height="728" />
@@ -601,10 +641,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="457" y="319" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1580975026938" />
-    <state x="175" y="175" width="1241" height="605" key="new project wizard" timestamp="1582793574887">
+    <state x="680" y="312" key="git4idea.merge.GitPullDialog" timestamp="1583952092033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="175" y="175" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582793574887" />
+    <state x="680" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583952092033" />
+    <state x="175" y="175" width="1241" height="605" key="new project wizard" timestamp="1583952607989">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="175" y="175" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1583952607989" />
     <state x="125" y="163" width="1241" height="605" key="new project wizard/0.40.1366.728@0.40.1366.728" timestamp="1580158110438" />
     <state x="702" y="150" key="refactoring.ChangeSignatureDialog" timestamp="1581534899475">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -895,42 +939,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>94</line>
+          <line>100</line>
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>95</line>
+          <line>101</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>96</line>
+          <line>102</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>97</line>
+          <line>103</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>98</line>
+          <line>104</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>99</line>
+          <line>105</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>101</line>
+          <line>107</line>
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>100</line>
+          <line>106</line>
           <option name="timeStamp" value="236" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -976,7 +1020,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java</url>
           <line>13</line>
-          <properties class="com.onthepitch.frontend.gwt.startpage.client.post.PostRest" method="showPosts">
+          <properties class="com.onthepitch.frontend.gwt.startpage.client.post.PostRest">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="218" />
