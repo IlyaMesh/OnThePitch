@@ -1,22 +1,23 @@
 package com.onthepitch.backend.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Class for post entity
+ */
 @Entity
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POST_SEQ")
-    @SequenceGenerator(sequenceName = "POSTS_SEC",allocationSize = 1,name = "POST_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "POST_SEQ")
+    @SequenceGenerator(sequenceName = "POSTS_SEC", allocationSize = 1, name = "POST_SEQ")
     private Long post_id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "USER_ID",referencedColumnName = "USER_ID")
+    @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
     private User author;
-//    private Long user_id;
-    @OneToMany(mappedBy = "post",cascade = CascadeType.REMOVE,orphanRemoval = true)
+    //    private Long user_id;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Comment> comments;
     private String header;
     private String text;
@@ -31,9 +32,11 @@ public class Post {
 
     public Post() {
     }
-    public String getAuthorName(){
+
+    public String getAuthorName() {
         return author != null ? author.getUsername() : "<none>";
     }
+
     @Override
     public String toString() {
         return "Post{" +

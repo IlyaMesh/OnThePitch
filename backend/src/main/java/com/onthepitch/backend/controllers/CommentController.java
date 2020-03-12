@@ -22,11 +22,12 @@ public class CommentController {
     private CommentService commentService;
     @Autowired
     private PostService postService;
+
     @RequestMapping("/comment/add/{id}")
-    public String newComment(Model model,@PathVariable String id){
+    public String newComment(Model model, @PathVariable String id) {
         CommentForm commentForm = new CommentForm();
         commentForm.setNote_id(Long.valueOf(id));
-        model.addAttribute("commentForm",commentForm);
+        model.addAttribute("commentForm", commentForm);
 //        Comment comment = new Comment();
 //        comment.setAuthor(user);
 //        if(postService.getById(idNote)!=null){
@@ -41,7 +42,7 @@ public class CommentController {
 //        commentService.SaveOrUpdate(comment);
         return "comment/add";
     }
-   // @RequestMapping(value = "/comment", method = RequestMethod.POST)
+    // @RequestMapping(value = "/comment", method = RequestMethod.POST)
 //    public String saveComment(@AuthenticationPrincipal User user,@Valid CommentForm commentForm){
 //        Comment comment = new Comment();
 //        Long idNote = commentForm.getNote_id();

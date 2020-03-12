@@ -1,12 +1,12 @@
 package com.onthepitch.backend.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * Class for club entity
+ */
 @Entity
 @Table(name = "CLUBS")
 public class Club {
@@ -20,7 +20,7 @@ public class Club {
     public Club() {
     }
 
-    public Club(String club_name,String logo,String stadium,String club_info){
+    public Club(String club_name, String logo, String stadium, String club_info) {
         this.club_name = club_name;
         this.logo = logo;
         this.stadium = stadium;

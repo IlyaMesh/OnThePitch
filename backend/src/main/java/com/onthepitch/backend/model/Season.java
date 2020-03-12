@@ -3,8 +3,11 @@ package com.onthepitch.backend.model;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * Class for season entity
+ */
 @Entity
-@Table(name="SEASONS")
+@Table(name = "SEASONS")
 public class Season {
     @Id
     private Long season_id;
@@ -13,7 +16,7 @@ public class Season {
     @Column(name = "CURRENT_MATCH_DAY")
     private Integer currentMatchDay;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "LEAGUE_ID",referencedColumnName = "LEAGUE_ID")
+    @JoinColumn(name = "LEAGUE_ID", referencedColumnName = "LEAGUE_ID")
     private League league;
 
     public Season() {

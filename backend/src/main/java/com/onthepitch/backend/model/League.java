@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Class for league(or competition) entity
+ */
 @Entity
 @Table(name = "LEAGUES")
 public class League {
@@ -15,11 +18,12 @@ public class League {
     public League() {
     }
 
-    public League(Long league_id,String league_title,String logo){
+    public League(Long league_id, String league_title, String logo) {
         this.league_id = league_id;
         this.league_title = league_title;
         this.logo = logo;
     }
+
     public Long getLeague_id() {
         return league_id;
     }

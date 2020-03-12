@@ -3,12 +3,15 @@ package com.onthepitch.backend.model;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Class for post's comment entity
+ */
 @Entity
 @Table(name = "USER_COMMENT")
 public class Comment {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POST_SEQ")
-    @SequenceGenerator(sequenceName = "POSTS_SEC",allocationSize = 1,name = "POST_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "POST_SEQ")
+    @SequenceGenerator(sequenceName = "POSTS_SEC", allocationSize = 1, name = "POST_SEQ")
     private Long comment_id;
     @ManyToOne
     @JoinColumn(name = "USER_ID")
@@ -27,9 +30,9 @@ public class Comment {
     private Integer reports;
 
     public Comment() {
-        likes =0;
-        dislikes=0;
-        reports=0;
+        likes = 0;
+        dislikes = 0;
+        reports = 0;
     }
 
     public Long getComment_id() {

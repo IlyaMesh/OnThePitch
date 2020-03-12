@@ -3,16 +3,19 @@ package com.onthepitch.backend.model;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * Class for match entity
+ */
 @Entity
 @Table(name = "MATCHES")
 public class Match {
     @Id
     private Long match_id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="HOME_TEAM_ID",referencedColumnName = "CLUB_ID")
+    @JoinColumn(name = "HOME_TEAM_ID", referencedColumnName = "CLUB_ID")
     private Club homeTeam;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="AWAY_TEAM_ID",referencedColumnName = "CLUB_ID")
+    @JoinColumn(name = "AWAY_TEAM_ID", referencedColumnName = "CLUB_ID")
     private Club awayTeam;
     @Column(name = "HOME_TEAM_SCORED")
     private Integer homeTeamScored;
@@ -24,10 +27,10 @@ public class Match {
     private Integer awayTeamPenalties;
     private Date matchTime;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "LEAGUE_ID",referencedColumnName = "LEAGUE_ID")
+    @JoinColumn(name = "LEAGUE_ID", referencedColumnName = "LEAGUE_ID")
     private League league;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "SEASON_ID",referencedColumnName = "SEASON_ID")
+    @JoinColumn(name = "SEASON_ID", referencedColumnName = "SEASON_ID")
     private Season season;
     @Column(name = "LAST_UPDATED")
     private Date lastUpdated;

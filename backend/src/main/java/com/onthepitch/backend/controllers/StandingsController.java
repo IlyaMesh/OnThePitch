@@ -13,19 +13,34 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for standings controllers
+ */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class StandingsController {
-    @Autowired
-    public StandingsToModel standingsToModel;
-    @Autowired
-    public StandingsService standingsService;
 
+    private StandingsToModel standingsToModel;
+
+    private StandingsService standingsService;
+
+    @Autowired
+    public StandingsController(StandingsToModel standingsToModel, StandingsService standingsService) {
+        this.standingsToModel = standingsToModel;
+        this.standingsService = standingsService;
+    }
+
+    /**
+     * Controller method for getting standings data
+     *
+     * @param id That's league id
+     * @return List of the objects, that contains data about points,goals etc.
+     */
     @GetMapping("/standings/{id}")
-    public List<StandingModel> getStandings(@PathVariable String id){
+    public List<StandingModel> getStandings(@PathVariable String id) {
         List<StandingsTeam> standings = standingsService.getStandings(Long.valueOf(id));
         List<StandingModel> standingModels = new ArrayList<>();
-        for (StandingsTeam team : standings){
+        for (StandingsTeam team : standings) {
             standingModels.add(standingsToModel.convert(team));
         }
         return standingModels;

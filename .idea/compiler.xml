@@ -10,11 +10,11 @@
         <module name="qulice" />
         <module name="shared" />
         <module name="backend" />
-        <module name="gwt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="business" target="8" />
+      <module name="gwt" target="1.8" />
       <module name="model" target="8" />
       <module name="test" target="8" />
       <module name="test-module" target="8" />
