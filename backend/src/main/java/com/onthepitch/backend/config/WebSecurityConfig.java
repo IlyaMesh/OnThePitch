@@ -18,20 +18,20 @@ public class WebSecurityConfig extends
         WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
-//    @Bean
-//    public PasswordEncoder getPasswordEncoder() {
-//        return new BCryptPasswordEncoder(8);
-//    }
+    @Bean
+    public PasswordEncoder getPasswordEncoder() {
+        return new BCryptPasswordEncoder(8);
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/registration", "/login","/","/posts","/matches","/post").permitAll()
+                .antMatchers( "/registration", "/login","/","/posts","/matches","/post","/standings/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -46,6 +46,6 @@ public class WebSecurityConfig extends
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService)
-                .passwordEncoder(NoOpPasswordEncoder.getInstance());
+                .passwordEncoder(getPasswordEncoder());
     }
 }

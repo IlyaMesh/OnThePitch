@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Home Team</th>
+        <th scope="col">Score</th>
+        <th scope="col">Score</th>
+        <th scope="col">Away Team</th>
+        <th scope="col">Match Time</th>
+        <th scope="col">League name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.homeTeam_name  }}</td>
+        <td>{{ result?.homeTeamScored || '-'}}</td>
+        <td>{{ result?.awayTeamScored || '-'}}</td>
+        <td>{{ result.awayTeam_name }}</td>
+        <td>{{ result.matchTime }}</td>
+        <td>{{ result.league_name }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

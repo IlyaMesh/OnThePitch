@@ -1,8 +1,5 @@
 package com.onthepitch.shared.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.Date;
 
 public class MatchesResult {
@@ -19,20 +16,19 @@ public class MatchesResult {
     private Long league_id;
     private String league_name;
 
-    @JsonCreator
     public MatchesResult(
-            @JsonProperty("match_id") Long match_id,
-            @JsonProperty("homeTeam_id") Long homeTeam_id,
-            @JsonProperty("homeTeam_name") String homeTeam_name,
-            @JsonProperty("awayTeam_id") Long awayTeam_id,
-            @JsonProperty("awayTeam_name") String awayTeam_name,
-            @JsonProperty("homeTeamScored") Integer homeTeamScored,
-            @JsonProperty("awayTeamScored") Integer awayTeamScored,
-            @JsonProperty("homeTeamPenalties") Integer homeTeamPenalties,
-            @JsonProperty("awayTeamPenalties") Integer awayTeamPenalties,
-            @JsonProperty("matchTime") Date matchTime,
-            @JsonProperty("league_id") Long league_id,
-            @JsonProperty("league_name") String league_name) {
+            Long match_id,
+            Long homeTeam_id,
+            String homeTeam_name,
+            Long awayTeam_id,
+            String awayTeam_name,
+            Integer homeTeamScored,
+            Integer awayTeamScored,
+            Integer homeTeamPenalties,
+            Integer awayTeamPenalties,
+            Date matchTime,
+            Long league_id,
+            String league_name) {
         this.match_id = match_id;
         this.homeTeam_id = homeTeam_id;
         this.homeTeam_name = homeTeam_name;

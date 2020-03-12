@@ -38,8 +38,6 @@ public class PostController {
     private CommentRepository commentRepository;
     @Autowired
     public SoccerDataService soccerDataService;
-    @Autowired
-    public StandingsService standingsService;
 
     private PostToPostForm postToPostForm;
 
@@ -74,11 +72,7 @@ public class PostController {
         return "post/list";
     }
 
-    @GetMapping("/post/standings/{id}")
-    public String getStandings(@PathVariable String id,Model model){
-        model.addAttribute("standings",standingsService.getStandings(Long.valueOf(id)));
-        return "post/standings";
-    }
+
     @RequestMapping("/post/show/{id}")
     public String getProduct(@PathVariable String id, Model model) {
 

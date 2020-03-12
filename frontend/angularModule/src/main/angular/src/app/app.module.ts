@@ -8,12 +8,24 @@ import { PostFormComponent } from './post-form/post-form.component';
 import {FormsModule} from "@angular/forms";
 import {PostServiceService} from "./service/post-service.service";
 import {HttpClientModule} from "@angular/common/http";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { StandingListComponent } from './standing-list/standing-list.component';
+import { ResultListComponent } from './result-list/result-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
     PostListComponent,
-    PostFormComponent
+    PostFormComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
+    StandingListComponent,
+    ResultListComponent
   ],
   imports: [
     BrowserModule,

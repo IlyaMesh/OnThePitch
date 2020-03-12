@@ -1,5 +1,7 @@
 package com.onthepitch.backend.controllers;
 
+import com.onthepitch.backend.converter.MatchToResult;
+import com.onthepitch.backend.converter.StandingsToModel;
 import com.onthepitch.backend.dao.MatchRepository;
 import com.onthepitch.backend.dao.PostRepository;
 import com.onthepitch.backend.dao.UserRepo;
@@ -24,7 +26,8 @@ import java.util.stream.StreamSupport;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class MainController {
-
+    @Autowired
+    public MatchToResult matchToResult;
     private PostRepository postRepository;
     private UserRepo userRepo;
     private AuthenticationManager authManager;
@@ -63,17 +66,21 @@ public class MainController {
         postRepository.save(post);
     }
 
-    @PostMapping("/matches")
+    @GetMapping("/matches")
     public List<MatchesResult> listMatches(){
-        try{
-        soccerDataService.updateAll();}
-        catch (InterruptedException ex){
-            System.out.println(ex.getMessage());
-        }
+//Problem with postponed matches need to be solved
+        //        try{
+//        soccerDataService.updateAll();}
+//        catch (InterruptedException ex){
+//            System.out.println(ex.getMessage());
+//        }
         Date from = Date.from(LocalDate.now().minusDays(4).atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
         List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
         List<MatchesResult> matchesResults =  new ArrayList<MatchesResult>();
+        for (Match match:matches){
+            matchesResults.add(matchToResult.convert(match));
+        }
 //        for(Match match : matches){
 //            matchesResults.add( new MatchesResult(
 //                    match.getMatch_id(),
@@ -96,7 +103,7 @@ public class MainController {
 //    @PostMapping("/login")
 //    @CrossOrigin
 //    public LoginResult getUserResult(@RequestBody final LoginRequest request){
-////TODO попытаться зарегать пользователя findByUsername
+//
 //
 //        UsernamePasswordAuthenticationToken uAuth = new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword());
 //        Authentication auth = authManager.authenticate(uAuth);
