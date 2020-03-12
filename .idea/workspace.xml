@@ -2,56 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/BasicAuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/StandingsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/MatchToResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/StandingsToModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/footer/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/footer/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/footer/footer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/footer/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/auth.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/match-result.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/match-result.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/standing.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/standing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/result-service.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/result-service.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/standing-service.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/standing-service.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/StandingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MatchesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/ClubController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-list/post-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-list/post-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/post.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/gwt/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qulice/target/classes/LICENCE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qulice/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qulice/target/qulice-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/MatchesResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/MatchesResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/StandingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/StandingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/LeagueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/MatchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/MatchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/League.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Season.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/StartPoint.gwt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/StartPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/login/LoginView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/login/LoginView.ui.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/login/UserRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/main/MainView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/main/MainView.ui.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/matches/MatchesRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/matches/MatchesView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/matches/MatchesView.ui.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostView.ui.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gwt/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/Shared.gwt.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,17 +76,6 @@
       </path>
     </expand>
     <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="spring-beans.schema" />
-        <option value="Enum" />
-        <option value="HTML File" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -214,9 +192,7 @@
               <set />
             </option>
             <option name="goals">
-              <list>
-                <option value="gwt:run" />
-              </list>
+              <list />
             </option>
             <option name="pomFileName" />
             <option name="profilesMap">
@@ -242,39 +218,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.EntryPoint" />
-      <item itemvalue="Maven.GWT" />
-      <item itemvalue="Spring Boot.EntryPoint" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.EntryPoint" />
-        <item itemvalue="Application.EntryPoint" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@4c12a904" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -339,7 +287,8 @@
       <workItem from="1583306169276" duration="5184000" />
       <workItem from="1583427466128" duration="3172000" />
       <workItem from="1583477739842" duration="8307000" />
-      <workItem from="1583989006530" duration="14152000" />
+      <workItem from="1583989006530" duration="19015000" />
+      <workItem from="1584043172513" duration="2770000" />
     </task>
     <task id="LOCAL-00001" summary="Example of post class(db almost connected)">
       <created>1580246270949</created>
@@ -439,16 +388,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583959039722</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Some data added to front">
+      <created>1584003302482</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1584003302483</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/frontend/angularModule/src/main/angular/node_modules/karma/config.tpl.js" />
-      </list>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -467,7 +418,9 @@
     <MESSAGE value="GWT getting data from backend(Spring security off)" />
     <MESSAGE value="Standing added" />
     <MESSAGE value="Angular added, connection with REST added too" />
-    <option name="LAST_COMMIT_MESSAGE" value="Angular added, connection with REST added too" />
+    <MESSAGE value="Some data added to front" />
+    <MESSAGE value="some javaDocks added" />
+    <option name="LAST_COMMIT_MESSAGE" value="some javaDocks added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="391" y="37" width="802" height="678" key="#Assign_Data_Sources" timestamp="1581491587250">
@@ -523,10 +476,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582787139494" />
-    <state x="98" y="0" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1583959037785">
+    <state x="231" y="219" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1584046031616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="98" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583959037785" />
+    <state x="231" y="219" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584046031616" />
     <state x="30" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1583490585846" />
     <state width="834" height="442" key="Diff.GoToChangePopup" timestamp="1583488863452">
       <screen x="0" y="40" width="1366" height="728" />
@@ -541,45 +494,45 @@
     </state>
     <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582995538826" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1583136051488" />
-    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.0.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.0.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.0.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251917" />
-    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.0.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.1.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
-    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.1.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251931" />
-    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.1.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251919" />
-    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1584002909495">
+    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1584046520498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584002909495" />
+    <state width="1877" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584046520498" />
     <state width="1320" height="169" key="GridCell.Tab.1.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
     <state width="1298" height="213" key="GridCell.Tab.2.bottom" timestamp="1583317542677">
       <screen x="0" y="40" width="1366" height="728" />
@@ -619,10 +572,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state width="200" height="461" key="SqlResolveConfigurable/0.40.1366.728@0.40.1366.728" timestamp="1580287390742" />
-    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584003245651">
+    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584003305398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584003245651" />
+    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584003305398" />
     <state x="278" y="140" width="802" height="529" key="Vcs.Push.Dialog.v2/0.40.1366.728@0.40.1366.728" timestamp="1580467769338" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1581443527393">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -640,10 +593,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="676" y="162" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581541688406" />
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583989201019">
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584043176911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583989201019" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584043176911" />
     <state x="457" y="319" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1580975026938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -886,102 +839,87 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>48</line>
+          <line>49</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>49</line>
+          <line>50</line>
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>52</line>
+          <line>53</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>50</line>
+          <line>51</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/CommentController.java</url>
-          <line>57</line>
+          <line>58</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>107</line>
+          <line>53</line>
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>108</line>
+          <line>54</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>109</line>
+          <line>55</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>110</line>
+          <line>56</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>111</line>
+          <line>57</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>112</line>
+          <line>58</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>114</line>
+          <line>60</line>
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java</url>
-          <line>113</line>
+          <line>59</line>
           <option name="timeStamp" value="236" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1021,14 +959,6 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="218" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MessageController.java</url>
-          <line>33</line>
-          <properties class="com.onthepitch.backend.controllers.MessageController">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="227" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
