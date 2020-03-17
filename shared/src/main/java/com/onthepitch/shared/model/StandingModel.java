@@ -3,6 +3,7 @@ package com.onthepitch.shared.model;
 public class StandingModel {
     private int club_id;
     private String club_name;
+    private String logo;
     private int matchesPlayed;
     private int wins;
     private int draws;
@@ -11,9 +12,10 @@ public class StandingModel {
     private int goalsScored;
     private int goalsAgainst;
 
-    public StandingModel(int club_id, String club_name, int matchesPlayed, int wins, int draws, int loses, int points, int goalsScored, int goalsAgainst) {
+    public StandingModel(int club_id, String club_name, String logo, int matchesPlayed, int wins, int draws, int loses, int points, int goalsScored, int goalsAgainst) {
         this.club_id = club_id;
         this.club_name = club_name;
+        this.logo = logo;
         this.matchesPlayed = matchesPlayed;
         this.wins = wins;
         this.draws = draws;
@@ -93,5 +95,13 @@ public class StandingModel {
 
     public void setGoalsAgainst(int goalsAgainst) {
         this.goalsAgainst = goalsAgainst;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 }

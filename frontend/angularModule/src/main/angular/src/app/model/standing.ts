@@ -1,6 +1,7 @@
 export class Standing {
   club_id: number;
   club_name: string;
+  logo: string;
   matchesPlayed: number;
   wins: number;
   draws: number;

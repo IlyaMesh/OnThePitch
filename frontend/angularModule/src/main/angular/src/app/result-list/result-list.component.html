@@ -1,26 +1,47 @@
-<div class="card my-5">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">Home Team</th>
-        <th scope="col">Score</th>
-        <th scope="col">Score</th>
-        <th scope="col">Away Team</th>
-        <th scope="col">Match Time</th>
-        <th scope="col">League name</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let result of results">
-        <td>{{ result.homeTeam_name  }}</td>
-        <td>{{ result?.homeTeamScored || '-'}}</td>
-        <td>{{ result?.awayTeamScored || '-'}}</td>
-        <td>{{ result.awayTeam_name }}</td>
-        <td>{{ result.matchTime }}</td>
-        <td>{{ result.league_name }}</td>
-      </tr>
-      </tbody>
-    </table>
+
+<div *ngFor="let result of results; let i = index">
+  <div *ngIf="i % 2 == 0" class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <table class="card-table table">
+            <tbody>
+            <tr>
+              <td align="center"><img src={{result.homeTeamLogo}} width="32" height="32"></td>
+              <td>{{result.homeTeam_name}}</td>
+              <td>{{ result?.homeTeamScored || '-'}}</td>
+             <td rowspan="2">{{result.matchTime}}</td>
+            </tr>
+            <tr>
+              <td align="center"><img src={{result.awayTeamLogo}} width="32" height="32"></td>
+              <td>{{result.awayTeam_name}}</td>
+              <td>{{ result?.awayTeamScored || '-'}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="i + 1 < results.length" class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <table class="card-table table">
+              <tbody>
+              <tr >
+                <td align="center"><img src={{results[i+1].homeTeamLogo}} width="32" height="32"></td>
+                <td >{{results[i + 1].homeTeam_name}}</td>
+                <td >{{ results[i + 1]?.homeTeamScored || '-'}}</td>
+               <td rowspan="2" >{{results[i + 1].matchTime}}</td>
+              </tr>
+              <tr>
+                <td align="center"><img src={{results[i+1].awayTeamLogo}} width="32" height="32"></td>
+                <td class="col-sm-5">{{results[i + 1].awayTeam_name}}</td>
+                <td class="col-sm-2">{{ results[i + 1]?.awayTeamScored || '-'}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
   </div>
 </div>

@@ -13,6 +13,7 @@ public class StandingsToModel implements Converter<StandingsTeam, StandingModel>
         StandingModel standingModel = new StandingModel(
                 Math.toIntExact(standingsTeam.getClub().getClub_id()),
                 standingsTeam.getClub().getClub_name(),
+                standingsTeam.getClub().getLogo(),
                 standingsTeam.getMatchesPlayed(),
                 standingsTeam.getWins(),
                 standingsTeam.getDraws(),

@@ -6,8 +6,10 @@ public class MatchesResult {
     private Long match_id;
     private Long homeTeam_id;
     private String homeTeam_name;
+    private String homeTeamLogo;
     private Long awayTeam_id;
     private String awayTeam_name;
+    private String awayTeamLogo;
     private Integer homeTeamScored;
     private Integer awayTeamScored;
     private Integer homeTeamPenalties;
@@ -20,8 +22,10 @@ public class MatchesResult {
             Long match_id,
             Long homeTeam_id,
             String homeTeam_name,
+            String homeTeamLogo,
             Long awayTeam_id,
             String awayTeam_name,
+            String awayTeamLogo,
             Integer homeTeamScored,
             Integer awayTeamScored,
             Integer homeTeamPenalties,
@@ -32,8 +36,10 @@ public class MatchesResult {
         this.match_id = match_id;
         this.homeTeam_id = homeTeam_id;
         this.homeTeam_name = homeTeam_name;
+        this.homeTeamLogo = homeTeamLogo;
         this.awayTeam_id = awayTeam_id;
         this.awayTeam_name = awayTeam_name;
+        this.awayTeamLogo = awayTeamLogo;
         this.homeTeamScored = homeTeamScored;
         this.awayTeamScored = awayTeamScored;
         this.homeTeamPenalties = homeTeamPenalties;
@@ -137,5 +143,21 @@ public class MatchesResult {
 
     public void setLeague_name(String league_name) {
         this.league_name = league_name;
+    }
+
+    public String getHomeTeamLogo() {
+        return homeTeamLogo;
+    }
+
+    public void setHomeTeamLogo(String homeTeamLogo) {
+        this.homeTeamLogo = homeTeamLogo;
+    }
+
+    public String getAwayTeamLogo() {
+        return awayTeamLogo;
+    }
+
+    public void setAwayTeamLogo(String awayTeamLogo) {
+        this.awayTeamLogo = awayTeamLogo;
     }
 }
