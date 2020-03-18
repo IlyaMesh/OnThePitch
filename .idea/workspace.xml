@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="">
+    <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="Club card added">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/ClubController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/club.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/club.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/club-service.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/club-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/MatchToResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/MatchToResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/StandingsToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/converter/StandingsToModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/match-result.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/match-result.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/standing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/standing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-form/post-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/post-form/post-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/MatchesResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/MatchesResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/StandingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/StandingModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +46,13 @@
       </path>
     </expand>
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,15 +108,15 @@
     <property name="ts.external.directory.path" value="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\service" />
-      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\model" />
-      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app" />
-      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\post-list" />
-      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\shared\src\main\java\com\onthepitch\shared" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/gwt/src/main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\service" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\model" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\frontend\angularModule\src\main\angular\src\app\post-list" />
+      <recent name="C:\Users\ipioneer\IdeaProjects\OnThePitch\shared\src\main\java\com\onthepitch\shared" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.EntryPoint">
@@ -202,7 +214,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@3f47d1a9" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@66a813d0" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -276,7 +288,8 @@
       <workItem from="1583477739842" duration="8307000" />
       <workItem from="1583989006530" duration="19015000" />
       <workItem from="1584043172513" duration="2770000" />
-      <workItem from="1584453736676" duration="12466000" />
+      <workItem from="1584453736676" duration="15415000" />
+      <workItem from="1584514206239" duration="8078000" />
     </task>
     <task id="LOCAL-00001" summary="Example of post class(db almost connected)">
       <created>1580246270949</created>
@@ -397,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584046788999</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Standings and Matches view reworked">
+      <created>1584477484204</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1584477484204</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +442,9 @@
     <MESSAGE value="Angular added, connection with REST added too" />
     <MESSAGE value="Some data added to front" />
     <MESSAGE value="some javaDocks added" />
-    <option name="LAST_COMMIT_MESSAGE" value="some javaDocks added" />
+    <MESSAGE value="Standings and Matches view reworked" />
+    <MESSAGE value="Club card added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Club card added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="391" y="37" width="802" height="678" key="#Assign_Data_Sources" timestamp="1581491587250">
@@ -478,10 +500,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582787139494" />
-    <state x="231" y="219" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1584477457044">
+    <state x="231" y="219" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1584522763459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="231" y="219" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584477457044" />
+    <state x="231" y="219" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763459" />
     <state x="30" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1583490585846" />
     <state width="834" height="442" key="Diff.GoToChangePopup" timestamp="1583488863452">
       <screen x="0" y="40" width="1366" height="728" />
@@ -496,65 +518,65 @@
     </state>
     <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582995538826" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1583136051488" />
-    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.0.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.0.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1584522763519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763519" />
     <state width="1320" height="169" key="GridCell.Tab.0.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251917" />
-    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.0.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.1.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
-    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.1.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251931" />
-    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.1.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251919" />
-    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1584474029121">
+    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1584522763520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584474029121" />
+    <state width="1877" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584522763520" />
     <state width="1320" height="169" key="GridCell.Tab.1.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1584473539371">
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1584520713988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584473539371" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584520713988" />
     <state width="1298" height="213" key="GridCell.Tab.2.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583317542677" />
-    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1584473539371">
+    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1584520713988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584473539371" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584520713988" />
     <state width="1298" height="213" key="GridCell.Tab.2.center/0.40.1366.728@0.40.1366.728" timestamp="1583317542676" />
-    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1584473539370">
+    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1584520713988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584473539370" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584520713988" />
     <state width="1298" height="213" key="GridCell.Tab.2.left/0.40.1366.728@0.40.1366.728" timestamp="1583317542676" />
-    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1584473539371">
+    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1584520713988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584473539371" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584520713988" />
     <state width="1298" height="213" key="GridCell.Tab.2.right/0.40.1366.728@0.40.1366.728" timestamp="1583317542677" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1581077405299">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -574,10 +596,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state width="200" height="461" key="SqlResolveConfigurable/0.40.1366.728@0.40.1366.728" timestamp="1580287390742" />
-    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584046792682">
+    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584477490509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584046792682" />
+    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584477490509" />
     <state x="278" y="140" width="802" height="529" key="Vcs.Push.Dialog.v2/0.40.1366.728@0.40.1366.728" timestamp="1580467769338" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1581443527393">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -595,10 +617,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="676" y="162" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581541688406" />
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584455422108">
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584515313862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584455422108" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584515313862" />
     <state x="457" y="319" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1580975026938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -616,10 +638,10 @@
     </state>
     <state x="175" y="175" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1583952607989" />
     <state x="125" y="163" width="1241" height="605" key="new project wizard/0.40.1366.728@0.40.1366.728" timestamp="1580158110438" />
-    <state x="702" y="150" key="refactoring.ChangeSignatureDialog" timestamp="1581534899475">
+    <state x="702" y="150" key="refactoring.ChangeSignatureDialog" timestamp="1584518473590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="702" y="150" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581534899475" />
+    <state x="702" y="150" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584518473590" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1580975284926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -969,8 +991,31 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.html</url>
           <line>1</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.ts</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.ts</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.ts</url>
+          <line>16</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/club-view/club-view.component.ts</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="259" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

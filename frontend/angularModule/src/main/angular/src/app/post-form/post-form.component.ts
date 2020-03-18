@@ -17,10 +17,10 @@ export class PostFormComponent{
     this.post = new Post();
   }
   onSubmit() {
-    this.postService.save(this.post).subscribe(result => this.gotoUserList());
+    this.postService.save(this.post).subscribe(result => this.gotoPostList());
   }
 
-  gotoUserList() {
+  gotoPostList() {
     this.router.navigate(['/posts']);
   }
 

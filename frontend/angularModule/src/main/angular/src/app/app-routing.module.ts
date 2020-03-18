@@ -6,6 +6,7 @@ import {LoginComponent} from "./login/login.component";
 import {StandingListComponent} from "./standing-list/standing-list.component";
 import {ResultServiceService} from "./service/result-service.service";
 import {ResultListComponent} from "./result-list/result-list.component";
+import {ClubViewComponent} from "./club-view/club-view.component";
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'matches',component:ResultListComponent},
   {path: 'addPost', component: PostFormComponent},
   {path: 'login',component: LoginComponent},
-  {path: 'standings',component: StandingListComponent}
+  {path: 'standings',component: StandingListComponent},
+  {path: 'clubs/:club_id',component: ClubViewComponent}
 
 ];
 

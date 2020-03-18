@@ -31,7 +31,7 @@ public class WebSecurityConfig extends
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/registration", "/login","/","/posts","/matches","/post","/standings/*").permitAll()
+                .antMatchers( "/registration", "/login","/","/posts","/matches","/post","/standings/*","/clubs/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
