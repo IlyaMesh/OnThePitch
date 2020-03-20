@@ -1,11 +1,9 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.backend.dao.CommentRepository;
+import com.onthepitch.backend.repos.CommentRepository;
 import com.onthepitch.backend.model.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class CommentServiceImpl implements CommentService {

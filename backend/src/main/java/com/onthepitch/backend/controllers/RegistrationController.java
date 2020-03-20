@@ -1,6 +1,6 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.dao.UserRepo;
+import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.model.Role;
 import com.onthepitch.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;

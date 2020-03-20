@@ -1,6 +1,6 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.backend.dao.UserRepo;
+import com.onthepitch.backend.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

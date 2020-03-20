@@ -2,6 +2,8 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.commands.StandingsTeam;
 import com.onthepitch.backend.converter.StandingsToModel;
+import com.onthepitch.backend.model.League;
+import com.onthepitch.backend.service.LeagueService;
 import com.onthepitch.backend.service.StandingsService;
 import com.onthepitch.shared.model.StandingModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +23,14 @@ import java.util.List;
 public class StandingsController {
 
     private StandingsToModel standingsToModel;
-
+    private LeagueService leagueService;
     private StandingsService standingsService;
 
     @Autowired
-    public StandingsController(StandingsToModel standingsToModel, StandingsService standingsService) {
+    public StandingsController(StandingsToModel standingsToModel, StandingsService standingsService, LeagueService leagueService) {
         this.standingsToModel = standingsToModel;
         this.standingsService = standingsService;
+        this.leagueService = leagueService;
     }
 
     /**
@@ -44,5 +47,10 @@ public class StandingsController {
             standingModels.add(standingsToModel.convert(team));
         }
         return standingModels;
+    }
+
+    @GetMapping("/standings/leagues")
+    public List<League> getLeagues() {
+        return leagueService.getAll();
     }
 }

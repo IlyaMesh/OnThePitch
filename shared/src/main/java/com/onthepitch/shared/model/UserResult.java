@@ -8,7 +8,6 @@ public class UserResult {
     private String user_pic;
     private String role;
 
-    //ВЕРОЯТНО ПРОБЛЕМА В ВИДИМОСТИ USERRESULT!!!!
     public UserResult(Long user_id, String username, String user_password, String email, String user_pic, String role) {
         this.user_id = user_id;
         this.username = username;

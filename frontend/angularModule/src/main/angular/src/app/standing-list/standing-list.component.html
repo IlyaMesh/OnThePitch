@@ -1,5 +1,13 @@
+
 <div class="card my-5">
   <div class="card-body">
+    <div class="dropdown">
+      <button class="dropbtn">League</button>
+      <div class="dropdown-content">
+        <a  *ngFor="let league of leagues" class="dropdown-item" [routerLink]="['/standings/',league.league_id]">{{league.league_title}}</a>
+
+      </div>
+    </div>
     <table class="table table-striped">
       <thead class="thead-dark">
       <tr>
@@ -30,5 +38,17 @@
       </tr>
       </tbody>
     </table>
+<!--    <div class="dropdown">-->
+<!--      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--        Leagues-->
+<!--      </button>-->
+<!--      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--        <a class="dropdown-item" href="#">Action</a>-->
+<!--        <a class="dropdown-item" href="#">Another action</a>-->
+<!--        <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        &lt;!&ndash;        <a  *ngFor="let league of leagues" class="dropdown-item" href="#">{{league.league_title}}</a>&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+
   </div>
 </div>

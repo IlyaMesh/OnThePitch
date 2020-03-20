@@ -1,15 +1,15 @@
 package com.onthepitch.shared.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.NotBlank;
+
 
 public class LoginRequest {
+    @NotBlank
     private String username;
+    @NotBlank
     private String password;
-    @JsonCreator
-    public LoginRequest(@JsonProperty("username") String username, @JsonProperty("password") String password) {
-        this.username = username;
-        this.password = password;
+    public LoginRequest() {
+
     }
 
     public String getUsername() {

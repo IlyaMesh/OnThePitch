@@ -1,6 +1,6 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.backend.dao.LeagueRepository;
+import com.onthepitch.backend.repos.LeagueRepository;
 import com.onthepitch.backend.model.League;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class LeagueServiceImpl implements LeagueService {
     }
 
     @Override
-    public List<League> listAll() {
+    public List<League> getAll() {
         List<League> leagues = new ArrayList<>();
         leagueRepository.findAll().forEach(leagues::add);
         return leagues;

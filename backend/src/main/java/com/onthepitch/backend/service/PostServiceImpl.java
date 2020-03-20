@@ -2,7 +2,7 @@ package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.converter.PostFormToPost;
-import com.onthepitch.backend.dao.PostRepository;
+import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.dao.PostRepository;
+import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

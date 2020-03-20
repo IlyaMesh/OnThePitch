@@ -1,27 +1,13 @@
 package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.converter.MatchToResult;
-import com.onthepitch.backend.converter.StandingsToModel;
-import com.onthepitch.backend.dao.MatchRepository;
-import com.onthepitch.backend.dao.PostRepository;
-import com.onthepitch.backend.dao.UserRepo;
-import com.onthepitch.backend.model.Match;
-import com.onthepitch.backend.model.Post;
+import com.onthepitch.backend.repos.MatchRepository;
+import com.onthepitch.backend.repos.PostRepository;
+import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.soccerApi.SoccerDataService;
-import com.onthepitch.shared.model.MatchesResult;
-import com.onthepitch.shared.model.PostResult;
-import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
