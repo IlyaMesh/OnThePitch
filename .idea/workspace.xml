@@ -2,49 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c50f3a-7e84-4b72-aff8-4090171cc1fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/jwt/AuthEntryPointJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/jwt/AuthTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/jwt/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/league.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/model/league.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/helpers/auth.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/profile/profile.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/profile/profile.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/profile/profile.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/profile/profile.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/register/register.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/token-storage.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/token-storage.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/user.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/user.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/SignupRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/BasicAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MatchesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/MatchesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/StandingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/StandingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/ClubRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/ClubRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/LeagueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/LeagueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/MatchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/MatchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/SeasonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/SeasonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/dao/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/repos/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/ClubServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/ClubServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/LeagueServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/MatchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/SeasonServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/standing-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/standing-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/standing-list/standing-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/UserResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/com/onthepitch/shared/model/UserResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/service/auth.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/login/login.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +55,12 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="C##MAINUSER: schema" type="3abd1b6a:OraImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="C##MAINUSER: schema" type="3abd1b6a:OraImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -242,7 +232,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@66a813d0" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@7e018b9a" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -318,7 +308,8 @@
       <workItem from="1584043172513" duration="2770000" />
       <workItem from="1584453736676" duration="15415000" />
       <workItem from="1584514206239" duration="17160000" />
-      <workItem from="1584686503484" duration="9968000" />
+      <workItem from="1584686503484" duration="10172000" />
+      <workItem from="1584769176471" duration="8293000" />
     </task>
     <task id="LOCAL-00001" summary="Example of post class(db almost connected)">
       <created>1580246270949</created>
@@ -453,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584522816775</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Security on backend was modified">
+      <created>1584710222302</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1584710222302</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +478,8 @@
     <MESSAGE value="some javaDocks added" />
     <MESSAGE value="Standings and Matches view reworked" />
     <MESSAGE value="Club card added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Club card added" />
+    <MESSAGE value="Security on backend was modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Security on backend was modified" />
   </component>
   <component name="WindowStateProjectService">
     <state x="391" y="37" width="802" height="678" key="#Assign_Data_Sources" timestamp="1581491587250">
@@ -510,10 +509,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="399" y="210" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1580155156328" />
-    <state x="909" y="217" width="462" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1584702016717">
+    <state x="909" y="217" width="462" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1584770271209">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="909" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584702016717" />
+    <state x="909" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584770271209" />
     <state x="647" y="192" width="462" height="576" key="#com.intellij.ide.util.MemberChooser/0.40.1366.728@0.40.1366.728" timestamp="1583487254584" />
     <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582785639648">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -536,10 +535,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582787139494" />
-    <state x="231" y="219" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1584710163290">
+    <state x="231" y="219" width="1217" height="728" key="CommitChangelistDialog2" timestamp="1584710220446">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="231" y="219" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163290" />
+    <state x="231" y="219" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584710220446" />
     <state x="30" y="40" width="1217" height="728" key="CommitChangelistDialog2/0.40.1366.728@0.40.1366.728" timestamp="1583490585846" />
     <state width="834" height="442" key="Diff.GoToChangePopup" timestamp="1583488863452">
       <screen x="0" y="40" width="1366" height="728" />
@@ -554,65 +553,65 @@
     </state>
     <state x="655" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582995538826" />
     <state x="466" y="162" width="426" height="485" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1583136051488" />
-    <state width="1877" height="346" key="GridCell.Tab.0.bottom" timestamp="1584710163338">
+    <state width="1293" height="278" key="GridCell.Tab.0.bottom" timestamp="1584777456979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1293" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584777456979" />
     <state width="1320" height="169" key="GridCell.Tab.0.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="346" key="GridCell.Tab.0.center" timestamp="1584710163338">
+    <state width="1293" height="278" key="GridCell.Tab.0.center" timestamp="1584777456979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1293" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584777456979" />
     <state width="1320" height="169" key="GridCell.Tab.0.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="346" key="GridCell.Tab.0.left" timestamp="1584710163338">
+    <state width="1293" height="278" key="GridCell.Tab.0.left" timestamp="1584777456979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1293" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584777456979" />
     <state width="1320" height="169" key="GridCell.Tab.0.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251917" />
-    <state width="1877" height="346" key="GridCell.Tab.0.right" timestamp="1584710163338">
+    <state width="1293" height="278" key="GridCell.Tab.0.right" timestamp="1584777456979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1293" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584777456979" />
     <state width="1320" height="169" key="GridCell.Tab.0.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251918" />
-    <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1584710163338">
+    <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1584775852340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1877" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852340" />
     <state width="1320" height="169" key="GridCell.Tab.1.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
-    <state width="1877" height="346" key="GridCell.Tab.1.center" timestamp="1584710163338">
+    <state width="1877" height="346" key="GridCell.Tab.1.center" timestamp="1584775852340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1877" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852340" />
     <state width="1320" height="169" key="GridCell.Tab.1.center/0.40.1366.728@0.40.1366.728" timestamp="1583490251931" />
-    <state width="1877" height="346" key="GridCell.Tab.1.left" timestamp="1584710163338">
+    <state width="1877" height="346" key="GridCell.Tab.1.left" timestamp="1584775852340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1877" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852340" />
     <state width="1320" height="169" key="GridCell.Tab.1.left/0.40.1366.728@0.40.1366.728" timestamp="1583490251919" />
-    <state width="1877" height="346" key="GridCell.Tab.1.right" timestamp="1584710163338">
+    <state width="1877" height="346" key="GridCell.Tab.1.right" timestamp="1584775852340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1877" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852340" />
     <state width="1320" height="169" key="GridCell.Tab.1.right/0.40.1366.728@0.40.1366.728" timestamp="1583490251935" />
-    <state width="1877" height="346" key="GridCell.Tab.2.bottom" timestamp="1584710163339">
+    <state width="1877" height="346" key="GridCell.Tab.2.bottom" timestamp="1584775852341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163339" />
+    <state width="1877" height="346" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852341" />
     <state width="1298" height="213" key="GridCell.Tab.2.bottom/0.40.1366.728@0.40.1366.728" timestamp="1583317542677" />
-    <state width="1877" height="346" key="GridCell.Tab.2.center" timestamp="1584710163339">
+    <state width="1877" height="346" key="GridCell.Tab.2.center" timestamp="1584775852341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163339" />
+    <state width="1877" height="346" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852341" />
     <state width="1298" height="213" key="GridCell.Tab.2.center/0.40.1366.728@0.40.1366.728" timestamp="1583317542676" />
-    <state width="1877" height="346" key="GridCell.Tab.2.left" timestamp="1584710163338">
+    <state width="1877" height="346" key="GridCell.Tab.2.left" timestamp="1584775852341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163338" />
+    <state width="1877" height="346" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852341" />
     <state width="1298" height="213" key="GridCell.Tab.2.left/0.40.1366.728@0.40.1366.728" timestamp="1583317542676" />
-    <state width="1877" height="346" key="GridCell.Tab.2.right" timestamp="1584710163339">
+    <state width="1877" height="346" key="GridCell.Tab.2.right" timestamp="1584775852341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="346" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584710163339" />
+    <state width="1877" height="346" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584775852341" />
     <state width="1298" height="213" key="GridCell.Tab.2.right/0.40.1366.728@0.40.1366.728" timestamp="1583317542677" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1581077405299">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -632,10 +631,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state width="200" height="461" key="SqlResolveConfigurable/0.40.1366.728@0.40.1366.728" timestamp="1580287390742" />
-    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584522818702">
+    <state x="391" y="143" width="802" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584710225438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584522818702" />
+    <state x="391" y="143" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584710225438" />
     <state x="278" y="140" width="802" height="529" key="Vcs.Push.Dialog.v2/0.40.1366.728@0.40.1366.728" timestamp="1580467769338" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1581443527393">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -653,10 +652,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="676" y="162" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581541688406" />
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584686502267">
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584769180495">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584686502267" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584769180495" />
     <state x="457" y="319" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1580975026938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -1032,69 +1031,54 @@
           <option name="timeStamp" value="262" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="263" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="265" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="281" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="266" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="282" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/WebSecurityConfig.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/WebSecurityConfig.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/WebSecurityConfig.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/WebSecurityConfig.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="286" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/security/WebSecurityConfig.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
           <line>44</line>
-          <option name="timeStamp" value="267" />
+          <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="268" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="270" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="271" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="272" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="273" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="274" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="275" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="276" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/AuthController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="277" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/frontend/gwt/src/main/java/com/onthepitch/frontend/gwt/startpage/client/post/PostRest.java</url>
@@ -1103,6 +1087,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/onthepitch/backend/controllers/PostController.java</url>
+          <line>30</line>
+          <properties class="com.onthepitch.backend.controllers.PostController" method="listPosts">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/angularModule/src/main/angular/src/app/result-list/result-list.component.html</url>
