@@ -18,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
+import { UploadFilesComponent } from './upload-files/upload-files.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {authInterceptorProviders} from "./helpers/auth.interceptor";
     ClubViewComponent,
     RegisterComponent,
     ProfileComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    UploadFilesComponent
   ],
   imports: [
     BrowserModule,

@@ -12,12 +12,19 @@ export class StandingListComponent implements OnInit {
 
   standings:Standing[];
   leagues:League[];
+  currentLeagueId:number;
 
-  constructor(private standingServiceService:StandingServiceService) { }
+  constructor(private standingServiceService:StandingServiceService) {
+    this.currentLeagueId = 2002;
+  }
 
   ngOnInit(): void {
-    this.standingServiceService.findAll().subscribe(data =>{this.standings = data;});
+    this.standingServiceService.findAll(this.currentLeagueId).subscribe(data =>{this.standings = data;});
     this.standingServiceService.findAllLeagues().subscribe(data =>{this.leagues = data;})
+  }
+  selectLeague(id){
+    this.currentLeagueId = id;
+    this.standingServiceService.findAll(this.currentLeagueId).subscribe(data=>{this.standings = data;});
   }
 
 }

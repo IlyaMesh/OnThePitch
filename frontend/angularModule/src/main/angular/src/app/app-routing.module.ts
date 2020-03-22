@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {PostListComponent} from "./post-list/post-list.component";
 import {PostFormComponent} from "./post-form/post-form.component";
 import {LoginComponent} from "./login/login.component";
 import {StandingListComponent} from "./standing-list/standing-list.component";
-import {ResultServiceService} from "./service/result-service.service";
 import {ResultListComponent} from "./result-list/result-list.component";
 import {ClubViewComponent} from "./club-view/club-view.component";
 import {RegisterComponent} from "./register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {BoardUserComponent} from "./board-user/board-user.component";
+import {UploadFilesComponent} from "./upload-files/upload-files.component";
 
 
 const routes: Routes = [
@@ -22,7 +22,8 @@ const routes: Routes = [
   {path: 'clubs/:club_id',component: ClubViewComponent},
   {path:'register',component: RegisterComponent},
   {path:'profile',component: ProfileComponent},
-  {path: 'user',component: BoardUserComponent}
+  {path: 'user',component: BoardUserComponent},
+  {path:'upload',component: UploadFilesComponent}
 
 ];
 

@@ -1,13 +1,16 @@
 
 <div class="card my-5">
   <div class="card-body">
-    <div class="dropdown">
-      <button class="dropbtn">League</button>
-      <div class="dropdown-content">
-        <a  *ngFor="let league of leagues" class="dropdown-item" [routerLink]="['/standings/',league.league_id]">{{league.league_title}}</a>
+<!--    <div class="dropdown">-->
+<!--    <button class="dropbtn">League</button>-->
+<!--    <div class="dropdown-content">-->
+<!--      <a  *ngFor="let league of leagues" class="dropdown-item" [routerLink]="['/standings/',league.league_id]">{{league.league_title}}</a>-->
 
-      </div>
-    </div>
+<!--    </div>-->
+<!--  </div>-->
+    <select #mySelect (change)="selectLeague(mySelect.value)">
+      <option *ngFor="let league of leagues" [value]="league.league_id">{{league.league_title}}</option>
+    </select>
     <table class="table table-striped">
       <thead class="thead-dark">
       <tr>
