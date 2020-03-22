@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from "../model/post";
 import {PostServiceService} from "../service/post-service.service";
+import {TokenStorageService} from "../service/token-storage.service";
 
 @Component({
   selector: 'app-post-list',
@@ -10,9 +11,11 @@ import {PostServiceService} from "../service/post-service.service";
 export class PostListComponent implements OnInit {
 
   posts: Post[];
-  constructor(private postService:PostServiceService) { }
+  isLoggedIn = false;
+  constructor(private postService:PostServiceService,private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
     this.postService.findAll().subscribe(data =>{this.posts = data;});
   }
 

@@ -1,11 +1,13 @@
 <div class="card my-5">
   <div class="card-body">
+    <div *ngIf="isLoggedIn">
       <h2 class="card-title text-center py-3">Write your own post</h2>
        <ul class="text-center list-inline py-3">
           <li class="list-inline-item">
            <a routerLink="/addPost" class="btn btn-info">Add Post</a>
          </li>
         </ul>
+    </div>
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>

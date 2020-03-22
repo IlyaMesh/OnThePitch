@@ -9,6 +9,7 @@ import {ResultListComponent} from "./result-list/result-list.component";
 import {ClubViewComponent} from "./club-view/club-view.component";
 import {RegisterComponent} from "./register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {BoardUserComponent} from "./board-user/board-user.component";
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'standings',component: StandingListComponent},
   {path: 'clubs/:club_id',component: ClubViewComponent},
   {path:'register',component: RegisterComponent},
-  {path:'profile',component: ProfileComponent}
+  {path:'profile',component: ProfileComponent},
+  {path: 'user',component: BoardUserComponent}
 
 ];
 

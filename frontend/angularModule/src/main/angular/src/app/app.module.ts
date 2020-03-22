@@ -16,6 +16,8 @@ import { ResultListComponent } from './result-list/result-list.component';
 import { ClubViewComponent } from './club-view/club-view.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import {authInterceptorProviders} from "./helpers/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ProfileComponent } from './profile/profile.component';
     ResultListComponent,
     ClubViewComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    BoardUserComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PostServiceService],
+  providers: [PostServiceService,authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

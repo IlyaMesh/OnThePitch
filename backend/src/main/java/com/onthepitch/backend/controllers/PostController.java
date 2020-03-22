@@ -3,6 +3,9 @@ package com.onthepitch.backend.controllers;
 import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,11 +21,12 @@ public class PostController {
 
     private PostRepository postRepository;
 
+
+
     @Autowired
     public PostController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
-
     /**
      * Controller method for getting all posts
      * @return List of all posts
@@ -39,7 +43,9 @@ public class PostController {
      * @param post - new post that we'd like to save
      */
     @PostMapping("/posts")
+    @PreAuthorize("hasAuthority('USER')")
     public void addPost(@RequestBody Post post) {
+
         postRepository.save(post);
     }
 }
