@@ -19,6 +19,7 @@ public class Post {
     //    private Long user_id;
     @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Comment> comments;
+
     private String header;
     private String text;
     private Date created_at;
@@ -86,5 +87,13 @@ public class Post {
 
     public void setCreated_at(Date created_at) {
         this.created_at = created_at;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

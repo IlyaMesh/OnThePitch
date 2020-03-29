@@ -47,10 +47,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post saveOrUpdatePostForm(PostForm postForm, User user) {
-        postForm.setUser(user);
-        Post savedPost = saveOrUpdate(postFormToPost.convert(postForm));
-        System.out.println("Saved product id+ "+savedPost.getPost_id());
-        return savedPost;
+        return null;
     }
 
 

@@ -30,8 +30,7 @@ public class WebSecurityConfig extends
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private static final String POST_ENDPOINT = "/posts/**";
 
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
@@ -51,21 +50,11 @@ public class WebSecurityConfig extends
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .antMatchers( "/registration", "/login","/","/posts","/matches","/post","/standings/*","/clubs/*").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .httpBasic()
-//                .and()
-//                .logout()
-//                .permitAll()
-//                .and().csrf().disable();
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/posts").permitAll()
+                .antMatchers(HttpMethod.GET,"/posts","/comments").permitAll()
                 .antMatchers("/login","/registration","/matches","/standings/**","/clubs/**","/auth/**").permitAll()
                 .antMatchers("/api/test/**").permitAll()
                 .anyRequest().authenticated();

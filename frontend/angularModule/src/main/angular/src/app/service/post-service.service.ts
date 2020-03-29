@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Post } from '../model/post';
 import {Observable} from "rxjs";
+import {Comment} from "../model/comment";
 
-const API_URL = 'http://localhost:8080/posts';
+const API_URL_POSTS = 'http://localhost:8080/posts';
+const API_URL_COMMENTS = 'http://localhost:8080/comments';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -15,11 +17,13 @@ export class PostServiceService {
 
   constructor(private http: HttpClient) {
   }
-  public findAll(): Observable<Post[]> {
-    return this.http.get<Post[]>(API_URL,httpOptions);
+  public findAllPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(API_URL_POSTS,httpOptions);
   }
-
-  public save(post: Post) {
-    return this.http.post<Post>(API_URL, post);
+  public findAllComments():Observable<Comment[]>{
+    return this.http.get<Comment[]>(API_URL_COMMENTS,httpOptions);
+  }
+  public savePost(post: Post) {
+    return this.http.post<Post>(API_URL_POSTS, post);
   }
 }

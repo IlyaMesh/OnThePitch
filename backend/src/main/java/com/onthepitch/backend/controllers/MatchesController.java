@@ -46,8 +46,8 @@ public class MatchesController {
 //        catch (InterruptedException ex){
 //            System.out.println(ex.getMessage());
 //        }
-        Date from = Date.from(LocalDate.now().minusDays(4).atStartOfDay(ZoneId.systemDefault()).toInstant());
-        Date to = Date.from(LocalDate.now().plusDays(2).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date from = Date.from(LocalDate.now().minusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date to = Date.from(LocalDate.now().plusDays(6).atStartOfDay(ZoneId.systemDefault()).toInstant());
         List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
         List<MatchesResult> matchesResults = new ArrayList<MatchesResult>();
         for (Match match : matches) {

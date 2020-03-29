@@ -18,9 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -46,7 +44,7 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
         User userDetails = (User) authentication.getPrincipal();
-        String principal = SecurityContextHolder.getContext().getAuthentication().getName();
+            //String principal = SecurityContextHolder.getContext().getAuthentication().getName();
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
@@ -79,10 +77,11 @@ public class AuthController {
         user.setUsername(signUpRequest.getUsername());
         user.setEmail(signUpRequest.getEmail());
         user.setUser_password(passwordEncoder.encode(signUpRequest.getPassword()));
-        user.setClub_id(Long.parseLong(signUpRequest.getClub_id()));//TODO add ability to choose
+        user.setClub_id(Long.parseLong(signUpRequest.getClub_id()));
         Set<Role> userRole = Collections.singleton(Role.USER);
         user.setRoles(userRole);
         user.setActive(true);
+        user.setRegistration_time(new Date());
         userRepo.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));

@@ -1,28 +1,34 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
 <div class="card my-5">
   <div class="card-body">
     <div *ngIf="isLoggedIn">
       <h2 class="card-title text-center py-3">Write your own post</h2>
-       <ul class="text-center list-inline py-3">
-          <li class="list-inline-item">
-           <a routerLink="/addPost" class="btn btn-info">Add Post</a>
-         </li>
-        </ul>
+      <ul class="text-center list-inline py-3">
+        <li class="list-inline-item">
+          <a routerLink="/addPost" class="btn btn-info">Add Post</a>
+        </li>
+      </ul>
     </div>
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Header</th>
-        <th scope="col">Text</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let post of posts">
-        <td>{{ post.id }}</td>
-        <td>{{ post.header }}</td>
-        <td>{{ post.text }}</td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="container-fluid">
+      <div class="row content">
+          <div class="well col-sm-12" *ngFor="let post of posts">
+            <hr>
+            <h2>{{post.header}}</h2>
+            <h5><i class="far fa-calendar-alt"></i> Post by {{post.username}}, {{post.created_at}}.</h5>
+            <p>{{post.text}}</p><a href ="#">Read full...</a>
+            <br>
+            <i class="far fa-comments	"></i><a href="#" >Comments({{post?.comments_count || '0'}})</a>
+            <br><br>
+          </div>
+        </div>
+    </div>
+    <div *ngFor="let comment of comments">
+      <h5>{{comment.text}}</h5>
+      <div *ngFor="let comm of comment.comments">
+        <h6>{{comm.text}}</h6>
+      </div>
+    </div>
   </div>
 </div>

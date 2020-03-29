@@ -125,8 +125,8 @@ public class User implements UserDetails {
         return registration_time;
     }
 
-    public void setRegistration_time() {
-        this.registration_time = new Date();
+    public void setRegistration_time(Date date) {
+        this.registration_time = date;
     }
 
     public Long getClub_id() {

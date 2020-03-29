@@ -17,7 +17,7 @@ export class PostFormComponent{
     this.post = new Post();
   }
   onSubmit() {
-    this.postService.save(this.post).subscribe(result => this.gotoPostList());
+    this.postService.savePost(this.post).subscribe(result => this.gotoPostList());
   }
 
   gotoPostList() {

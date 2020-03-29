@@ -1,13 +1,22 @@
 package com.onthepitch.backend.controllers;
 
+import com.onthepitch.backend.converter.PostFormToPost;
+import com.onthepitch.backend.converter.PostToPostForm;
+import com.onthepitch.backend.model.Match;
+import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.model.Post;
+import com.onthepitch.backend.repos.UserRepo;
+import com.onthepitch.shared.model.MatchesResult;
+import com.onthepitch.shared.model.PostResult;
+import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -20,7 +29,12 @@ import java.util.stream.StreamSupport;
 public class PostController {
 
     private PostRepository postRepository;
-
+@Autowired
+private PostFormToPost postFormToPost;
+    @Autowired
+    private PostToPostForm postToPostForm;
+    @Autowired
+    private UserRepo userRepo;
 
 
     @Autowired
@@ -31,11 +45,15 @@ public class PostController {
      * Controller method for getting all posts
      * @return List of all posts
      */
+
     @GetMapping("/posts")
-    public List<Post> listPosts() {
-        return StreamSupport
-                .stream(postRepository.findAll().spliterator(), false)
-                .collect(Collectors.toList());
+    public List<PostResult> listPosts() {
+        List<PostResult> postResults = new ArrayList<PostResult>();
+        Iterable<Post> posts = postRepository.findAll();
+        for (Post post : posts) {
+            postResults.add(postToPostForm.convert(post));
+        }
+        return postResults;
     }
 
     /**
@@ -43,9 +61,19 @@ public class PostController {
      * @param post - new post that we'd like to save
      */
     @PostMapping("/posts")
-    @PreAuthorize("hasAuthority('USER')")
-    public void addPost(@RequestBody Post post) {
+    @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
+    public void addPost(@RequestBody PostResult post) {
+        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepo.findByUsername(UserName);
+        Post newPost = postFormToPost.convert(post);
+        newPost.setAuthor(user);
+        newPost.setCreated_at(new Date());
+        postRepository.save(newPost);
+    }
 
-        postRepository.save(post);
+    @GetMapping("/posts/{id}")
+    public PostResult getPost(@PathVariable(name = "id") String id){
+        Post post = postRepository.findById(Long.parseLong(id)).get();
+        return postToPostForm.convert(post);
     }
 }

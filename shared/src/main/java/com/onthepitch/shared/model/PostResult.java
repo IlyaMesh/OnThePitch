@@ -1,34 +1,38 @@
 package com.onthepitch.shared.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 import java.util.Date;
 
-//@Component
-////@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+
 public class PostResult {
     private Long post_id;
     private String username;
     private String header;
     private String text;
     private Date created_at;
+    private int comments_count;
 
-    @JsonCreator
+
+    public int getComments_count() {
+        return comments_count;
+    }
+
+    public void setComments_count(int comments_count) {
+        this.comments_count = comments_count;
+    }
+
     public PostResult(
-            @JsonProperty("post_id") Long post_id,
-            @JsonProperty("username") String username,
-            @JsonProperty("header") String header,
-            @JsonProperty("text") String text,
-            @JsonProperty("created_at") Date created_at) {
+            Long post_id,
+            String username,
+            String header,
+            String text,
+            Date created_at,
+            int comments_count) {
         this.post_id = post_id;
         this.username = username;
         this.header = header;
         this.text = text;
         this.created_at = created_at;
+        this.comments_count = comments_count;
     }
 
     public Long getPost_id() {

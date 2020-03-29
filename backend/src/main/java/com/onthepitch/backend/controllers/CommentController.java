@@ -1,46 +1,29 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.commands.CommentForm;
+import com.onthepitch.backend.converter.CommentToCommentResult;
 import com.onthepitch.backend.model.Comment;
-import com.onthepitch.backend.model.Post;
-import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.service.CommentService;
-import com.onthepitch.backend.service.PostService;
+import com.onthepitch.shared.model.CommentResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 //import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.List;
 
-import javax.validation.Valid;
-
-@Controller
+@RestController
+@CrossOrigin(origins = "*")
 public class CommentController {
     @Autowired
     private CommentService commentService;
     @Autowired
-    private PostService postService;
+    private CommentToCommentResult commentToCommentResult;
 
-    @RequestMapping("/comment/add/{id}")
-    public String newComment(Model model, @PathVariable String id) {
-        CommentForm commentForm = new CommentForm();
-        commentForm.setNote_id(Long.valueOf(id));
-        model.addAttribute("commentForm", commentForm);
-//        Comment comment = new Comment();
-//        comment.setAuthor(user);
-//        if(postService.getById(idNote)!=null){
-//        comment.setPost(postService.getById(idNote));
-//        }
-//        //если это комментарий на комментарий
-//        if(commentService.getById(idNote)!=null){
-//            Comment rootComment = commentService.getById(idNote);
-//            comment.setReplyTo(rootComment);
-//        }
-//        comment.setText("Wow that's auto-generated comment");
-//        commentService.SaveOrUpdate(comment);
-        return "comment/add";
+    @GetMapping("/comments")
+    public List<CommentResult> getComments() {
+        List<Comment> allComments = commentService.getAllComments();
+        List<CommentResult> commentResults = commentToCommentResult.convertList(allComments);
+
+        return commentResults;
     }
     // @RequestMapping(value = "/comment", method = RequestMethod.POST)
 //    public String saveComment(@AuthenticationPrincipal User user,@Valid CommentForm commentForm){

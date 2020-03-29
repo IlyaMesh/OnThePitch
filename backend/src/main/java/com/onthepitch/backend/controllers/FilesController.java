@@ -5,6 +5,8 @@ import com.onthepitch.shared.model.PhotoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @CrossOrigin(origins = "*",maxAge = 3600)
+@PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
 public class FilesController {
     @Autowired
     PhotoStorageService photoStorageService;
@@ -20,6 +23,7 @@ public class FilesController {
     @PostMapping("/upload")
     public ResponseEntity<PhotoResponse> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";
+        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
         try {
             photoStorageService.save(file);
 
