@@ -12,14 +12,13 @@ import {Comment} from "../model/comment";
 export class PostListComponent implements OnInit {
 
   posts: Post[];
-  comments : Comment[];
   isLoggedIn = false;
   constructor(private postService:PostServiceService,private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     this.postService.findAllPosts().subscribe(data =>{this.posts = data;});
-    this.postService.findAllComments().subscribe(data=>{this.comments = data;})
+
   }
 
 }

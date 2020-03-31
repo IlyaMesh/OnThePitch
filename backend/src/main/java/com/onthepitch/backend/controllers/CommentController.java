@@ -7,8 +7,9 @@ import com.onthepitch.shared.model.CommentResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-//import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import java.util.List;
+
+//import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -18,9 +19,10 @@ public class CommentController {
     @Autowired
     private CommentToCommentResult commentToCommentResult;
 
-    @GetMapping("/comments")
-    public List<CommentResult> getComments() {
-        List<Comment> allComments = commentService.getAllComments();
+    @GetMapping("/comments/{id}")
+    public List<CommentResult> getComments(@PathVariable(name = "id") String id) {
+
+        List<Comment> allComments = commentService.getAllCommentsForPost(Long.parseLong(id));
         List<CommentResult> commentResults = commentToCommentResult.convertList(allComments);
 
         return commentResults;

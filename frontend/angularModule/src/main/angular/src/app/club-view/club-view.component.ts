@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Club} from "../model/club";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PostServiceService} from "../service/post-service.service";
-import {Post} from "../model/post";
 import {ClubServiceService} from "../service/club-service.service";
 
 @Component({
@@ -16,7 +14,6 @@ export class ClubViewComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private clubService: ClubServiceService,
   ) {}
 

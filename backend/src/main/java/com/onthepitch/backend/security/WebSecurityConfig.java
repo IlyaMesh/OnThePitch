@@ -54,7 +54,7 @@ public class WebSecurityConfig extends
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/posts","/comments").permitAll()
+                .antMatchers(HttpMethod.GET,"/posts/**","/comments/**","/post/**").permitAll()
                 .antMatchers("/login","/registration","/matches","/standings/**","/clubs/**","/auth/**").permitAll()
                 .antMatchers("/api/test/**").permitAll()
                 .anyRequest().authenticated();

@@ -71,7 +71,7 @@ private PostFormToPost postFormToPost;
         postRepository.save(newPost);
     }
 
-    @GetMapping("/posts/{id}")
+    @GetMapping("/post/{id}")
     public PostResult getPost(@PathVariable(name = "id") String id){
         Post post = postRepository.findById(Long.parseLong(id)).get();
         return postToPostForm.convert(post);

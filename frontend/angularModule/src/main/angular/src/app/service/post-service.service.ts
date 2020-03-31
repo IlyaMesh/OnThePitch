@@ -20,9 +20,6 @@ export class PostServiceService {
   public findAllPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(API_URL_POSTS,httpOptions);
   }
-  public findAllComments():Observable<Comment[]>{
-    return this.http.get<Comment[]>(API_URL_COMMENTS,httpOptions);
-  }
   public savePost(post: Post) {
     return this.http.post<Post>(API_URL_POSTS, post);
   }

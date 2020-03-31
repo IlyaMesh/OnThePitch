@@ -12,11 +12,17 @@ import java.util.List;
 public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentRepository commentRepository;
-
     @Override
     public List<Comment> getAllComments() {
         List<Comment> comments = new ArrayList<>();
-        commentRepository.findAll().forEach(comments :: add);
+       // commentRepository.findAll().forEach(comments :: add);
+        return comments;
+    }
+
+    @Override
+    public List<Comment> getAllCommentsForPost(long id) {
+        List<Comment> comments = new ArrayList<>();
+        commentRepository.findAllCommentsOfPost(id).forEach(comments :: add);
         return comments;
     }
 

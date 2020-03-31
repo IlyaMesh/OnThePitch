@@ -1,5 +1,5 @@
 export class Post {
-  post_id:string;
+  post_id:number;
   username:string;
   header:string;
   text:string;

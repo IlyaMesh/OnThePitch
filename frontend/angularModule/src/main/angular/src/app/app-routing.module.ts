@@ -10,21 +10,26 @@ import {RegisterComponent} from "./register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {BoardUserComponent} from "./board-user/board-user.component";
 import {UploadFilesComponent} from "./upload-files/upload-files.component";
+import {PostDetailComponent} from "./post-detail/post-detail.component";
+
 
 
 const routes: Routes = [
   {path: '',component: ResultListComponent},
+
   {path: 'posts', component: PostListComponent},
+
   {path: 'matches',component:ResultListComponent},
   {path: 'addPost', component: PostFormComponent},
   {path: 'login',component: LoginComponent},
   {path: 'standings',component: StandingListComponent},
   {path: 'clubs/:club_id',component: ClubViewComponent},
+
   {path:'register',component: RegisterComponent},
   {path:'profile',component: ProfileComponent},
   {path: 'user',component: BoardUserComponent},
-  {path:'upload',component: UploadFilesComponent}
-
+  {path:'upload',component: UploadFilesComponent},
+  {path: 'post-detail/:post_id',component: PostDetailComponent}
 ];
 
 @NgModule({

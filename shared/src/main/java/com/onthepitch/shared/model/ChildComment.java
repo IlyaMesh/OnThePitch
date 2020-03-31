@@ -2,14 +2,34 @@ package com.onthepitch.shared.model;
 
 import java.util.List;
 
-public class CommentResult {
+public class ChildComment {
     private Long comment_id;
     private String username;
-    private List<ChildComment> comments;
     private String text;
     private Integer likes;
     private Integer dislikes;
     private Integer reports;
+    private Long reply_id;
+    private String reply_name;
+
+    public ChildComment(Long comment_id, String username, String text, Integer likes, Integer dislikes, Integer reports, Long reply_id,String reply_name) {
+        this.comment_id = comment_id;
+        this.username = username;
+        this.text = text;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.reports = reports;
+        this.reply_id = reply_id;
+        this.reply_name = reply_name;
+    }
+
+    public String getReply_name() {
+        return reply_name;
+    }
+
+    public void setReply_name(String reply_name) {
+        this.reply_name = reply_name;
+    }
 
     public Long getComment_id() {
         return comment_id;
@@ -26,16 +46,6 @@ public class CommentResult {
     public void setUsername(String username) {
         this.username = username;
     }
-
-
-    public List<ChildComment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<ChildComment> comments) {
-        this.comments = comments;
-    }
-
 
     public String getText() {
         return text;
@@ -68,13 +78,12 @@ public class CommentResult {
     public void setReports(Integer reports) {
         this.reports = reports;
     }
-    public CommentResult(Long comment_id, String username, List<ChildComment> comments, String text, Integer likes, Integer dislikes, Integer reports) {
-        this.comment_id = comment_id;
-        this.username = username;
-        this.comments = comments;
-        this.text = text;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.reports = reports;
+
+    public Long getReply_id() {
+        return reply_id;
+    }
+
+    public void setReply_id(Long reply_id) {
+        this.reply_id = reply_id;
     }
 }

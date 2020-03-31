@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 
 <div class="card my-5">
@@ -13,21 +14,17 @@
     </div>
     <div class="container-fluid">
       <div class="row content">
-          <div class="well col-sm-12" *ngFor="let post of posts">
-            <hr>
-            <h2>{{post.header}}</h2>
-            <h5><i class="far fa-calendar-alt"></i> Post by {{post.username}}, {{post.created_at}}.</h5>
-            <p>{{post.text}}</p><a href ="#">Read full...</a>
-            <br>
-            <i class="far fa-comments	"></i><a href="#" >Comments({{post?.comments_count || '0'}})</a>
-            <br><br>
-          </div>
+        <div class="well col-sm-12" *ngFor="let post of posts">
+          <hr>
+          <h2>{{post.header}}</h2>
+          <h5><i class="far fa-calendar-alt"></i> Post by {{post.username}}, {{post.created_at}}.</h5>
+          <p>{{post.text}}</p>
+          <!--            <router-link :to="{name : 'post', params:{post_id: post.post_id}}">View more</router-link>-->
+          <a [routerLink]="['/post-detail/', post.post_id]">Show</a>
+          <br>
+          <i class="far fa-comments	"></i>Comments({{post?.comments_count || '0'}})
+          <br><br>
         </div>
-    </div>
-    <div *ngFor="let comment of comments">
-      <h5>{{comment.text}}</h5>
-      <div *ngFor="let comm of comment.comments">
-        <h6>{{comm.text}}</h6>
       </div>
     </div>
   </div>
