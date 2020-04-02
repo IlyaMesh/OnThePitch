@@ -6,15 +6,21 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
-public class UserService implements UserDetailsService
-         {
+@Transactional
+public class UserService implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepo.findByUsername(username);
+    }
+
+    public void updatePhoto(String userName,String link) {
+        userRepo.updatePhoto(userName,link);
     }
 }
