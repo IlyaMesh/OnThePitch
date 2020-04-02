@@ -71,6 +71,12 @@
         </div>
       </div>
       <div class="form-group">
+        <label for="club">Select list:</label>
+        <select class="form-control" id="club" [(ngModel)]="form.club_id" name="club_id">
+          <option *ngFor="let club of clubs" [value]="club.club_id">{{club.club_name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
         <button class="btn btn-primary btn-block">Sign Up</button>
       </div>
 

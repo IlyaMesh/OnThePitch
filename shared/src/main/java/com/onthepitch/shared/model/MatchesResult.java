@@ -14,7 +14,7 @@ public class MatchesResult {
     private Integer awayTeamScored;
     private Integer homeTeamPenalties;
     private Integer awayTeamPenalties;
-    private Date matchTime;
+    private String matchTime;
     private Long league_id;
     private String league_name;
 
@@ -30,7 +30,7 @@ public class MatchesResult {
             Integer awayTeamScored,
             Integer homeTeamPenalties,
             Integer awayTeamPenalties,
-            Date matchTime,
+            String matchTime,
             Long league_id,
             String league_name) {
         this.match_id = match_id;
@@ -121,11 +121,11 @@ public class MatchesResult {
         this.awayTeamPenalties = awayTeamPenalties;
     }
 
-    public Date getMatchTime() {
+    public String getMatchTime() {
         return matchTime;
     }
 
-    public void setMatchTime(Date matchTime) {
+    public void setMatchTime(String matchTime) {
         this.matchTime = matchTime;
     }
 

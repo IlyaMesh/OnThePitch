@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../service/auth.service";
+import {ClubServiceService} from "../service/club-service.service";
+import {Club} from "../model/club";
 
 @Component({
   selector: 'app-register',
@@ -9,13 +11,15 @@ import {AuthService} from "../service/auth.service";
 export class RegisterComponent implements OnInit {
 
   form: any = {};
+  clubs:Club[];
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private clubService: ClubServiceService) { }
 
   ngOnInit(): void {
+    this.clubService.getAll().subscribe(data=>{this.clubs=data});
   }
 
   onSubmit() {

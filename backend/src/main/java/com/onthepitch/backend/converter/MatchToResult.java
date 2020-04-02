@@ -5,10 +5,16 @@ import org.springframework.core.convert.converter.Converter;
 import com.onthepitch.backend.model.Match;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.TimeZone;
+
 @Component
 public class MatchToResult implements Converter<Match,MatchesResult> {
     @Override
     public MatchesResult convert(Match match) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yy HH:mm", Locale.UK);
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
         MatchesResult matchesResult = new MatchesResult(
                 match.getMatch_id(),
                 match.getHomeTeam().getClub_id(),
@@ -21,7 +27,7 @@ public class MatchToResult implements Converter<Match,MatchesResult> {
                 match.getAwayTeamScored(),
                 match.getHomeTeamPenalties(),
                 match.getAwayTeamPenalties(),
-                match.getMatchTime(),
+                simpleDateFormat.format(match.getMatchTime()),
                 match.getLeague().getLeague_id(),
                 match.getLeague().getLeague_title()
         );

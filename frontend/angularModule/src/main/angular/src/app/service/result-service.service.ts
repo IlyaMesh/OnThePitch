@@ -13,7 +13,7 @@ export class ResultServiceService {
     this.matchResultUrl = "http://localhost:8080/matches";
   }
 
-  public findAll(): Observable<MatchResult[]> {
-    return this.http.get<MatchResult[]>(this.matchResultUrl);
+  public findAll(page:number): Observable<MatchResult[]> {
+    return this.http.get<MatchResult[]>(this.matchResultUrl+'?page='+page);
   }
 }

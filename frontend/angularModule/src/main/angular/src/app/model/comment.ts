@@ -15,4 +15,6 @@ export class Comment {
   likes: number;
   dislikes: number;
   reports: number;
+  reply_id:number;
+  post_id:number;
 }

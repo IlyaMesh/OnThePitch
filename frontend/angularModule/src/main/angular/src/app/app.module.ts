@@ -19,7 +19,9 @@ import {ProfileComponent} from './profile/profile.component';
 import {BoardUserComponent} from './board-user/board-user.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
 import {UploadFilesComponent} from './upload-files/upload-files.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
+import {PostDetailComponent} from './post-detail/post-detail.component';
+import {CommentFormComponent} from './comment-form/comment-form.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -39,12 +41,14 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     BoardUserComponent,
     UploadFilesComponent,
     PostDetailComponent,
+    CommentFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [PostServiceService,authInterceptorProviders],
   bootstrap: [AppComponent]

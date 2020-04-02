@@ -55,7 +55,7 @@ public class WebSecurityConfig extends
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/posts/**","/comments/**","/post/**").permitAll()
-                .antMatchers("/login","/registration","/matches","/standings/**","/clubs/**","/auth/**").permitAll()
+                .antMatchers("/login","/registration","/matches/**","/standings/**","/clubs/**","/auth/**").permitAll()
                 .antMatchers("/api/test/**").permitAll()
                 .anyRequest().authenticated();
 

@@ -14,18 +14,20 @@
     </div>
     <div class="container-fluid">
       <div class="row content">
-        <div class="well col-sm-12" *ngFor="let post of posts">
+        <div class="well col-sm-12" *ngFor="let post of posts | paginate:{itemsPerPage:4 , currentPage: page}">
           <hr>
           <h2>{{post.header}}</h2>
           <h5><i class="far fa-calendar-alt"></i> Post by {{post.username}}, {{post.created_at}}.</h5>
           <p>{{post.text}}</p>
-          <!--            <router-link :to="{name : 'post', params:{post_id: post.post_id}}">View more</router-link>-->
           <a [routerLink]="['/post-detail/', post.post_id]">Show</a>
           <br>
           <i class="far fa-comments	"></i>Comments({{post?.comments_count || '0'}})
           <br><br>
         </div>
       </div>
+    </div>
+    <div id="pagination" align="center">
+      <pagination-controls (pageChange)="page=$event"></pagination-controls>
     </div>
   </div>
 </div>

@@ -27,12 +27,15 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void SaveOrUpdate(Comment comment) {
+    public void saveOrUpdate(Comment comment) {
         commentRepository.save(comment);
     }
 
     @Override
     public Comment getById(Long id) {
+        if(id == null){
+            return null;
+        }
         return commentRepository.findById(id).orElse(null);
     }
 

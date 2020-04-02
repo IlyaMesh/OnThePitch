@@ -6,8 +6,12 @@ import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.soccerApi.SoccerDataService;
 import com.onthepitch.shared.model.MatchesResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
@@ -39,7 +43,7 @@ public class MatchesController {
      * @return List of the objects, that contains data about matches.
      */
     @GetMapping("/matches")
-    public List<MatchesResult> listMatches() {
+    public ArrayList<MatchesResult> listMatches(@RequestParam(defaultValue = "0") int page) {
 //Problem with postponed matches need to be solved
         //        try{
 //        soccerDataService.updateAll();}
@@ -48,8 +52,9 @@ public class MatchesController {
 //        }
         Date from = Date.from(LocalDate.now().minusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date to = Date.from(LocalDate.now().plusDays(6).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        PageRequest pageRequest =  PageRequest.of(page, 10);
         List<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to);
-        List<MatchesResult> matchesResults = new ArrayList<MatchesResult>();
+        ArrayList<MatchesResult> matchesResults = new ArrayList<MatchesResult>();
         for (Match match : matches) {
             matchesResults.add(matchToResult.convert(match));
         }

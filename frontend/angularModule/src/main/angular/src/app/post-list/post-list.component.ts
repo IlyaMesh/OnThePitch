@@ -12,6 +12,7 @@ import {Comment} from "../model/comment";
 export class PostListComponent implements OnInit {
 
   posts: Post[];
+  page:number = 1;
   isLoggedIn = false;
   constructor(private postService:PostServiceService,private tokenStorageService: TokenStorageService) { }
 

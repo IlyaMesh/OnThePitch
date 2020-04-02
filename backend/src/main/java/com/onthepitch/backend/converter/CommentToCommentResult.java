@@ -87,7 +87,7 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
                 comment.getLikes(),
                 comment.getDislikes(),
                 comment.getReports(),
-                comment.getReplyTo().getComment_id(),
+                comment.getReplyTo().getComment_id().toString(),
                 comment.getReplyTo().getAuthor().getUsername());
     }
 

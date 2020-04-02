@@ -9,10 +9,13 @@ public class ChildComment {
     private Integer likes;
     private Integer dislikes;
     private Integer reports;
-    private Long reply_id;
+    private String reply_id;
     private String reply_name;
 
-    public ChildComment(Long comment_id, String username, String text, Integer likes, Integer dislikes, Integer reports, Long reply_id,String reply_name) {
+    public ChildComment() {
+    }
+
+    public ChildComment(Long comment_id, String username, String text, Integer likes, Integer dislikes, Integer reports, String reply_id, String reply_name) {
         this.comment_id = comment_id;
         this.username = username;
         this.text = text;
@@ -79,11 +82,11 @@ public class ChildComment {
         this.reports = reports;
     }
 
-    public Long getReply_id() {
+    public String getReply_id() {
         return reply_id;
     }
 
-    public void setReply_id(Long reply_id) {
+    public void setReply_id(String reply_id) {
         this.reply_id = reply_id;
     }
 }

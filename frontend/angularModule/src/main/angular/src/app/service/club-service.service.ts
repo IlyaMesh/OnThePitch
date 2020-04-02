@@ -10,9 +10,12 @@ export class ClubServiceService {
   private clubUrl : string;
 
   constructor(private http: HttpClient) {
-    this.clubUrl = "http://localhost:8080/clubs/";
+    this.clubUrl = "http://localhost:8080/clubs";
   }
   getById(id) : Observable<Club>{
-    return this.http.get<Club>(this.clubUrl+id);
+    return this.http.get<Club>(this.clubUrl+'/'+id);
+  }
+  getAll(): Observable<Club[]>{
+    return this.http.get<Club[]>(this.clubUrl);
   }
 }
