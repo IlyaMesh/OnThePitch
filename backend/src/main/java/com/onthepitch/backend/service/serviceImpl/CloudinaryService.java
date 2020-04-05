@@ -1,4 +1,4 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
@@ -18,8 +18,8 @@ public class CloudinaryService {
 
     public String uploadFile(MultipartFile file) {
         try {
-            File uploadedFile = convertMultiPartToFile(file);
-            Map uploadResult = cloudinaryConfig.uploader().upload(uploadedFile, ObjectUtils.emptyMap());
+            //File uploadedFile = convertMultiPartToFile(file);
+            Map uploadResult = cloudinaryConfig.uploader().upload(file.getBytes(), ObjectUtils.emptyMap());
             return  uploadResult.get("url").toString();
         } catch (Exception e) {
             throw new RuntimeException(e);

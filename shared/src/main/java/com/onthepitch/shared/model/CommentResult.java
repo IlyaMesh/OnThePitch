@@ -5,6 +5,7 @@ import java.util.List;
 public class CommentResult {
     private Long comment_id;
     private String username;
+    private String user_logo;
     private List<ChildComment> comments;
     private String text;
     private Integer likes;
@@ -68,9 +69,10 @@ public class CommentResult {
     public void setReports(Integer reports) {
         this.reports = reports;
     }
-    public CommentResult(Long comment_id, String username, List<ChildComment> comments, String text, Integer likes, Integer dislikes, Integer reports) {
+    public CommentResult(Long comment_id, String username,String user_logo, List<ChildComment> comments, String text, Integer likes, Integer dislikes, Integer reports) {
         this.comment_id = comment_id;
         this.username = username;
+        this.user_logo= user_logo;
         this.comments = comments;
         this.text = text;
         this.likes = likes;

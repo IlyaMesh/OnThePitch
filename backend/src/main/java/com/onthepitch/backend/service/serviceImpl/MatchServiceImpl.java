@@ -1,7 +1,10 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.repos.MatchRepository;
 import com.onthepitch.backend.model.Match;
+import com.onthepitch.backend.service.LeagueService;
+import com.onthepitch.backend.service.MatchService;
+import com.onthepitch.backend.service.SeasonService;
 import com.onthepitch.backend.soccerApi.EndpointProviderService;
 import com.onthepitch.backend.soccerApi.RestClientService;
 import com.onthepitch.backend.soccerApi.parser.MatchParserService;

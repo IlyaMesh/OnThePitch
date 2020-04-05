@@ -1,7 +1,8 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.repos.CommentRepository;
 import com.onthepitch.backend.model.Comment;
+import com.onthepitch.backend.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

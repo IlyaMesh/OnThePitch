@@ -1,7 +1,9 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.commands.StandingsTeam;
 import com.onthepitch.backend.model.Match;
+import com.onthepitch.backend.service.MatchService;
+import com.onthepitch.backend.service.StandingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

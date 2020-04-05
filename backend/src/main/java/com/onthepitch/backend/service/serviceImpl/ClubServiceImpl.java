@@ -1,9 +1,10 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.commands.ClubForm;
 import com.onthepitch.backend.converter.ClubFormToClub;
 import com.onthepitch.backend.repos.ClubRepository;
 import com.onthepitch.backend.model.Club;
+import com.onthepitch.backend.service.ClubService;
 import com.onthepitch.backend.soccerApi.EndpointProviderService;
 import com.onthepitch.backend.soccerApi.RestClientService;
 import com.onthepitch.backend.soccerApi.parser.ClubParserService;

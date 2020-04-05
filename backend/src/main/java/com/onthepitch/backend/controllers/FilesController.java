@@ -1,8 +1,8 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.service.CloudinaryService;
+import com.onthepitch.backend.service.serviceImpl.CloudinaryService;
 import com.onthepitch.backend.service.PhotoStorageService;
-import com.onthepitch.backend.service.UserService;
+import com.onthepitch.backend.service.serviceImpl.UserService;
 import com.onthepitch.shared.model.PhotoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

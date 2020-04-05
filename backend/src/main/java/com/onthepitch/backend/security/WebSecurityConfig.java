@@ -2,7 +2,7 @@ package com.onthepitch.backend.security;
 
 import com.onthepitch.backend.security.jwt.AuthEntryPointJwt;
 import com.onthepitch.backend.security.jwt.AuthTokenFilter;
-import com.onthepitch.backend.service.UserService;
+import com.onthepitch.backend.service.serviceImpl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,8 +29,6 @@ public class WebSecurityConfig extends
 
     @Autowired
     private UserService userService;
-
-    private static final String POST_ENDPOINT = "/posts/**";
 
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {

@@ -1,7 +1,9 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.repos.SeasonRepository;
 import com.onthepitch.backend.model.Season;
+import com.onthepitch.backend.service.LeagueService;
+import com.onthepitch.backend.service.SeasonService;
 import com.onthepitch.backend.soccerApi.EndpointProviderService;
 import com.onthepitch.backend.soccerApi.RestClientService;
 import com.onthepitch.backend.soccerApi.parser.SeasonParserService;

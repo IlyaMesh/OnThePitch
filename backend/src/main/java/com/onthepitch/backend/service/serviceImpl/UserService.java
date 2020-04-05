@@ -1,4 +1,4 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;

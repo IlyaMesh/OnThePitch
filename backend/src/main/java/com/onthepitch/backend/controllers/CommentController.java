@@ -2,23 +2,17 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.converter.CommentToCommentResult;
 import com.onthepitch.backend.model.Comment;
-import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
-import com.onthepitch.backend.repos.CommentRepository;
 import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.service.CommentService;
 import com.onthepitch.backend.service.PostService;
-import com.onthepitch.backend.service.PostServiceImpl;
 import com.onthepitch.shared.model.ChildComment;
 import com.onthepitch.shared.model.CommentResult;
-import com.onthepitch.shared.model.PostResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.activation.CommandMap;
-import java.util.Date;
 import java.util.List;
 
 //import org.springframework.security.core.annotation.AuthenticationPrincipal;

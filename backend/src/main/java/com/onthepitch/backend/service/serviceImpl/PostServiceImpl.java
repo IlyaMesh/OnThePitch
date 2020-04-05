@@ -1,10 +1,11 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.converter.PostFormToPost;
 import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
+import com.onthepitch.backend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

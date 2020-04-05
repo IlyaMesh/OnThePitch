@@ -1,7 +1,8 @@
-package com.onthepitch.backend.service;
+package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.repos.LeagueRepository;
 import com.onthepitch.backend.model.League;
+import com.onthepitch.backend.service.LeagueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

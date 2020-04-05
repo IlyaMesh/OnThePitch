@@ -1,6 +1,6 @@
 package com.onthepitch.backend.security.jwt;
 
-import com.onthepitch.backend.service.UserService;
+import com.onthepitch.backend.service.serviceImpl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,9 +1,11 @@
 export class Comment {
   comment_id: number;
   username: string;
+  user_logo:string;
   comments: {
     comment_id: number;
     username: string;
+    user_logo:string;
     text: string;
     likes: number;
     dislikes: number;

@@ -19,6 +19,7 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
         CommentResult commentResult = new CommentResult(
                 comment.getComment_id(),
                 comment.getAuthor().getUsername(),
+                comment.getAuthor().getUser_pic(),
                 new ArrayList<ChildComment>(),
                 comment.getText(),
                 comment.getLikes(),
@@ -83,6 +84,7 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
         return new ChildComment(
                 comment.getComment_id(),
                 comment.getAuthor().getUsername(),
+                comment.getAuthor().getUser_pic(),
                 comment.getText(),
                 comment.getLikes(),
                 comment.getDislikes(),
