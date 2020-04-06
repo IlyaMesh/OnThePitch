@@ -15,7 +15,7 @@ import java.util.List;
 public interface MatchRepository extends CrudRepository<Match,Long> {
 
 
-    List<Match> findMatchesByMatchTimeBetweenOrderByMatchTime(Date from, Date to);
+    Page<Match> findMatchesByMatchTimeBetweenOrderByMatchTime(Date from, Date to,Pageable pageable);
 
     @Query(value = "SELECT m FROM Match m where m.lastUpdated < m.matchTime and m.matchTime<:today")
     List<Match> findMatchesNeedToBeUpdated(@Param("today")Date today);

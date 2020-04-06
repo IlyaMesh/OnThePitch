@@ -11,6 +11,9 @@ import com.onthepitch.shared.model.MatchesResult;
 import com.onthepitch.shared.model.PostResult;
 import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -47,13 +50,15 @@ private PostFormToPost postFormToPost;
      */
 
     @GetMapping("/posts")
-    public List<PostResult> listPosts() {
+    public Page<PostResult> listPosts(@RequestParam(defaultValue = "0") int page,@RequestParam("size")int size) {
         List<PostResult> postResults = new ArrayList<PostResult>();
-        Iterable<Post> posts = postRepository.findAll();
-        for (Post post : posts) {
-            postResults.add(postToPostForm.convert(post));
-        }
-        return postResults;
+        PageRequest pageRequest = PageRequest.of(page, size);
+        Page<Post> posts = postRepository.findAll(pageRequest);
+        int totalElements = (int) posts.getTotalElements();
+        return new PageImpl<PostResult>(
+                posts.stream()
+                .map(post -> postToPostForm.convert(post))
+                .collect(Collectors.toList()),pageRequest,totalElements);
     }
 
     /**
