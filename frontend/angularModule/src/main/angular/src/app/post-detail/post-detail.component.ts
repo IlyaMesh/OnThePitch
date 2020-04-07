@@ -35,13 +35,13 @@ export class PostDetailComponent implements OnInit {
 
 
   likeComment(comment_id: number) {
-    this.ratingService.setLike(comment_id).subscribe(x=>console.log(x));
+    this.ratingService.setLike(comment_id).subscribe(x => console.log(x));
     //если лайкаем а уже стоит диз то убираем диз
     var comm: Comment;
     for (let comm of this.comments) {
       if (comm.comment_id == comment_id) {
-        if(comm.disliked){
-          comm.disliked =false;
+        if (comm.disliked) {
+          comm.disliked = false;
           comm.dislikes--;
         }
         if (comm.liked) {
@@ -55,8 +55,8 @@ export class PostDetailComponent implements OnInit {
       }
       for (let comment of comm.comments) {
         if (comment.comment_id == comment_id) {
-          if(comment.disliked){
-            comment.disliked =false;
+          if (comment.disliked) {
+            comment.disliked = false;
             comment.dislikes--;
           }
           if (comment.liked) {
@@ -73,12 +73,12 @@ export class PostDetailComponent implements OnInit {
   }
 
   dislikeComment(comment_id: number) {
-    this.ratingService.setDislike(comment_id).subscribe(x=>console.log(x));
+    this.ratingService.setDislike(comment_id).subscribe(x => console.log(x));
     var comm: Comment;
     for (let comm of this.comments) {
       if (comm.comment_id == comment_id) {
-        if(comm.liked){
-          comm.liked =false;
+        if (comm.liked) {
+          comm.liked = false;
           comm.likes--;
         }
         if (comm.disliked) {
@@ -92,8 +92,8 @@ export class PostDetailComponent implements OnInit {
       }
       for (let comment of comm.comments) {
         if (comment.comment_id == comment_id) {
-          if(comment.liked){
-            comment.liked =false;
+          if (comment.liked) {
+            comment.liked = false;
             comment.likes--;
           }
           if (comment.disliked) {
@@ -106,6 +106,37 @@ export class PostDetailComponent implements OnInit {
           return;
         }
       }
+    }
+  }
+
+  dislikePost(post_id: number) {
+    this.ratingService.setDislike(post_id).subscribe(x => console.log(x));
+    if (this.post.liked) {
+      this.post.liked = false;
+      this.post.likes--;
+    }
+    if (this.post.disliked) {
+      this.post.disliked = false;
+      this.post.dislikes--;
+    } else {
+      this.post.disliked = true;
+      this.post.dislikes++;
+    }
+  }
+
+  likePost(post_id: number) {
+    this.ratingService.setLike(post_id).subscribe(x => console.log(x));
+    if (this.post.disliked) {
+      this.post.disliked = false;
+      this.post.dislikes--;
+    }
+    if (this.post.liked) {
+      this.post.liked = false;
+      this.post.likes--;
+    }
+    else{
+      this.post.liked = true;
+      this.post.likes++;
     }
   }
 }

@@ -5,4 +5,8 @@ export class Post {
   text:string;
   created_at:string;
   comments_count:number;
+  likes:number;
+  dislikes;
+  liked:boolean;
+  disliked:boolean;
 }

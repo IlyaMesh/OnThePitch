@@ -10,6 +10,23 @@
           <h2>{{post.header}}</h2>
           <h5><i class="far fa-calendar-alt"></i> Post by {{post.username}}, {{post.created_at}}.</h5>
           <p>{{post.text}}</p>
+          <a (click)="likePost(post.post_id)">
+            <div class="row">
+              <div *ngIf="post.liked; else elseBlock123">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+              </div>
+              <ng-template #elseBlock123> <i class="far fa-arrow-alt-circle-up"></i></ng-template>
+            </div>
+          </a>
+          <b>{{post.likes-post.dislikes}}</b>
+          <a (click)="dislikePost(post.post_id)">
+            <div class="row">
+              <div *ngIf="post.disliked; else elseBlock124">
+                <i class="fas fa-arrow-alt-circle-down"></i>
+              </div>
+              <ng-template #elseBlock124> <i class="far fa-arrow-alt-circle-down"></i></ng-template>
+            </div>
+          </a>
         </div>
       </div>
       <a [routerLink]="['/comment/', post.post_id, 'undefined']">Add comment</a>

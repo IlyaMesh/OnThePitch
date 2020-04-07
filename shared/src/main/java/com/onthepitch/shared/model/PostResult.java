@@ -87,4 +87,36 @@ public class PostResult {
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
+
+    public Integer getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
+    public Integer getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(Integer dislikes) {
+        this.dislikes = dislikes;
+    }
+
+    public Boolean getLiked() {
+        return isLiked;
+    }
+
+    public void setLiked(Boolean liked) {
+        isLiked = liked;
+    }
+
+    public Boolean getDisliked() {
+        return isDisliked;
+    }
+
+    public void setDisliked(Boolean disliked) {
+        isDisliked = disliked;
+    }
 }
