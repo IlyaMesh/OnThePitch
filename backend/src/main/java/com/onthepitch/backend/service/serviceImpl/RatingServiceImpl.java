@@ -29,7 +29,7 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public Rating getByNoteId(Long id) {
-        return ratingRepository.getByNoteId(id);
+        return null;
     }
 
     @Override
@@ -40,12 +40,14 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public void createRating(String authorname, Long note_id, boolean isLiked) {
-
         //добавить проверку не имеется ли уже лайка/дизлайка, если имеется -> удалить
         User user = userRepo.findByUsername(authorname);
-        if(ratingRepository.existsByUserAndAndNote_id(user,note_id)){
-            //не работает удаление
+        Rating rating1 = ratingRepository.findRateByUserAndNote(user, note_id).orElse(null);
+        if(rating1!=null){
             delete(user,note_id);
+            if(rating1.isLike()==isLiked){
+                return;
+            }
         }
         Rating rating = new Rating();
         rating.setUser(user);

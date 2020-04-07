@@ -1,5 +1,7 @@
 package com.onthepitch.shared.model;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.List;
 
 public class ChildComment {
@@ -9,23 +11,42 @@ public class ChildComment {
     private String text;
     private Integer likes;
     private Integer dislikes;
-    private Integer reports;
     private String reply_id;
     private String reply_name;
+    private Boolean isLiked;
+    private Boolean isDisliked;
 
     public ChildComment() {
     }
 
-    public ChildComment(Long comment_id, String username,String user_logo, String text, Integer likes, Integer dislikes, Integer reports, String reply_id, String reply_name) {
+    public ChildComment(Long comment_id, String username, String user_logo, String text, Integer likes, Integer dislikes, String reply_id, String reply_name, Boolean isLiked, Boolean isDisliked) {
         this.comment_id = comment_id;
         this.username = username;
         this.user_logo = user_logo;
         this.text = text;
         this.likes = likes;
         this.dislikes = dislikes;
-        this.reports = reports;
         this.reply_id = reply_id;
         this.reply_name = reply_name;
+        this.isLiked = isLiked;
+        this.isDisliked = isDisliked;
+    }
+
+
+    public Boolean getLiked() {
+        return isLiked;
+    }
+
+    public void setLiked(Boolean liked) {
+        isLiked = liked;
+    }
+
+    public Boolean getDisliked() {
+        return isDisliked;
+    }
+
+    public void setDisliked(Boolean disliked) {
+        isDisliked = disliked;
     }
 
     public String getReply_name() {
@@ -74,14 +95,6 @@ public class ChildComment {
 
     public void setDislikes(Integer dislikes) {
         this.dislikes = dislikes;
-    }
-
-    public Integer getReports() {
-        return reports;
-    }
-
-    public void setReports(Integer reports) {
-        this.reports = reports;
     }
 
     public String getReply_id() {

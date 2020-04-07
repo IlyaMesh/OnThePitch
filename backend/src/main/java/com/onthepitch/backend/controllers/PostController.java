@@ -28,7 +28,7 @@ import java.util.stream.StreamSupport;
  * Class for posts controllers
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PostController {
 
     private PostRepository postRepository;

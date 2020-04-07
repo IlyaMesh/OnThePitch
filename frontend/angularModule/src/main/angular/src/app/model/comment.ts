@@ -9,6 +9,8 @@ export class Comment {
     text: string;
     likes: number;
     dislikes: number;
+    liked: boolean;
+    disliked: boolean;
     reports: number;
     reply_id: bigint;
     reply_name: string;
@@ -16,7 +18,8 @@ export class Comment {
   text: string;
   likes: number;
   dislikes: number;
-  reports: number;
+  liked: boolean;
+  disliked: boolean;
   reply_id:number;
   post_id:number;
 }

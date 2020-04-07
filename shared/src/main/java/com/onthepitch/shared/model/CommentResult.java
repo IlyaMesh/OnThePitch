@@ -10,7 +10,20 @@ public class CommentResult {
     private String text;
     private Integer likes;
     private Integer dislikes;
-    private Integer reports;
+    private Boolean isLiked;
+    private Boolean isDisliked;
+
+    public CommentResult(Long comment_id, String username,String user_logo, List<ChildComment> comments, String text, Integer likes, Integer dislikes, Boolean isLiked, Boolean isDisliked) {
+        this.comment_id = comment_id;
+        this.username = username;
+        this.user_logo= user_logo;
+        this.comments = comments;
+        this.text = text;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.isLiked = isLiked;
+        this.isDisliked = isDisliked;
+    }
 
     public Long getComment_id() {
         return comment_id;
@@ -28,6 +41,30 @@ public class CommentResult {
         this.username = username;
     }
 
+
+    public String getUser_logo() {
+        return user_logo;
+    }
+
+    public void setUser_logo(String user_logo) {
+        this.user_logo = user_logo;
+    }
+
+    public Boolean getLiked() {
+        return isLiked;
+    }
+
+    public void setLiked(Boolean liked) {
+        isLiked = liked;
+    }
+
+    public Boolean getDisliked() {
+        return isDisliked;
+    }
+
+    public void setDisliked(Boolean disliked) {
+        isDisliked = disliked;
+    }
 
     public List<ChildComment> getComments() {
         return comments;
@@ -62,21 +99,4 @@ public class CommentResult {
         this.dislikes = dislikes;
     }
 
-    public Integer getReports() {
-        return reports;
-    }
-
-    public void setReports(Integer reports) {
-        this.reports = reports;
-    }
-    public CommentResult(Long comment_id, String username,String user_logo, List<ChildComment> comments, String text, Integer likes, Integer dislikes, Integer reports) {
-        this.comment_id = comment_id;
-        this.username = username;
-        this.user_logo= user_logo;
-        this.comments = comments;
-        this.text = text;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.reports = reports;
-    }
 }

@@ -9,12 +9,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
-public interface RatingRepository extends JpaRepository<Rating,Long> {
+public interface RatingRepository extends JpaRepository<Rating, Long> {
 
     @Query("select r from Rating r where r.note_id =:id")
-    Rating getByNoteId(@Param("id")Long id);
+    List<Rating> getAllByNote_id(@Param("id") Long id);
+
+    @Query("select r from Rating r where r.user =:user and r.note_id=:note_id")
+    Optional<Rating> findRateByUserAndNote(@Param("user") User user, @Param("note_id") Long note_id);
 
     List<Rating> findAllByUser(User user);
 
@@ -23,5 +28,5 @@ public interface RatingRepository extends JpaRepository<Rating,Long> {
 
     @Modifying
     @Query("delete from Rating r where r.user=:user and r.note_id=:note_id")
-    void deleteByUserAndNote_id(@Param("user") User user,@Param("note_id") Long note_id);
+    void deleteByUserAndNote_id(@Param("user") User user, @Param("note_id") Long note_id);
 }
