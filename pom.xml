@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>qulice</module>
         <module>backend</module>
         <module>frontend</module>
         <module>shared</module>

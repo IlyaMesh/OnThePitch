@@ -81,4 +81,9 @@ private PostFormToPost postFormToPost;
         Post post = postRepository.findById(Long.parseLong(id)).get();
         return postToPostForm.convert(post);
     }
+
+    @DeleteMapping("/posts/{id}")
+    public void deletePost(@PathVariable("id") String id){
+        postRepository.deleteById(Long.parseLong(id));
+    }
 }

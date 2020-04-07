@@ -24,4 +24,8 @@ export class PostServiceService {
   public savePost(post: Post) {
     return this.http.post<Post>(API_URL_POSTS, post);
   }
+
+  delete(post_id: number) {
+    return this.http.delete(API_URL_POSTS+'/'+post_id);
+  }
 }

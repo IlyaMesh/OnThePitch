@@ -1,17 +1,17 @@
 package com.onthepitch.shared.model;
 
+import java.util.List;
+
 public class UserResult {
     private Long user_id;
     private String username;
-    private String user_password;
     private String email;
     private String user_pic;
-    private String role;
+    private List<String> role;
 
-    public UserResult(Long user_id, String username, String user_password, String email, String user_pic, String role) {
+    public UserResult(Long user_id, String username, String email, String user_pic, List<String> role) {
         this.user_id = user_id;
         this.username = username;
-        this.user_password = user_password;
         this.email = email;
         this.user_pic = user_pic;
         this.role = role;
@@ -33,13 +33,6 @@ public class UserResult {
         this.username = username;
     }
 
-    public String getUser_password() {
-        return user_password;
-    }
-
-    public void setUser_password(String user_password) {
-        this.user_password = user_password;
-    }
 
     public String getEmail() {
         return email;
@@ -57,11 +50,11 @@ public class UserResult {
         this.user_pic = user_pic;
     }
 
-    public String getRole() {
+    public List<String> getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(List<String> role) {
         this.role = role;
     }
 }
