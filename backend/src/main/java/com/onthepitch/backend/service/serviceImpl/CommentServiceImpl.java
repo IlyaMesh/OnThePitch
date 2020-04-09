@@ -14,12 +14,6 @@ import java.util.Optional;
 public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentRepository commentRepository;
-    @Override
-    public List<Comment> getAllComments() {
-        List<Comment> comments = new ArrayList<>();
-       // commentRepository.findAll().forEach(comments :: add);
-        return comments;
-    }
 
     @Override
     public List<Comment> getAllCommentsForPost(long id) {

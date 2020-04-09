@@ -15,7 +15,6 @@ import java.util.List;
 @Service
 public class PostServiceImpl implements PostService {
     private PostRepository postRepository;
-    private PostFormToPost postFormToPost;
 
     @Override
     public List<Post> listAll() {
@@ -27,7 +26,6 @@ public class PostServiceImpl implements PostService {
     @Autowired
     public PostServiceImpl(PostRepository postRepository, PostFormToPost postFormToPost) {
         this.postRepository = postRepository;
-        this.postFormToPost = postFormToPost;
     }
 
     @Override

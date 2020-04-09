@@ -27,13 +27,11 @@ import java.util.stream.Collectors;
 public class MatchesController {
 
     private MatchToResult matchToResult;
-    private SoccerDataService soccerDataService;
     private MatchRepository matchRepository;
 
     @Autowired
     public MatchesController(MatchToResult matchToResult, MatchRepository matchRepository, SoccerDataService soccerDataService) {
         this.matchToResult = matchToResult;
-        this.soccerDataService = soccerDataService;
         this.matchRepository = matchRepository;
     }
 

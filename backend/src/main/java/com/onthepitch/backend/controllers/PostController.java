@@ -7,6 +7,7 @@ import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.repos.UserRepo;
+import com.onthepitch.backend.service.LogService;
 import com.onthepitch.shared.model.MatchesResult;
 import com.onthepitch.shared.model.PostResult;
 import javafx.geometry.Pos;
@@ -15,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +40,8 @@ private PostFormToPost postFormToPost;
     private PostToPostForm postToPostForm;
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    private LogService logService;
 
 
     @Autowired
@@ -51,14 +55,13 @@ private PostFormToPost postFormToPost;
 
     @GetMapping("/posts")
     public Page<PostResult> listPosts(@RequestParam(defaultValue = "0") int page,@RequestParam("size")int size) {
-        List<PostResult> postResults = new ArrayList<PostResult>();
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Post> posts = postRepository.findAll(pageRequest);
         int totalElements = (int) posts.getTotalElements();
-        return new PageImpl<PostResult>(
+        return new PageImpl<>(
                 posts.stream()
-                .map(post -> postToPostForm.convert(post))
-                .collect(Collectors.toList()),pageRequest,totalElements);
+                        .map(post -> postToPostForm.convert(post))
+                        .collect(Collectors.toList()), pageRequest, totalElements);
     }
 
     /**
@@ -84,6 +87,7 @@ private PostFormToPost postFormToPost;
 
     @DeleteMapping("/posts/{id}")
     public void deletePost(@PathVariable("id") String id){
+        logService.addLog("Delete post");
         postRepository.deleteById(Long.parseLong(id));
     }
 }

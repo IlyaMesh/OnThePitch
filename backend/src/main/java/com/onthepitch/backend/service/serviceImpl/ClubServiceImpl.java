@@ -66,7 +66,6 @@ public class ClubServiceImpl implements ClubService {
     public List<Club> getFromApi(Long id) {
         String endpoint = endpointProviderService.getTeams(Math.toIntExact(id));
         String s = restClientService.get(endpoint);
-        List<Club> clubs = parser.toClubs(s);
-        return clubs;
+        return parser.toClubs(s);
     }
 }

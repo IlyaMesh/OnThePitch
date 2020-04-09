@@ -60,7 +60,7 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
         }
         Integer likes = getLikes(ratings);
         Integer dislikes = getDislikes(ratings);
-        CommentResult commentResult = new CommentResult(
+        return new CommentResult(
                 comment.getComment_id(),
                 comment.getAuthor().getUsername(),
                 comment.getAuthor().getUser_pic(),
@@ -71,8 +71,6 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
                 isLiked,
                 isDisliked
         );
-
-        return commentResult;
     }
 
     public List<CommentResult> convertList(List<Comment> list) {

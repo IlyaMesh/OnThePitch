@@ -36,15 +36,13 @@ public class MatchServiceImpl implements MatchService {
     public List<Match> getFromApi(int compId) {
         String endpoint = endpointProviderService.getSeasonMatches(Math.toIntExact(compId));
         String s = restClientService.get(endpoint);
-        List<Match> matches = parser.toMatches(s);
-        return matches;
+        return parser.toMatches(s);
     }
 
     private Match getMatch(int match_id){
         String match = endpointProviderService.getMatch(match_id);
         String s = restClientService.get(match);
-        Match match1 = parser.getMatch(s);
-        return match1;
+        return parser.getMatch(s);
     }
 
     @Override

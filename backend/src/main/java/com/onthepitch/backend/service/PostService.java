@@ -7,7 +7,7 @@ import com.onthepitch.backend.model.User;
 import java.util.List;
 
 public interface PostService {
-    public List<Post> listAll();
+    List<Post> listAll();
 
     Post getById(Long id);
 

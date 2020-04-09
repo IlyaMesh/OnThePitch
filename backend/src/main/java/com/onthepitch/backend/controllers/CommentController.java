@@ -5,6 +5,7 @@ import com.onthepitch.backend.model.Comment;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.service.CommentService;
+import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
 import com.onthepitch.shared.model.ChildComment;
 import com.onthepitch.shared.model.CommentResult;
@@ -30,14 +31,15 @@ public class CommentController {
     private CommentToCommentResult commentToCommentResult;
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    private LogService logService;
 
     @GetMapping("/comments/{id}")
     public List<CommentResult> getComments(@PathVariable(name = "id") String id) {
 
         List<Comment> allComments = commentService.getAllCommentsForPost(Long.parseLong(id));
-        List<CommentResult> commentResults = commentToCommentResult.convertList(allComments);
 
-        return commentResults;
+        return commentToCommentResult.convertList(allComments);
     }
 
     @PostMapping("/comments/{id}")
@@ -59,6 +61,7 @@ public class CommentController {
 
     @DeleteMapping("/comments/{id}")
     public ResponseEntity<?> delete(@PathVariable String id) {
+        logService.addLog("Delete comment");
         commentService.delete(Long.valueOf(id));
         return ResponseEntity.ok(new MessageResponse("Comment deleted"));
     }

@@ -15,7 +15,7 @@ public class MatchToResult implements Converter<Match,MatchesResult> {
     public MatchesResult convert(Match match) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yy HH:mm", Locale.UK);
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
-        MatchesResult matchesResult = new MatchesResult(
+        return new MatchesResult(
                 match.getMatch_id(),
                 match.getHomeTeam().getClub_id(),
                 match.getHomeTeam().getClub_name(),
@@ -31,6 +31,5 @@ public class MatchToResult implements Converter<Match,MatchesResult> {
                 match.getLeague().getLeague_id(),
                 match.getLeague().getLeague_title()
         );
-        return matchesResult;
     }
 }

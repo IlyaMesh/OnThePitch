@@ -1,7 +1,6 @@
 package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.service.serviceImpl.CloudinaryService;
-import com.onthepitch.backend.service.PhotoStorageService;
 import com.onthepitch.backend.service.serviceImpl.UserService;
 import com.onthepitch.shared.model.PhotoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
 public class FilesController {
-    @Autowired
-    private PhotoStorageService photoStorageService;
     @Autowired
     private UserService userService;
     @Autowired

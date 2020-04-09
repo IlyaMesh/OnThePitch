@@ -13,6 +13,7 @@ import {UploadFilesComponent} from "./upload-files/upload-files.component";
 import {PostDetailComponent} from "./post-detail/post-detail.component";
 import {CommentFormComponent} from "./comment-form/comment-form.component";
 import {AdminBoardComponent} from "./admin-board/admin-board.component";
+import {LogListComponent} from "./log-list/log-list.component";
 
 
 
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: 'user',component: BoardUserComponent},
   {path:'upload',component: UploadFilesComponent},
   {path: 'post-detail/:post_id',component: PostDetailComponent},
-  {path: 'comment/:post_id/:reply_to',component: CommentFormComponent}
+  {path: 'comment/:post_id/:reply_to',component: CommentFormComponent},
+  {path:'logs', component: LogListComponent}
 ];
 
 @NgModule({

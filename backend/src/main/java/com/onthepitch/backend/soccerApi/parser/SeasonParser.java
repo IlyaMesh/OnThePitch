@@ -40,10 +40,9 @@ public class SeasonParser {
     public List<Season> getSeasons(String jsonString){
         JsonElement element = parser.parse(jsonString);
         JsonObject json = element.getAsJsonObject();
-        List<Season> seasons = parseSeasons(json).stream()
+        return parseSeasons(json).stream()
                 .filter(season -> season.getStart_date().after(Date.from(LocalDate.now().minusYears(2).atStartOfDay(ZoneId.systemDefault()).toInstant())))
                 .collect(Collectors.toList());
-        return seasons;
     }
     private int parseId(JsonObject json) {
         return extractor.extractInt(json, "id");

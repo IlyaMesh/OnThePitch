@@ -65,7 +65,7 @@ public class PostToPostForm implements Converter<Post, PostResult> {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yy HH:mm", Locale.UK);
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
-        PostResult postResult = new PostResult(
+        return new PostResult(
                 post.getPost_id(),
                 post.getAuthorName(),
                 post.getHeader(),
@@ -77,6 +77,5 @@ public class PostToPostForm implements Converter<Post, PostResult> {
                 isLiked,
                 isDisliked
         );
-        return postResult;
     }
 }

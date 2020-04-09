@@ -27,6 +27,7 @@ public class EntryPoint {
         SpringApplication.run(EntryPoint.class,args);
     }
 
+    //TODO remove cloudinary from here
     @Bean
     public Cloudinary cloudinaryConfig() {
         Cloudinary cloudinary = null;

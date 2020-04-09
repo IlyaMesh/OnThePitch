@@ -10,7 +10,7 @@ public class StandingsToModel implements Converter<StandingsTeam, StandingModel>
 
     @Override
     public StandingModel convert(StandingsTeam standingsTeam) {
-        StandingModel standingModel = new StandingModel(
+        return new StandingModel(
                 Math.toIntExact(standingsTeam.getClub().getClub_id()),
                 standingsTeam.getClub().getClub_name(),
                 standingsTeam.getClub().getLogo(),
@@ -22,6 +22,5 @@ public class StandingsToModel implements Converter<StandingsTeam, StandingModel>
                 standingsTeam.getGoalsScored(),
                 standingsTeam.getGoalsAgainst()
         );
-        return standingModel;
     }
 }

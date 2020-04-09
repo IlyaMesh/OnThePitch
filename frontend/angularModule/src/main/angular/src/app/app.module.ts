@@ -23,6 +23,7 @@ import {PostDetailComponent} from './post-detail/post-detail.component';
 import {CommentFormComponent} from './comment-form/comment-form.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { AdminBoardComponent } from './admin-board/admin-board.component';
+import { LogListComponent } from './log-list/log-list.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AdminBoardComponent } from './admin-board/admin-board.component';
     PostDetailComponent,
     CommentFormComponent,
     AdminBoardComponent,
+    LogListComponent,
   ],
   imports: [
     BrowserModule,
