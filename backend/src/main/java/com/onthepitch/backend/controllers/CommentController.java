@@ -8,7 +8,9 @@ import com.onthepitch.backend.service.CommentService;
 import com.onthepitch.backend.service.PostService;
 import com.onthepitch.shared.model.ChildComment;
 import com.onthepitch.shared.model.CommentResult;
+import com.onthepitch.shared.model.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -54,27 +56,10 @@ public class CommentController {
         }
         commentService.saveOrUpdate(newComment);
     }
-    // @RequestMapping(value = "/comment", method = RequestMethod.POST)
-//    public String saveComment(@AuthenticationPrincipal User user,@Valid CommentForm commentForm){
-//        Comment comment = new Comment();
-//        Long idNote = commentForm.getNote_id();
-//        comment.setAuthor(user);
-//        if(postService.getById(idNote)!=null){
-//        comment.setPost(postService.getById(idNote));
-//        }
-//        //если это комментарий на комментарий
-//        if(commentService.getById(idNote)!=null){
-//            Comment rootComment = commentService.getById(idNote);
-//            comment.setReplyTo(rootComment);
-//        }
-//        comment.setText(commentForm.getText());
-//        commentService.SaveOrUpdate(comment);
-//        return "post/list";
-//    }
 
-    @RequestMapping("/comment/delete/{id}")
-    public String delete(@PathVariable String id) {
+    @DeleteMapping("/comments/{id}")
+    public ResponseEntity<?> delete(@PathVariable String id) {
         commentService.delete(Long.valueOf(id));
-        return "redirect:/post/list";
+        return ResponseEntity.ok(new MessageResponse("Comment deleted"));
     }
 }

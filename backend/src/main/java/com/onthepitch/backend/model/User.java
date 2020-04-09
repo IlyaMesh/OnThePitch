@@ -136,4 +136,10 @@ public class User implements UserDetails {
     public void setClub_id(Long club_id) {
         this.club_id = club_id;
     }
+
+    public void addRole(Role role){ this.roles.add(role);}
+
+    public void removeRole(Role role) {
+        this.roles.remove(role);
+    }
 }

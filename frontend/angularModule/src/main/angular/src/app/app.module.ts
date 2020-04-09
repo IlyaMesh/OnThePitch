@@ -22,6 +22,7 @@ import {UploadFilesComponent} from './upload-files/upload-files.component';
 import {PostDetailComponent} from './post-detail/post-detail.component';
 import {CommentFormComponent} from './comment-form/comment-form.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { AdminBoardComponent } from './admin-board/admin-board.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     UploadFilesComponent,
     PostDetailComponent,
     CommentFormComponent,
+    AdminBoardComponent,
   ],
   imports: [
     BrowserModule,

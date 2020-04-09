@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -42,7 +43,15 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void delete(Long id) {
-        commentRepository.deleteById(id);
+        Comment comment = commentRepository.findById(id).orElse(null);
+        if(comment.getComments().isEmpty()){
+            commentRepository.deleteById(id);
+        }
+        else {
+            comment.setText("This comment was deleted");
+            commentRepository.save(comment);
+        }
+
     }
 
 }

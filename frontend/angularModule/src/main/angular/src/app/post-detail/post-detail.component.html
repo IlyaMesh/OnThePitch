@@ -28,11 +28,14 @@
             </div>
           </a>
         </div>
+        <div class="well col-sm-4" *ngIf="showModeratorBoard">
+          <button type="button" class="btn btn-warning" (click)="delete(post.post_id)">Delete</button>
+        </div>
       </div>
       <a [routerLink]="['/comment/', post.post_id, 'undefined']">Add comment</a>
       <div class="container bootstrap snippet">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-8">
             <div class="blog-comment">
               <h3>Comments</h3>
               <hr/>
@@ -64,6 +67,9 @@
                           <small>{{comment.dislikes}}</small>
                         </div>
                       </a>
+                    </div>
+                    <div class="well col-sm-4" *ngIf="showModeratorBoard">
+                      <button type="button" class="btn btn-warning" (click)="delete(comment.comment_id)">Delete</button>
                     </div>
                   </div>
                 </li>
@@ -99,6 +105,9 @@
                             <small>{{comm.dislikes}}</small>
                           </div>
                         </a>
+                      </div>
+                      <div class="well col-sm-4" *ngIf="showModeratorBoard">
+                        <button type="button" class="btn btn-warning" (click)="delete(comm.comment_id)">Delete</button>
                       </div>
                     </div>
                   </li>

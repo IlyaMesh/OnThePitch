@@ -25,4 +25,7 @@ export class PostDetailService {
   public findAllComments(id):Observable<Comment[]>{
     return this.http.get<Comment[]>(API_URL_COMMENTS+id,httpOptions);
   }
+  public deleteComment(id:number){
+    return this.http.delete(API_URL_COMMENTS+id,httpOptions)
+  }
 }

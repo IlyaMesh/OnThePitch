@@ -12,6 +12,7 @@ import {BoardUserComponent} from "./board-user/board-user.component";
 import {UploadFilesComponent} from "./upload-files/upload-files.component";
 import {PostDetailComponent} from "./post-detail/post-detail.component";
 import {CommentFormComponent} from "./comment-form/comment-form.component";
+import {AdminBoardComponent} from "./admin-board/admin-board.component";
 
 
 
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'login',component: LoginComponent},
   {path: 'standings',component: StandingListComponent},
   {path: 'clubs/:club_id',component: ClubViewComponent},
-
+  {path: 'admin',component: AdminBoardComponent},
   {path:'register',component: RegisterComponent},
   {path:'profile',component: ProfileComponent},
   {path: 'user',component: BoardUserComponent},

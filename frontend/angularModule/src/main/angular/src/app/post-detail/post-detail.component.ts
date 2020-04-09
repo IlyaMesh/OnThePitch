@@ -4,6 +4,8 @@ import {Post} from "../model/post";
 import {PostDetailService} from "../service/post-detail.service";
 import {Comment} from "../model/comment";
 import {RatingServiceService} from "../service/rating-service.service";
+import {CommentServiceService} from "../service/comment-service.service";
+import {TokenStorageService} from "../service/token-storage.service";
 
 @Component({
   selector: 'app-post-detail',
@@ -13,16 +15,25 @@ import {RatingServiceService} from "../service/rating-service.service";
 export class PostDetailComponent implements OnInit {
   post: Post;
   comments: Comment[];
+  private roles: string[];
   post_id: number;
+  showModeratorBoard = false;
+  isLoggedIn = false;
 
   constructor(
     private actRoute: ActivatedRoute,
     private postDetService: PostDetailService,
-    private ratingService: RatingServiceService
+    private ratingService: RatingServiceService,
+    private tokenStorageService:TokenStorageService
   ) {
   }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      this.roles = this.tokenStorageService.getUser().roles;
+      this.showModeratorBoard = this.roles.includes('ADMIN' || 'MODERATOR');
+    }
     this.post = new Post();
     this.post_id = this.actRoute.snapshot.params['post_id'];
     this.postDetService.findPost(this.post_id).subscribe(data => {
@@ -138,5 +149,12 @@ export class PostDetailComponent implements OnInit {
       this.post.liked = true;
       this.post.likes++;
     }
+  }
+  delete(comment_id:number) {
+    this.postDetService.deleteComment(comment_id).subscribe(result => this.reloadPage());
+  }
+
+  reloadPage() {
+    window.location.reload();
   }
 }

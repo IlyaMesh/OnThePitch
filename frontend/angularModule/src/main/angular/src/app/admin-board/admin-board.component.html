@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Pic</th>
+    <th scope="col">Username</th>
+    <th scope="col">Mail</th>
+    <th scope="col">Roles</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <th scope="row">{{user.user_id}}</th>
+    <td><img src="{{user.user_pic}}" height="100" width="100"></td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td>
+      <ul>
+        <li *ngFor="let role of user.role">{{role}}</li>
+      </ul>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary" (click)="promote(user.user_id)">Promote</button>
+      <button type="button" class="btn btn-secondary" (click)="demote(user.user_id)">Demote</button>
+      <button type="button" class="btn btn-danger" (click)="ban(user.user_id)">Ban</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
