@@ -6,6 +6,7 @@ import com.onthepitch.backend.repos.RatingRepository;
 import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,12 +40,11 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public void createRating(String authorname, Long note_id, boolean isLiked) {
-        //добавить проверку не имеется ли уже лайка/дизлайка, если имеется -> удалить
-        User user = userRepo.findByUsername(authorname);
+    public void createRating(Long note_id, boolean isLiked) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Rating rating1 = ratingRepository.findRateByUserAndNote(user, note_id).orElse(null);
         if(rating1!=null){
-            delete(user,note_id);
+            removeRating(note_id);
             if(rating1.isLike()==isLiked){
                 return;
             }
@@ -58,13 +58,9 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public void delete(User user, Long note_id) {
+    public void removeRating(long note_id) {
+        //User user = userRepo.findByUsername(userName);
+        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         ratingRepository.deleteByUserAndNote_id(user,note_id);
-    }
-
-    @Override
-    public void removerating(String userName, long note_id) {
-        User user = userRepo.findByUsername(userName);
-        delete(user,note_id);
     }
 }

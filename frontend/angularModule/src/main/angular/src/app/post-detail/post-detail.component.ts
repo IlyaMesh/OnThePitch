@@ -42,6 +42,7 @@ export class PostDetailComponent implements OnInit {
     this.postDetService.findAllComments(this.post_id).subscribe(data => {
       this.comments = data;
     })
+    console.log(this.post.isLiked);
   }
 
 
@@ -51,30 +52,30 @@ export class PostDetailComponent implements OnInit {
     var comm: Comment;
     for (let comm of this.comments) {
       if (comm.comment_id == comment_id) {
-        if (comm.disliked) {
-          comm.disliked = false;
+        if (comm.isDisliked) {
+          comm.isDisliked = false;
           comm.dislikes--;
         }
-        if (comm.liked) {
-          comm.liked = false;
+        if (comm.isLiked) {
+          comm.isLiked = false;
           comm.likes--;
         } else {
-          comm.liked = true;
+          comm.isLiked = true;
           comm.likes++;
         }
         return;
       }
       for (let comment of comm.comments) {
         if (comment.comment_id == comment_id) {
-          if (comment.disliked) {
-            comment.disliked = false;
+          if (comment.isDisliked) {
+            comment.isDisliked = false;
             comment.dislikes--;
           }
-          if (comment.liked) {
-            comment.liked = false;
+          if (comment.isLiked) {
+            comment.isLiked = false;
             comment.likes--;
           } else {
-            comment.liked = true;
+            comment.isLiked = true;
             comment.likes++;
           }
           return;
@@ -88,30 +89,30 @@ export class PostDetailComponent implements OnInit {
     var comm: Comment;
     for (let comm of this.comments) {
       if (comm.comment_id == comment_id) {
-        if (comm.liked) {
-          comm.liked = false;
+        if (comm.isLiked) {
+          comm.isLiked = false;
           comm.likes--;
         }
-        if (comm.disliked) {
-          comm.disliked = false;
+        if (comm.isDisliked) {
+          comm.isDisliked = false;
           comm.dislikes--;
         } else {
-          comm.disliked = true;
+          comm.isDisliked = true;
           comm.dislikes++;
         }
         return;
       }
       for (let comment of comm.comments) {
         if (comment.comment_id == comment_id) {
-          if (comment.liked) {
-            comment.liked = false;
+          if (comment.isLiked) {
+            comment.isLiked = false;
             comment.likes--;
           }
-          if (comment.disliked) {
-            comment.disliked = false;
+          if (comment.isDisliked) {
+            comment.isDisliked = false;
             comment.dislikes--;
           } else {
-            comment.disliked = true;
+            comment.isDisliked = true;
             comment.dislikes++;
           }
           return;
@@ -122,31 +123,31 @@ export class PostDetailComponent implements OnInit {
 
   dislikePost(post_id: number) {
     this.ratingService.setDislike(post_id).subscribe(x => console.log(x));
-    if (this.post.liked) {
-      this.post.liked = false;
+    if (this.post.isLiked) {
+      this.post.isLiked = false;
       this.post.likes--;
     }
-    if (this.post.disliked) {
-      this.post.disliked = false;
+    if (this.post.isDisliked) {
+      this.post.isDisliked = false;
       this.post.dislikes--;
     } else {
-      this.post.disliked = true;
+      this.post.isDisliked = true;
       this.post.dislikes++;
     }
   }
 
   likePost(post_id: number) {
     this.ratingService.setLike(post_id).subscribe(x => console.log(x));
-    if (this.post.disliked) {
-      this.post.disliked = false;
+    if (this.post.isDisliked) {
+      this.post.isDisliked = false;
       this.post.dislikes--;
     }
-    if (this.post.liked) {
-      this.post.liked = false;
+    if (this.post.isLiked) {
+      this.post.isLiked = false;
       this.post.likes--;
     }
     else{
-      this.post.liked = true;
+      this.post.isLiked = true;
       this.post.likes++;
     }
   }

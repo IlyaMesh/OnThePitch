@@ -30,8 +30,6 @@ public class CommentController {
     @Autowired
     private CommentToCommentResult commentToCommentResult;
     @Autowired
-    private UserRepo userRepo;
-    @Autowired
     private LogService logService;
 
     @GetMapping("/comments/{id}")
@@ -45,8 +43,9 @@ public class CommentController {
     @PostMapping("/comments/{id}")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void addComment(@PathVariable(name = "id") String id, @RequestBody ChildComment commentResult) {
-        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepo.findByUsername(UserName);
+//        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
+//        User user = userRepo.findByUsername(UserName);
+        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Comment newComment = new Comment();
         newComment.setAuthor(user);
         newComment.setText(commentResult.getText());

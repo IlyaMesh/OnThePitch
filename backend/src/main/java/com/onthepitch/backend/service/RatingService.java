@@ -13,9 +13,7 @@ public interface RatingService {
 
     Rating save(Rating r);
 
-    void createRating(String authorname, Long note_id,boolean isLiked);
+    void createRating(Long note_id,boolean isLiked);
 
-    void delete(User user, Long note_id);
-
-    void removerating(String userName, long parseLong);
+    void removeRating(long parseLong);
 }

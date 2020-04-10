@@ -34,12 +34,10 @@ import java.util.stream.StreamSupport;
 public class PostController {
 
     private PostRepository postRepository;
-@Autowired
-private PostFormToPost postFormToPost;
+    @Autowired
+    private PostFormToPost postFormToPost;
     @Autowired
     private PostToPostForm postToPostForm;
-    @Autowired
-    private UserRepo userRepo;
     @Autowired
     private LogService logService;
 
@@ -48,13 +46,15 @@ private PostFormToPost postFormToPost;
     public PostController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
+
     /**
      * Controller method for getting all posts
+     *
      * @return List of all posts
      */
 
     @GetMapping("/posts")
-    public Page<PostResult> listPosts(@RequestParam(defaultValue = "0") int page,@RequestParam("size")int size) {
+    public Page<PostResult> listPosts(@RequestParam(defaultValue = "0") int page, @RequestParam("size") int size) {
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Post> posts = postRepository.findAll(pageRequest);
         int totalElements = (int) posts.getTotalElements();
@@ -66,13 +66,15 @@ private PostFormToPost postFormToPost;
 
     /**
      * Controller method for saving the post
+     *
      * @param post - new post that we'd like to save
      */
     @PostMapping("/posts")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void addPost(@RequestBody PostResult post) {
-        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepo.findByUsername(UserName);
+//        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
+//        User user = userRepo.findByUsername(UserName);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Post newPost = postFormToPost.convert(post);
         newPost.setAuthor(user);
         newPost.setCreated_at(new Date());
@@ -80,13 +82,13 @@ private PostFormToPost postFormToPost;
     }
 
     @GetMapping("/post/{id}")
-    public PostResult getPost(@PathVariable(name = "id") String id){
+    public PostResult getPost(@PathVariable(name = "id") String id) {
         Post post = postRepository.findById(Long.parseLong(id)).get();
         return postToPostForm.convert(post);
     }
 
     @DeleteMapping("/posts/{id}")
-    public void deletePost(@PathVariable("id") String id){
+    public void deletePost(@PathVariable("id") String id) {
         logService.addLog("Delete post");
         postRepository.deleteById(Long.parseLong(id));
     }

@@ -7,6 +7,6 @@ export class Post {
   comments_count:number;
   likes:number;
   dislikes;
-  liked:boolean;
-  disliked:boolean;
+  isLiked:boolean;
+  isDisliked:boolean;
 }

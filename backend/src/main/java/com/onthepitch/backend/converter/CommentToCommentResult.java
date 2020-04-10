@@ -45,8 +45,9 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
     @Override
     public CommentResult convert(Comment comment) {
         List<Rating> ratings = ratingRepository.getAllByNote_id(comment.getComment_id());
-        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
-        User currentUser = userRepo.findByUsername(UserName);
+//        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
+//        User currentUser = userRepo.findByUsername(UserName);
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Boolean userLiked = isUserLiked(comment, currentUser);
         Boolean isLiked;
         Boolean isDisliked;
@@ -127,8 +128,9 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
         List<Rating> ratings = ratingRepository.getAllByNote_id(comment.getComment_id());
         Integer likes = getLikes(ratings);
         Integer dislikes = getDislikes(ratings);
-        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
-        User currentUser = userRepo.findByUsername(UserName);
+//        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
+//        User currentUser = userRepo.findByUsername(UserName);
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Boolean userLiked = isUserLiked(comment, currentUser);
         Boolean isLiked;
         Boolean isDisliked;

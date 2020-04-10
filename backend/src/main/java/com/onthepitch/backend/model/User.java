@@ -1,5 +1,8 @@
 package com.onthepitch.backend.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,6 +14,9 @@ import java.util.Set;
 /**
  * Class for user entity
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "SITE_USERS")
 public class User implements UserDetails {
@@ -39,17 +45,6 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
-
-    public User() {
-    }
-
-    public Long getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -83,58 +78,6 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return getActive();
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUser_password() {
-        return user_password;
-    }
-
-    public void setUser_password(String user_password) {
-        this.user_password = user_password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUser_pic() {
-        return user_pic;
-    }
-
-    public void setUser_pic(String user_pic) {
-        this.user_pic = user_pic;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean is_moderator) {
-        this.active = is_moderator;
-    }
-
-    public Date getRegistration_time() {
-        return registration_time;
-    }
-
-    public void setRegistration_time(Date date) {
-        this.registration_time = date;
-    }
-
-    public Long getClub_id() {
-        return club_id;
-    }
-
-    public void setClub_id(Long club_id) {
-        this.club_id = club_id;
     }
 
     public void addRole(Role role){ this.roles.add(role);}

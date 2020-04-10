@@ -1,11 +1,18 @@
 package com.onthepitch.backend.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 /**
  * Class for post's comment entity
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "USER_COMMENT")
 public class Comment {
@@ -25,56 +32,5 @@ public class Comment {
     @JoinColumn(name = "POST_ID")
     private Post post;
     private String text;
-
-    public Comment() {
-    }
-
-    public Long getComment_id() {
-        return comment_id;
-    }
-
-    public void setComment_id(Long comment_id) {
-        this.comment_id = comment_id;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
-    }
-
-    public Comment getReplyTo() {
-        return replyTo;
-    }
-
-    public void setReplyTo(Comment replyTo) {
-        this.replyTo = replyTo;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
 
 }
