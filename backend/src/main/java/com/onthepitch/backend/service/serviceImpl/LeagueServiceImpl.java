@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class LeagueServiceImpl implements LeagueService {
 
-    private LeagueRepository leagueRepository;
+    private final LeagueRepository leagueRepository;
 
     @Autowired
     public LeagueServiceImpl(LeagueRepository leagueRepository) {

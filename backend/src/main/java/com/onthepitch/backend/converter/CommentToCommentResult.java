@@ -13,8 +13,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component
 public class CommentToCommentResult implements Converter<Comment, CommentResult> {
@@ -65,7 +63,7 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
                 comment.getComment_id(),
                 comment.getAuthor().getUsername(),
                 comment.getAuthor().getUser_pic(),
-                new ArrayList<ChildComment>(),
+                new ArrayList<>(),
                 comment.getText(),
                 likes,
                 dislikes,
@@ -77,9 +75,7 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
     public List<CommentResult> convertList(List<Comment> list) {
         Queue<Comment> comments = new LinkedList<>();
         List<CommentResult> result = new ArrayList<>();
-        for (Comment comment : list) {
-            comments.add(comment);
-        }
+        comments.addAll(list);
         while (!comments.isEmpty()) {
             Comment peek = comments.peek();
             if (peek.getReplyTo() == null) {

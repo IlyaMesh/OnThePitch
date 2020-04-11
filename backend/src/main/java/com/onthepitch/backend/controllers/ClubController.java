@@ -11,16 +11,20 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class ClubController {
 
-    @Autowired
     public ClubService clubService;
 
+    @Autowired
+    public ClubController(ClubService clubService) {
+        this.clubService = clubService;
+    }
+
     @GetMapping("/clubs/{id}")
-    public Club getClubById(@PathVariable String id){
+    public Club getClubById(@PathVariable String id) {
         return clubService.getById(Long.parseLong(id));
     }
 
     @GetMapping("/clubs")
-    public List<Club> getAllClubs(){
+    public List<Club> getAllClubs() {
         return clubService.listAll();
     }
 

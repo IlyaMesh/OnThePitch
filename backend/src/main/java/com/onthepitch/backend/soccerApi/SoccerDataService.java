@@ -1,16 +1,15 @@
 package com.onthepitch.backend.soccerApi;
 
 import com.onthepitch.backend.model.Club;
-import com.onthepitch.backend.model.League;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Season;
 
 import java.util.List;
 
 public interface SoccerDataService {
-    Season save(Season season);
+    void save(Season season);
 
-    Club save(Club club);
+    void save(Club club);
 
     List<Season> seasons(int id);
 
@@ -20,7 +19,7 @@ public interface SoccerDataService {
 
     List<Match> matches(int parseInt);
 
-    Match save(Match match);
+    void save(Match match);
 
     void updateAll() throws InterruptedException;
 }

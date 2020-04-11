@@ -1,8 +1,6 @@
 package com.onthepitch.backend.converter;
 
 
-import com.onthepitch.backend.commands.PostForm;
-import com.onthepitch.backend.model.Comment;
 import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.Rating;
 import com.onthepitch.backend.model.User;

@@ -1,5 +1,6 @@
 package com.onthepitch.backend.controllers;
 
+import com.google.web.bindery.autobean.shared.AutoBeanFactory;
 import com.onthepitch.backend.model.Club;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Season;
@@ -9,14 +10,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class SeasonController {
-    @Autowired
+
     public SoccerDataService soccerDataService;
     //TODO подгружать счеты уже состоявшихся матчей(на случай переноса даты обновлять).Сделать все это в фоновом режиме на главной стр, на ней отображать ближайшие матчи из топ лиг
+
+    @Autowired
+    public SeasonController(SoccerDataService soccerDataService) {
+        this.soccerDataService = soccerDataService;
+    }
+
     @GetMapping("/competitions/{id}/seasons")
     public List<Season> leagueSeasons(@PathVariable String id){
         List<Season> seasons = soccerDataService.seasons(Integer.parseInt(id));

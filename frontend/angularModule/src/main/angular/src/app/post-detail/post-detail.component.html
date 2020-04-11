@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<div class="card my-5">
+<div class="alert alert-danger" *ngIf="isError">
+  Error!<br />{{ errorMessage }}
+</div>
+
+<div class="card my-5" *ngIf="!isError">
   <div class="card-body">
     <div class="container-fluid">
       <div class="row content">
@@ -29,7 +33,7 @@
           </a>
         </div>
         <div class="well col-sm-4" *ngIf="showModeratorBoard">
-          <button type="button" class="btn btn-warning" (click)="delete(post.post_id)">Delete</button>
+          <button type="button" class="btn btn-danger" (click)="delete(post.post_id)">Delete</button>
         </div>
       </div>
       <a [routerLink]="['/comment/', post.post_id, 'undefined']">Add comment</a>
@@ -69,7 +73,7 @@
                       </a>
                     </div>
                     <div class="well col-sm-4" *ngIf="showModeratorBoard">
-                      <button type="button" class="btn btn-warning" (click)="delete(comment.comment_id)">Delete</button>
+                      <button type="button" class="btn btn-danger" (click)="delete(comment.comment_id)">Delete</button>
                     </div>
                   </div>
                 </li>
@@ -107,7 +111,7 @@
                         </a>
                       </div>
                       <div class="well col-sm-4" *ngIf="showModeratorBoard">
-                        <button type="button" class="btn btn-warning" (click)="delete(comm.comment_id)">Delete</button>
+                        <button type="button" class="btn btn-danger" (click)="delete(comm.comment_id)">Delete</button>
                       </div>
                     </div>
                   </li>

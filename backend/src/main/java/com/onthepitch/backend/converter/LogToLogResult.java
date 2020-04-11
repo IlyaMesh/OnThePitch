@@ -6,7 +6,6 @@ import com.onthepitch.shared.model.LogResult;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Component

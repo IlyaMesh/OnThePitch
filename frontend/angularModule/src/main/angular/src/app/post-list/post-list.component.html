@@ -26,7 +26,7 @@
           <i class="fas fa-heart"></i><b>{{post.likes - post.dislikes}}</b>
         </div>
         <div class="well col-sm-4" *ngIf="showModeratorBoard">
-          <button type="button" class="btn btn-warning" (click)="delete(post.post_id)">Delete</button>
+          <button type="button" class="btn btn-danger" (click)="delete(post.post_id)">Delete</button>
         </div>
       </div>
     </div>

@@ -18,10 +18,15 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
 public class FilesController {
-    @Autowired
+
     private UserService userService;
-    @Autowired
     private CloudinaryService cloudinaryConfig;
+
+    @Autowired
+    public FilesController(UserService userService, CloudinaryService cloudinaryService) {
+        this.userService = userService;
+        this.cloudinaryConfig = cloudinaryService;
+    }
 
     @PostMapping("/upload")
     public ResponseEntity<MessageResponse> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -30,7 +35,7 @@ public class FilesController {
 
         //photoStorageService.save(file);
         String url = cloudinaryConfig.uploadFile(file);
-        userService.updatePhoto(UserName,url);
+        userService.updatePhoto(UserName, url);
         message = "Uploaded the file successfully: " + url;
         return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse(message));
 

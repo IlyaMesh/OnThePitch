@@ -49,9 +49,8 @@ public class SeasonServiceImpl implements SeasonService {
     }
 
     @Override
-    public Season saveOrUpdate(Season season) {
+    public void saveOrUpdate(Season season) {
         seasonRepository.save(season);
-        return season;
 
     }
 

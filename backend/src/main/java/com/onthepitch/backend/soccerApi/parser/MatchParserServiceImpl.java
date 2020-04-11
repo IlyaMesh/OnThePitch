@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 public class MatchParserServiceImpl implements MatchParserService {
-    private MatchParser matchParser = new MatchParser();
+    private final MatchParser matchParser = new MatchParser();
     @Autowired
     private ClubService clubService;
     @Autowired

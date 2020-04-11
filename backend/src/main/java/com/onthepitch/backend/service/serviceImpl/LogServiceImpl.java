@@ -4,7 +4,6 @@ import com.onthepitch.backend.converter.LogToLogResult;
 import com.onthepitch.backend.model.Log;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.LogRepository;
-import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.shared.model.LogResult;
 import org.springframework.beans.factory.annotation.Autowired;

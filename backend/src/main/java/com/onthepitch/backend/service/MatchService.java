@@ -2,7 +2,6 @@ package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.model.Match;
 
-import java.util.Date;
 import java.util.List;
 
 public interface MatchService {
@@ -10,7 +9,7 @@ public interface MatchService {
 
     List<Match> getFromApi(int compId);
 
-    Match saveOrUpdate(Match match);
+    void saveOrUpdate(Match match);
 
     void updateMatches() throws InterruptedException;
 

@@ -4,7 +4,6 @@ import com.onthepitch.backend.model.Rating;
 import com.onthepitch.backend.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +14,13 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*")
 public class RatingController {
-    @Autowired
+
     private RatingService ratingService;
+
+    @Autowired
+    public RatingController(RatingService ratingService) {
+        this.ratingService = ratingService;
+    }
 
     @GetMapping("/ratings")
     public List<Rating> showAll(){

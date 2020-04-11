@@ -12,7 +12,7 @@ public class ClubFormToClub implements Converter<ClubForm,Club> {
     public Club convert(ClubForm clubForm) {
         Club club = new Club();
         if (clubForm.getClub_id() != null && !StringUtils.isEmpty(clubForm.getClub_id())) {
-            club.setClub_id(new Long(clubForm.getClub_id()));
+            club.setClub_id(clubForm.getClub_id());
         }
         club.setClub_name(clubForm.getClub_name());
         club.setLogo(clubForm.getLogo());

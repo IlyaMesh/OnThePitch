@@ -10,6 +10,8 @@ import {User} from "../model/user";
 export class AdminBoardComponent implements OnInit {
 
   users: User[];
+  errorMessage = '';
+  isError = false;
 
   constructor(private userService: UserService) {
   }
@@ -26,8 +28,14 @@ export class AdminBoardComponent implements OnInit {
         //user finded
         if (!this.findRole(user, 'ADMIN')) {
           //если в ролях не админ вызваем метод с клиента!
-          this.userService.promote(user_id).subscribe(x => this.reloadPage());
-          this.reloadPage();
+          this.userService.promote(user_id).subscribe(
+            x => {this.reloadPage()},
+            error => {
+              this.errorMessage = error.error.message;
+              this.isError = true;
+            }
+          );
+         // this.reloadPage();
         }
 
       }

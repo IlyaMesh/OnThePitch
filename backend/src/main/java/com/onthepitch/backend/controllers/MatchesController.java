@@ -26,11 +26,11 @@ import java.util.stream.Collectors;
 @CrossOrigin(origins = "http://localhost:4200")
 public class MatchesController {
 
-    private MatchToResult matchToResult;
-    private MatchRepository matchRepository;
+    private final MatchToResult matchToResult;
+    private final MatchRepository matchRepository;
 
     @Autowired
-    public MatchesController(MatchToResult matchToResult, MatchRepository matchRepository, SoccerDataService soccerDataService) {
+    public MatchesController(MatchToResult matchToResult, MatchRepository matchRepository) {
         this.matchToResult = matchToResult;
         this.matchRepository = matchRepository;
     }
@@ -53,7 +53,7 @@ public class MatchesController {
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to, pageRequest);
         int totalElements = (int) matches.getTotalElements();
-        return new PageImpl<MatchesResult>(matches.stream()
+        return new PageImpl<>(matches.stream()
                 .map(match -> matchToResult.convert(match))
                 .collect(Collectors.toList()), pageRequest, totalElements);
     }

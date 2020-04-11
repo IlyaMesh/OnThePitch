@@ -46,9 +46,8 @@ public class MatchServiceImpl implements MatchService {
     }
 
     @Override
-    public Match saveOrUpdate(Match match) {
+    public void saveOrUpdate(Match match) {
         matchRepository.save(match);
-        return match;
     }
 
     @Override

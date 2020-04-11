@@ -1,7 +1,6 @@
 package com.onthepitch.backend.soccerApi;
 
 import com.onthepitch.backend.model.Club;
-import com.onthepitch.backend.model.League;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Season;
 import com.onthepitch.backend.service.ClubService;
@@ -10,7 +9,6 @@ import com.onthepitch.backend.service.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -23,15 +21,13 @@ public class SoccerDataServiceImpl implements SoccerDataService {
     private MatchService matchService;
 
     @Override
-    public Season save(Season season) {
+    public void save(Season season) {
         seasonService.saveOrUpdate(season);
-        return season;
     }
 
     @Override
-    public Club save(Club club) {
+    public void save(Club club) {
         clubService.saveOrUpdate(club);
-        return club;
     }
 
     @Override
@@ -55,9 +51,8 @@ public class SoccerDataServiceImpl implements SoccerDataService {
     }
 
     @Override
-    public Match save(Match match) {
+    public void save(Match match) {
         matchService.saveOrUpdate(match);
-        return match;
     }
 
     @Override

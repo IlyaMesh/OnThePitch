@@ -39,13 +39,6 @@ public class CloudinaryService {
             throw new RuntimeException(e);
         }
     }
-    private File convertMultiPartToFile(MultipartFile file) throws IOException {
-        File convFile = new File(file.getOriginalFilename());
-        FileOutputStream fos = new FileOutputStream(convFile);
-        fos.write(file.getBytes());
-        fos.close();
-        return convFile;
-    }
 
     @Bean
     public Cloudinary cloudinaryConfig() {

@@ -1,8 +1,5 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.converter.UserToUserResult;
-import com.onthepitch.backend.model.User;
-import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.serviceImpl.UserService;
 import com.onthepitch.shared.model.LogResult;
@@ -15,66 +12,42 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class AdminController {
-    @Autowired
-    private UserToUserResult userToUserResult;
-    @Autowired
-    private UserRepo userRepo;
-    @Autowired
+
     private UserService userService;
-    @Autowired
     private LogService logService;
 
-    //TODO do smth with same code pieces and preauthorize
+    @Autowired
+    public AdminController(UserService userService,LogService logService) {
+        this.userService = userService;
+        this.logService = logService;
+    }
+
+    //TODO preauthorize
     @GetMapping("/admin/users")
     public List<UserResult> getAllUsers(){
-        List<User> all = userRepo.findAll();
-        List<UserResult> result = new ArrayList<>();
-        for(User user: all){
-            result.add(userToUserResult.convert(user));
-        }
-        return result;
+        return userService.getAllUsers();
     }
 
     @GetMapping("/admin/users/{id}/promote")
     public ResponseEntity<?> promote(@PathVariable("id") String id){
-        User user = userRepo.findById(Long.parseLong(id)).orElse(null);
-        if(user == null){
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("User with that id didnt exists"));
-        }
-        userService.promote(user);
-
+        userService.promote(Long.parseLong(id));
         return ResponseEntity.ok(new MessageResponse("User promoted successfully!"));
     }
 
     @GetMapping("/admin/users/{id}/demote")
     public ResponseEntity<?> demote(@PathVariable("id") String id){
-        User user = userRepo.findById(Long.parseLong(id)).orElse(null);
-        if(user == null){
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("User with that id didnt exists"));
-        }
-        userService.demote(user);
+        userService.demote(Long.parseLong(id));
         return ResponseEntity.ok(new MessageResponse("User demoted successfully!"));
     }
 
     @GetMapping("/admin/users/{id}/ban")
     public ResponseEntity<?> ban(@PathVariable("id") String id){
-        User user = userRepo.findById(Long.parseLong(id)).orElse(null);
-        if(user == null){
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("User with that id didnt exists"));
-        }
-        userService.ban(user);
+        userService.ban(Long.parseLong(id));
         return ResponseEntity.ok(new MessageResponse("User banned!"));
     }
 

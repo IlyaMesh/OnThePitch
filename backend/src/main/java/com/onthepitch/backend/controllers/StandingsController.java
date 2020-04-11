@@ -7,8 +7,6 @@ import com.onthepitch.backend.service.LeagueService;
 import com.onthepitch.backend.service.StandingsService;
 import com.onthepitch.shared.model.StandingModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,9 +22,9 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class StandingsController {
 
-    private StandingsToModel standingsToModel;
-    private LeagueService leagueService;
-    private StandingsService standingsService;
+    private final StandingsToModel standingsToModel;
+    private final LeagueService leagueService;
+    private final StandingsService standingsService;
 
     @Autowired
     public StandingsController(StandingsToModel standingsToModel, StandingsService standingsService, LeagueService leagueService) {

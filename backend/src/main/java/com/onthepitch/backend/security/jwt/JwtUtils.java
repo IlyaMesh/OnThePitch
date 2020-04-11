@@ -3,12 +3,10 @@ package com.onthepitch.backend.security.jwt;
 import com.onthepitch.backend.model.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import javax.validation.Valid;
 import java.util.Date;
 
 @Component

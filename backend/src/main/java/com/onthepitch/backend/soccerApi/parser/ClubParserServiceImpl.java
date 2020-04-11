@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class ClubParserServiceImpl implements ClubParserService {
-    private ClubParser clubParser= new ClubParser();
+    private final ClubParser clubParser= new ClubParser();
 
     @Override
     public List<Club> toClubs(String jsonString) {

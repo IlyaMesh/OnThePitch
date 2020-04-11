@@ -25,17 +25,19 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-    @Autowired
+
     AuthenticationManager authenticationManager;
-
-    @Autowired
     UserRepo userRepo;
-
-    @Autowired
     PasswordEncoder passwordEncoder;
+    JwtUtils jwtUtils;
 
     @Autowired
-    JwtUtils jwtUtils;
+    public AuthController(AuthenticationManager authenticationManager,UserRepo userRepo,PasswordEncoder passwordEncoder,JwtUtils jwtUtils) {
+        this.authenticationManager = authenticationManager;
+        this.userRepo = userRepo;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtUtils = jwtUtils;
+    }
 
     @PostMapping("/signin")
     public ResponseEntity<?> authUser(@Valid @RequestBody LoginRequest loginRequest) {

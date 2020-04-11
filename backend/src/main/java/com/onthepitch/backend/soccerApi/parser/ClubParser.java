@@ -4,15 +4,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.onthepitch.backend.model.Club;
-import com.onthepitch.backend.model.Season;
 import com.onthepitch.backend.soccerApi.JsonExtractor;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ClubParser {
     private final JsonParser parser = new JsonParser();

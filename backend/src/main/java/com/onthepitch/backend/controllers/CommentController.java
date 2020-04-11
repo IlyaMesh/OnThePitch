@@ -3,7 +3,6 @@ package com.onthepitch.backend.controllers;
 import com.onthepitch.backend.converter.CommentToCommentResult;
 import com.onthepitch.backend.model.Comment;
 import com.onthepitch.backend.model.User;
-import com.onthepitch.backend.repos.UserRepo;
 import com.onthepitch.backend.service.CommentService;
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
@@ -23,14 +22,19 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*")
 public class CommentController {
-    @Autowired
+
     private CommentService commentService;
-    @Autowired
     private PostService postService;
-    @Autowired
     private CommentToCommentResult commentToCommentResult;
-    @Autowired
     private LogService logService;
+
+    @Autowired
+    public CommentController(CommentService commentService,PostService postService,CommentToCommentResult commentToCommentResult,LogService logService) {
+        this.commentService = commentService;
+        this.postService = postService;
+        this.commentToCommentResult = commentToCommentResult;
+        this.logService = logService;
+    }
 
     @GetMapping("/comments/{id}")
     public List<CommentResult> getComments(@PathVariable(name = "id") String id) {
@@ -49,7 +53,7 @@ public class CommentController {
         Comment newComment = new Comment();
         newComment.setAuthor(user);
         newComment.setText(commentResult.getText());
-        newComment.setPost(postService.getById(Long.parseLong(id)));
+        newComment.setPost(postService.getPostById(Long.parseLong(id)));
         if (commentResult.getReply_id().matches("[-+]?\\d+")) {
             newComment.setReplyTo(commentService.getById(Long.parseLong(commentResult.getReply_id())));
         } else {

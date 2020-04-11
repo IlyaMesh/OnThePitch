@@ -29,11 +29,6 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public Rating getByNoteId(Long id) {
-        return null;
-    }
-
-    @Override
     public Rating save(Rating r) {
         ratingRepository.save(r);
         return r;

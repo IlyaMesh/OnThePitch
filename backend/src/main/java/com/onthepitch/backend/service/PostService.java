@@ -1,19 +1,19 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.backend.commands.PostForm;
 import com.onthepitch.backend.model.Post;
-import com.onthepitch.backend.model.User;
-
-import java.util.List;
+import com.onthepitch.shared.model.PostResult;
+import org.springframework.data.domain.Page;
 
 public interface PostService {
-    List<Post> listAll();
+    Page<PostResult> listAll(int page, int size);
 
-    Post getById(Long id);
+    PostResult getById(Long id);
 
     Post saveOrUpdate(Post post);
 
     void delete(Long id);
 
-    Post saveOrUpdatePostForm(PostForm productForm, User user);
+    void addPost(PostResult post);
+
+    Post getPostById(Long parseLong);
 }

@@ -7,11 +7,6 @@ public class EndpointProviderServiceImpl implements EndpointProviderService {
     private static final String BASE_URL = "http://api.football-data.org/v2/";
 
 
-    private String getBase() {
-        return BASE_URL;
-    }
-
-
     private String getCompetitions() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(BASE_URL).append("competitions/");

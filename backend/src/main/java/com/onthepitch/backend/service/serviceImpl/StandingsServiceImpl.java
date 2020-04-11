@@ -20,7 +20,7 @@ public class StandingsServiceImpl implements StandingsService {
     @Override
     public List<StandingsTeam> getStandings(Long leagueId) {
         List<Match> matches = matchService.getMatchesInLeagueAndCurrentSeason(leagueId);
-        List<StandingsTeam> result = new ArrayList<StandingsTeam>();
+        List<StandingsTeam> result = new ArrayList<>();
         //перебирать матчи, добавляем обе команды в список
         for (Match match : matches) {
             //если нет в множетсве клубов добавляем

@@ -16,18 +16,18 @@ import java.util.List;
 
 @Service
 public class ClubServiceImpl implements ClubService {
-    @Autowired
+
     private ClubParserService parser;
-    @Autowired
     private EndpointProviderService endpointProviderService;
-    @Autowired
     private RestClientService restClientService;
-
-    private ClubRepository clubRepository;
-    private ClubFormToClub clubFormToClub;
+    private final ClubRepository clubRepository;
+    private final ClubFormToClub clubFormToClub;
 
     @Autowired
-    public ClubServiceImpl(ClubRepository clubRepository, ClubFormToClub clubFormToClub) {
+    public ClubServiceImpl(ClubParserService parser,EndpointProviderService endpointProviderService,RestClientService restClientService,ClubRepository clubRepository, ClubFormToClub clubFormToClub) {
+        this.parser = parser;
+        this.endpointProviderService =endpointProviderService;
+        this.restClientService = restClientService;
         this.clubRepository = clubRepository;
         this.clubFormToClub = clubFormToClub;
     }

@@ -23,7 +23,7 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User author;
-    @ManyToOne(optional = true)
+    @ManyToOne()
     @JoinColumn(name = "REPLY_ID")
     private Comment replyTo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "replyTo",orphanRemoval = true)

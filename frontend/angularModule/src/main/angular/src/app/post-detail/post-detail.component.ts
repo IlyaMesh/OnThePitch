@@ -19,12 +19,14 @@ export class PostDetailComponent implements OnInit {
   post_id: number;
   showModeratorBoard = false;
   isLoggedIn = false;
+  isError = false;
+  errorMessage = '';
 
   constructor(
     private actRoute: ActivatedRoute,
     private postDetService: PostDetailService,
     private ratingService: RatingServiceService,
-    private tokenStorageService:TokenStorageService
+    private tokenStorageService: TokenStorageService
   ) {
   }
 
@@ -37,12 +39,17 @@ export class PostDetailComponent implements OnInit {
     this.post = new Post();
     this.post_id = this.actRoute.snapshot.params['post_id'];
     this.postDetService.findPost(this.post_id).subscribe(data => {
-      this.post = data;
-    })
-    this.postDetService.findAllComments(this.post_id).subscribe(data => {
-      this.comments = data;
-    })
-    console.log(this.post.isLiked);
+        this.post = data;
+      },
+      error => {
+        this.errorMessage = error.error.message;
+        this.isError = true;
+      })
+    if (!this.isError) {
+      this.postDetService.findAllComments(this.post_id).subscribe(data => {
+        this.comments = data;
+      })
+    }
   }
 
 
@@ -145,13 +152,13 @@ export class PostDetailComponent implements OnInit {
     if (this.post.isLiked) {
       this.post.isLiked = false;
       this.post.likes--;
-    }
-    else{
+    } else {
       this.post.isLiked = true;
       this.post.likes++;
     }
   }
-  delete(comment_id:number) {
+
+  delete(comment_id: number) {
     this.postDetService.deleteComment(comment_id).subscribe(result => this.reloadPage());
   }
 

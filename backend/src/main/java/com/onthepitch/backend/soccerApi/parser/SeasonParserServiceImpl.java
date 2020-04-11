@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class SeasonParserServiceImpl implements SeasonParserService {
-    private SeasonParser seasonParser = new SeasonParser();
+    private final SeasonParser seasonParser = new SeasonParser();
     @Override
     public List<Season> toSeasons(String jsonString) {
         return seasonParser.getSeasons(jsonString);

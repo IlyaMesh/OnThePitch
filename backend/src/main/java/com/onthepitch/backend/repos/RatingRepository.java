@@ -2,14 +2,11 @@ package com.onthepitch.backend.repos;
 
 import com.onthepitch.backend.model.Rating;
 import com.onthepitch.backend.model.User;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
