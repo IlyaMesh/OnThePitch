@@ -27,4 +27,7 @@ export class StandingListComponent implements OnInit {
     this.standingServiceService.findAll(this.currentLeagueId).subscribe(data=>{this.standings = data;});
   }
 
+  // onSelect(league_id: number) {
+  //   //   this.currentLeagueId = league_id;
+  //   // }
 }

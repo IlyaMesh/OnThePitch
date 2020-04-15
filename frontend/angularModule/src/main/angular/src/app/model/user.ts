@@ -3,5 +3,7 @@ export class User {
   username: string;
   email: string;
   user_pic: string;
+  reg_time:string;
   role: string[];
+  club_id: number;
 }

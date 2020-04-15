@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Post} from "../model/post";
 import {PostDetailService} from "../service/post-detail.service";
 import {Comment} from "../model/comment";
@@ -26,7 +26,8 @@ export class PostDetailComponent implements OnInit {
     private actRoute: ActivatedRoute,
     private postDetService: PostDetailService,
     private ratingService: RatingServiceService,
-    private tokenStorageService: TokenStorageService
+    private tokenStorageService: TokenStorageService,
+    private router: Router,
   ) {
   }
 
@@ -45,15 +46,18 @@ export class PostDetailComponent implements OnInit {
         this.errorMessage = error.error.message;
         this.isError = true;
       })
-    if (!this.isError) {
       this.postDetService.findAllComments(this.post_id).subscribe(data => {
         this.comments = data;
+        console.log(data);
       })
-    }
+
   }
 
 
   likeComment(comment_id: number) {
+    if(!this.isLoggedIn){
+      this.gotoLoginForm();
+    }
     this.ratingService.setLike(comment_id).subscribe(x => console.log(x));
     //если лайкаем а уже стоит диз то убираем диз
     var comm: Comment;
@@ -92,6 +96,9 @@ export class PostDetailComponent implements OnInit {
   }
 
   dislikeComment(comment_id: number) {
+    if(!this.isLoggedIn){
+      this.gotoLoginForm();
+    }
     this.ratingService.setDislike(comment_id).subscribe(x => console.log(x));
     var comm: Comment;
     for (let comm of this.comments) {
@@ -129,6 +136,9 @@ export class PostDetailComponent implements OnInit {
   }
 
   dislikePost(post_id: number) {
+    if(!this.isLoggedIn){
+      this.gotoLoginForm();
+    }
     this.ratingService.setDislike(post_id).subscribe(x => console.log(x));
     if (this.post.isLiked) {
       this.post.isLiked = false;
@@ -144,6 +154,9 @@ export class PostDetailComponent implements OnInit {
   }
 
   likePost(post_id: number) {
+    if(!this.isLoggedIn){
+      this.gotoLoginForm();
+    }
     this.ratingService.setLike(post_id).subscribe(x => console.log(x));
     if (this.post.isDisliked) {
       this.post.isDisliked = false;
@@ -164,5 +177,9 @@ export class PostDetailComponent implements OnInit {
 
   reloadPage() {
     window.location.reload();
+  }
+
+  gotoLoginForm() {
+    this.router.navigate(['/login']);
   }
 }

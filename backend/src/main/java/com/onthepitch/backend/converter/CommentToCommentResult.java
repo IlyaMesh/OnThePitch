@@ -10,6 +10,7 @@ import com.onthepitch.shared.model.CommentResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -45,7 +46,13 @@ public class CommentToCommentResult implements Converter<Comment, CommentResult>
         List<Rating> ratings = ratingRepository.getAllByNote_id(comment.getComment_id());
 //        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
 //        User currentUser = userRepo.findByUsername(UserName);
-        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        //if (SecurityContextHolder.getContext().getAuthentication().get)
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User currentUser =null;
+        if(principal instanceof UserDetails){
+            currentUser = (User)principal;
+        }
+       // User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Boolean userLiked = isUserLiked(comment, currentUser);
         Boolean isLiked;
         Boolean isDisliked;

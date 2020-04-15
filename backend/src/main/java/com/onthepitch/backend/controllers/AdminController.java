@@ -6,16 +6,16 @@ import com.onthepitch.shared.model.LogResult;
 import com.onthepitch.shared.model.MessageResponse;
 import com.onthepitch.shared.model.UserResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
+@PreAuthorize("hasAuthority('ADMIN')")
 public class AdminController {
 
     private UserService userService;
@@ -27,10 +27,9 @@ public class AdminController {
         this.logService = logService;
     }
 
-    //TODO preauthorize
     @GetMapping("/admin/users")
-    public List<UserResult> getAllUsers(){
-        return userService.getAllUsers();
+    public Page<UserResult> getAllUsers(@RequestParam(defaultValue = "0") int page, @RequestParam("size") int size){
+        return userService.getAllUsers(page,size);
     }
 
     @GetMapping("/admin/users/{id}/promote")
@@ -52,7 +51,7 @@ public class AdminController {
     }
 
     @GetMapping("/admin/logs")
-    public List<LogResult> getLogs(){
-        return logService.getLogs();
+    public Page<LogResult> getLogs(@RequestParam(defaultValue = "0") int page, @RequestParam("size") int size){
+        return logService.getLogs(page,size);
     }
 }

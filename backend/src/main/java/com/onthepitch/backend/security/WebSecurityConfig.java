@@ -1,5 +1,6 @@
 package com.onthepitch.backend.security;
 
+import com.onthepitch.backend.exсeption.RestAccessDeniedHandler;
 import com.onthepitch.backend.security.jwt.AuthEntryPointJwt;
 import com.onthepitch.backend.security.jwt.AuthTokenFilter;
 import com.onthepitch.backend.service.serviceImpl.UserService;
@@ -30,6 +31,9 @@ public class WebSecurityConfig extends
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RestAccessDeniedHandler accessDeniedHandler;
+
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
         return new AuthTokenFilter();
@@ -41,6 +45,11 @@ public class WebSecurityConfig extends
         return super.authenticationManagerBean();
     }
 
+//    @Bean
+//    public RestAccessDeniedHandler accessDeniedHandler() {
+//        return new RestAccessDeniedHandler();
+//    }
+
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder(8);
@@ -49,7 +58,7 @@ public class WebSecurityConfig extends
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
-                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+                .exceptionHandling().accessDeniedHandler(accessDeniedHandler).authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/posts/**","/comments/**","/post/**").permitAll()
@@ -65,4 +74,6 @@ public class WebSecurityConfig extends
         auth.userDetailsService(userService)
                 .passwordEncoder(getPasswordEncoder());
     }
+
+
 }

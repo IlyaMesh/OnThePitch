@@ -21,15 +21,20 @@ export class PostListComponent implements OnInit {
   page: number = 1;
   isLoggedIn = false;
   showModeratorBoard = false;
+  isError = false;
+  errorMessage = '';
 
   constructor(private router: Router, private postService: PostServiceService, private tokenStorageService: TokenStorageService) {
   }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
+    console.log(this.isLoggedIn);
     if (this.isLoggedIn) {
       this.roles = this.tokenStorageService.getUser().roles;
-      this.showModeratorBoard = this.roles.includes('ADMIN' || 'MODERATOR');
+      console.log(this.roles);
+      this.showModeratorBoard = this.roles.includes('ADMIN') || this.roles.includes('MODERATOR');
+      console.log(this.showModeratorBoard);
     }
     this.getPagePost(0);
 
@@ -49,7 +54,16 @@ export class PostListComponent implements OnInit {
   }
 
   delete(post_id:number) {
-    this.postService.delete(post_id).subscribe(result => this.reloadPage());
+    this.postService.delete(post_id).subscribe(
+      result => {
+        console.log(result);
+      },
+      error => {
+        this.errorMessage = error.error.message;
+        console.log(this.errorMessage);
+        this.isError = true;
+      }
+    );
   }
 
   reloadPage() {

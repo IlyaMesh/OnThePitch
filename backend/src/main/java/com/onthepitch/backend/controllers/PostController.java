@@ -71,7 +71,9 @@ public class PostController {
         return postService.getById(Long.parseLong(id));
     }
 
+    //TODO return errors
     @DeleteMapping("/posts/{id}")
+    @PreAuthorize("hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void deletePost(@PathVariable("id") String id) {
         logService.addLog("Delete post");
         postService.delete(Long.parseLong(id));

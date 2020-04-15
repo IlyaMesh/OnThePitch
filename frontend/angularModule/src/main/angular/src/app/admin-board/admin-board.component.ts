@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../service/user.service";
 import {User} from "../model/user";
+import {PagePost} from "../model/page-post";
+import {PageUser} from "../model/page-user";
 
 @Component({
   selector: 'app-admin-board',
@@ -10,6 +12,10 @@ import {User} from "../model/user";
 export class AdminBoardComponent implements OnInit {
 
   users: User[];
+  userPage: PageUser;
+  selectedPage: number = 0;
+  size: number = 5;
+  page: number = 1;
   errorMessage = '';
   isError = false;
 
@@ -17,13 +23,30 @@ export class AdminBoardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getUserList().subscribe(data => {
-      this.users = data;
-    });
+    // this.userService.getUserList().subscribe(data => {
+    //   this.users = data;
+    // });
+    this.getPageUser(0)
+  }
+
+  onSelect(page: number): void {
+    console.log("selected page : " + page);
+    this.selectedPage = page;
+    this.getPageUser(page);
+  }
+
+  getPageUser(page: number): void {
+    this.userService.getUserList(page, this.size)
+      .subscribe(page => {
+        this.userPage = page;
+
+      }
+      );
+    this.users = this.userPage.content;
   }
 
   promote(user_id: number) {
-    for (let user of this.users) {
+    for (let user of this.userPage.content) {
       if (user.user_id == user_id) {
         //user finded
         if (!this.findRole(user, 'ADMIN')) {
@@ -51,7 +74,8 @@ export class AdminBoardComponent implements OnInit {
   }
 
   demote(user_id: number) {
-    for (let user of this.users) {
+    console.log(this.users);
+    for (let user of this.userPage.content) {
       if (user.user_id == user_id) {
         //user finded
         if (this.findRole(user, 'MODERATOR')) {

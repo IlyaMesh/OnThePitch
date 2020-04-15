@@ -18,6 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -43,6 +44,8 @@ public class AuthController {
     public ResponseEntity<?> authUser(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginRequest.getUsername(), loginRequest.getPassword()));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yy HH:mm", Locale.UK);
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
         User userDetails = (User) authentication.getPrincipal();
@@ -56,7 +59,9 @@ public class AuthController {
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 userDetails.getUser_pic(),
-                roles
+                simpleDateFormat.format(userDetails.getRegistration_time()),
+                roles,
+                userDetails.getClub_id()
         ));
     }
 

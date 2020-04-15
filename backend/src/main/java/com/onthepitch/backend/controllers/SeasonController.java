@@ -1,6 +1,6 @@
 package com.onthepitch.backend.controllers;
 
-import com.google.web.bindery.autobean.shared.AutoBeanFactory;
+
 import com.onthepitch.backend.model.Club;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.model.Season;
