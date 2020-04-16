@@ -4,9 +4,9 @@ import { Post } from '../model/post';
 import {Observable} from "rxjs";
 import {Comment} from "../model/comment";
 import {PagePost} from "../model/page-post";
+import {Filter} from "../model/filter";
 
 const API_URL_POSTS = 'http://localhost:8080/posts';
-const API_URL_COMMENTS = 'http://localhost:8080/comments';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -27,5 +27,9 @@ export class PostServiceService {
 
   delete(post_id: number) {
     return this.http.delete(API_URL_POSTS+'/'+post_id);
+  }
+
+  findFilteredPosts(page: number, size: number, filterText: Filter) {
+    return this.http.post<PagePost>(API_URL_POSTS+'/filtered'+'?page='+page+'&size='+size,filterText,httpOptions);
   }
 }

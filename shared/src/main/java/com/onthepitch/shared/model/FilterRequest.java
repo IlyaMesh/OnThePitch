@@ -3,12 +3,8 @@ package com.onthepitch.shared.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
-public class LogResult {
-    private String username;
+public class FilterRequest {
     private String text;
-    private String created_at;
 }

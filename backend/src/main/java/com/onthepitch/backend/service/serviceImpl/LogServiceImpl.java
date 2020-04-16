@@ -14,11 +14,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class LogServiceImpl  implements LogService {
+public class LogServiceImpl implements LogService {
     @Autowired
     private LogRepository logRepository;
     @Autowired
@@ -26,7 +27,7 @@ public class LogServiceImpl  implements LogService {
 
     @Override
     public Page<LogResult> getLogs(int page, int size) {
-        PageRequest pageRequest = PageRequest.of(page,size);
+        PageRequest pageRequest = PageRequest.of(page, size);
         Page<Log> logs = logRepository.findAll(pageRequest);
         int totalElements = (int) logs.getTotalElements();
         return new PageImpl<>(
@@ -38,11 +39,12 @@ public class LogServiceImpl  implements LogService {
     @Override
     public void addLog(String text) {
 
-        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         //User user = userRepo.findByUsername(UserName);
         Log log = new Log();
         log.setText(text);
         log.setUser(user);
-            logRepository.save(log);
+        log.setCreated_at(new Date());
+        logRepository.save(log);
     }
 }

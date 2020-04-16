@@ -1,4 +1,4 @@
-package com.onthepitch.backend.commands;
+package com.onthepitch.shared.model;
 
 public class ClubForm {
     private Long club_id;

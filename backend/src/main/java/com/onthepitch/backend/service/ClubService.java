@@ -1,6 +1,6 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.backend.commands.ClubForm;
+import com.onthepitch.shared.model.ClubForm;
 import com.onthepitch.backend.model.Club;
 
 import java.util.List;
@@ -17,4 +17,7 @@ public interface ClubService {
     Club saveOrUpdatePostForm(ClubForm clubForm);
 
     List<Club> getFromApi(Long id);
+
+    void updateClubForUser(long parseLong);
+
 }

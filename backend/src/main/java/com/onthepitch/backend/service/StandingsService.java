@@ -1,6 +1,6 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.backend.commands.StandingsTeam;
+import com.onthepitch.backend.model.StandingsTeam;
 
 import java.util.List;
 

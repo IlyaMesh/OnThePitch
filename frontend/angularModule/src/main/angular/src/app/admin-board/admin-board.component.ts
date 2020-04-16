@@ -38,9 +38,9 @@ export class AdminBoardComponent implements OnInit {
   getPageUser(page: number): void {
     this.userService.getUserList(page, this.size)
       .subscribe(page => {
-        this.userPage = page;
+          this.userPage = page;
 
-      }
+        }
       );
     this.users = this.userPage.content;
   }
@@ -52,13 +52,15 @@ export class AdminBoardComponent implements OnInit {
         if (!this.findRole(user, 'ADMIN')) {
           //если в ролях не админ вызваем метод с клиента!
           this.userService.promote(user_id).subscribe(
-            x => {this.reloadPage()},
+            x => {
+              this.reloadPage()
+            },
             error => {
               this.errorMessage = error.error.message;
               this.isError = true;
             }
           );
-         // this.reloadPage();
+          // this.reloadPage();
         }
 
       }
@@ -89,8 +91,10 @@ export class AdminBoardComponent implements OnInit {
   }
 
   ban(user_id: number) {
-    this.userService.ban(user_id).subscribe(x => this.reloadPage());
-    this.reloadPage();
+    if (confirm("Are you sure to ban this user")) {
+      this.userService.ban(user_id).subscribe(x => this.reloadPage());
+      this.reloadPage();
+    }
   }
 
   reloadPage() {

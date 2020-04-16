@@ -12,13 +12,6 @@ const API_URL = 'http://localhost:8080/admin/users';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-  // getPublicContent(): Observable<any> {
-  //   return this.http.get(API_URL + 'all', { responseType: 'text' });
-  // }
-
-  // getUserBoard(): Observable<any> {
-  //   return this.http.get(API_URL + 'user', { responseType: 'text' });
-  // }
 
   getUserList(page, size):Observable<PageUser>{
     return this.http.get<PageUser>(API_URL+'?page='+page+'&size='+size);

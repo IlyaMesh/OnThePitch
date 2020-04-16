@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 public interface PostService {
     Page<PostResult> listAll(int page, int size);
 
+    Page<PostResult> listAll(int page, int size, String text);
+
     PostResult getById(Long id);
 
     Post saveOrUpdate(Post post);

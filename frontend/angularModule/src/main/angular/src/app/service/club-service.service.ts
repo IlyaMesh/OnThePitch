@@ -18,4 +18,7 @@ export class ClubServiceService {
   getAll(): Observable<Club[]>{
     return this.http.get<Club[]>(this.clubUrl);
   }
+  update(id){
+    return this.http.patch(this.clubUrl+"/"+id,id);
+  }
 }

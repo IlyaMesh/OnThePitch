@@ -5,6 +5,8 @@ import {TokenStorageService} from "../service/token-storage.service";
 import {Comment} from "../model/comment";
 import {PagePost} from "../model/page-post";
 import {Router} from "@angular/router";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Filter} from "../model/filter";
 
 @Component({
   selector: 'app-post-list',
@@ -14,6 +16,10 @@ import {Router} from "@angular/router";
 export class PostListComponent implements OnInit {
 
   posts: Post[];
+  regForm:FormGroup;
+  private firstName:FormControl;
+  filterText:Filter;
+  Name:string;
   private roles: string[];
   postPage: PagePost;
   selectedPage: number = 0;
@@ -23,8 +29,13 @@ export class PostListComponent implements OnInit {
   showModeratorBoard = false;
   isError = false;
   errorMessage = '';
+  ifSearchPressed = false;
 
-  constructor(private router: Router, private postService: PostServiceService, private tokenStorageService: TokenStorageService) {
+  constructor(private formBuilder:FormBuilder,private router: Router, private postService: PostServiceService, private tokenStorageService: TokenStorageService) {
+    this.firstName=new FormControl('',[Validators.required])
+    this.regForm=formBuilder.group({
+      Name:this.Name
+    })
   }
 
   ngOnInit(): void {
@@ -43,30 +54,55 @@ export class PostListComponent implements OnInit {
   onSelect(page: number): void {
     console.log("selected page : " + page);
     this.selectedPage = page;
+    if(!this.ifSearchPressed){
     this.getPagePost(page);
+    }
+    else{
+      this.getPagePost(page,this.filterText)
+    }
   }
 
-  getPagePost(page: number): void {
+  getPagePost(page: number, filterText?:Filter): void {
+    if(!filterText){
     this.postService.findAllPosts(page, this.size)
       .subscribe(page => {
         this.postPage = page;
       });
+    }
+    else {
+        this.postService.findFilteredPosts(page,this.size,filterText).subscribe(page=>{this.postPage = page;});
+    }
   }
 
-  delete(post_id:number) {
-    this.postService.delete(post_id).subscribe(
-      result => {
-        console.log(result);
-      },
-      error => {
-        this.errorMessage = error.error.message;
-        console.log(this.errorMessage);
-        this.isError = true;
-      }
-    );
+  delete(post_id: number) {
+    if (confirm("Are you sure to delete this post")) {
+      this.postService.delete(post_id).subscribe(
+        result => {
+          console.log(result);
+        },
+        error => {
+          this.errorMessage = error.error.message;
+          console.log(this.errorMessage);
+          this.isError = true;
+        }
+      );
+    }
   }
 
   reloadPage() {
     window.location.reload();
+  }
+
+  onSubmit() {
+    this.ifSearchPressed = true;
+    this.filterText = new Filter();
+    console.log(this.regForm.get('Name').value);
+    this.filterText.text = this.regForm.get('Name').value;
+    this.getPagePost(0,this.filterText)
+  }
+
+  removeFilter() {
+    this.ifSearchPressed = false;
+    this.reloadPage();
   }
 }

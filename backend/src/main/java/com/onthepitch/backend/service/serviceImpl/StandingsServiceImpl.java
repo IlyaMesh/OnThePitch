@@ -1,6 +1,6 @@
 package com.onthepitch.backend.service.serviceImpl;
 
-import com.onthepitch.backend.commands.StandingsTeam;
+import com.onthepitch.backend.model.StandingsTeam;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.service.MatchService;
 import com.onthepitch.backend.service.StandingsService;

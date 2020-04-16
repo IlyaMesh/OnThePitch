@@ -35,18 +35,21 @@ public class AdminController {
     @GetMapping("/admin/users/{id}/promote")
     public ResponseEntity<?> promote(@PathVariable("id") String id){
         userService.promote(Long.parseLong(id));
+        logService.addLog(new StringBuffer("Promote user with id").append(id).toString());
         return ResponseEntity.ok(new MessageResponse("User promoted successfully!"));
     }
 
     @GetMapping("/admin/users/{id}/demote")
     public ResponseEntity<?> demote(@PathVariable("id") String id){
         userService.demote(Long.parseLong(id));
+        logService.addLog(new StringBuffer("Demote user with id").append(id).toString());
         return ResponseEntity.ok(new MessageResponse("User demoted successfully!"));
     }
 
     @GetMapping("/admin/users/{id}/ban")
     public ResponseEntity<?> ban(@PathVariable("id") String id){
         userService.ban(Long.parseLong(id));
+        logService.addLog("Ban user");
         return ResponseEntity.ok(new MessageResponse("User banned!"));
     }
 

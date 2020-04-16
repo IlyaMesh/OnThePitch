@@ -35,7 +35,7 @@ export class PostDetailComponent implements OnInit {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
       this.roles = this.tokenStorageService.getUser().roles;
-      this.showModeratorBoard = this.roles.includes('ADMIN' || 'MODERATOR');
+      this.showModeratorBoard = this.roles.includes('ADMIN') || this.roles.includes('MODERATOR');
     }
     this.post = new Post();
     this.post_id = this.actRoute.snapshot.params['post_id'];
@@ -172,7 +172,9 @@ export class PostDetailComponent implements OnInit {
   }
 
   delete(comment_id: number) {
+    if(confirm("Are you sure to delete this comment")) {
     this.postDetService.deleteComment(comment_id).subscribe(result => this.reloadPage());
+    }
   }
 
   reloadPage() {

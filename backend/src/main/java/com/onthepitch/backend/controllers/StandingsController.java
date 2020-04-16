@@ -1,6 +1,6 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.commands.StandingsTeam;
+import com.onthepitch.backend.model.StandingsTeam;
 import com.onthepitch.backend.converter.StandingsToModel;
 import com.onthepitch.backend.model.League;
 import com.onthepitch.backend.service.LeagueService;

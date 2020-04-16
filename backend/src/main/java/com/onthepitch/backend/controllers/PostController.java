@@ -2,6 +2,7 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
+import com.onthepitch.shared.model.FilterRequest;
 import com.onthepitch.shared.model.MessageResponse;
 import com.onthepitch.shared.model.PostResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +36,13 @@ public class PostController {
 
     @GetMapping("/posts")
     public Page<PostResult> listPosts(@RequestParam(defaultValue = "0") int page, @RequestParam("size") int size) {
-//        PageRequest pageRequest = PageRequest.of(page, size);
-//        Page<Post> posts = postRepository.findAll(pageRequest);
-//        int totalElements = (int) posts.getTotalElements();
-//        return new PageImpl<>(
-//                posts.stream()
-//                        .map(post -> postToPostForm.convert(post))
-//                        .collect(Collectors.toList()), pageRequest, totalElements);
         return postService.listAll(page, size);
     }
 
+    @PostMapping("/posts/filtered")
+    public Page<PostResult> getFilteredPosts(@RequestParam(defaultValue = "0") int page, @RequestParam("size") int size,@RequestBody FilterRequest req) {
+        return postService.listAll(page, size,req.getText());
+    }
     /**
      * Controller method for saving the post
      *
@@ -75,8 +73,8 @@ public class PostController {
     @DeleteMapping("/posts/{id}")
     @PreAuthorize("hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void deletePost(@PathVariable("id") String id) {
-        logService.addLog("Delete post");
         postService.delete(Long.parseLong(id));
+        logService.addLog("Delete post");
         //postRepository.deleteById(Long.parseLong(id));
     }
 }

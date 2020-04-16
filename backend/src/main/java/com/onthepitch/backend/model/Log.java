@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -20,4 +21,6 @@ public class Log {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
     private User user;
+
+    private Date created_at;
 }

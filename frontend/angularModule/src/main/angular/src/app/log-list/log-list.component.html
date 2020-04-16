@@ -2,18 +2,14 @@
   <thead>
   <tr>
     <th scope="col">Username</th>
-    <th scope="col">Roles</th>
+    <th scope="col">Created at</th>
     <th scope="col">Text</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let log of logPage.content">
     <td>{{log.username}}</td>
-    <td>
-      <ul>
-        <li *ngFor="let role of log.roles">{{role}}</li>
-      </ul>
-    </td>
+    <td>{{log.created_at}}</td>
     <td>{{log.text}}</td>
   </tr>
   </tbody>

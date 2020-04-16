@@ -1,5 +1,5 @@
 export class Log {
   username:string;
-  roles:string[];
   text:string;
+  created_at:string;
 }

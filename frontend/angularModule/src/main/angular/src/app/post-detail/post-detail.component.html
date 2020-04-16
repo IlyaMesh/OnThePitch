@@ -2,7 +2,7 @@
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 <div class="alert alert-danger" *ngIf="isError">
-  Error!<br />{{ errorMessage }}
+  Error!<br/>{{ errorMessage }}
 </div>
 
 <div class="card my-5" *ngIf="!isError">
@@ -19,16 +19,16 @@
               <div *ngIf="post.isLiked; else elseBlock123">
                 <i class="fas fa-arrow-alt-circle-up"></i>
               </div>
-              <ng-template #elseBlock123> <i class="far fa-arrow-alt-circle-up"></i></ng-template>
+              <ng-template #elseBlock123><i class="far fa-arrow-alt-circle-up"></i></ng-template>
             </div>
           </a>
-          <b>{{post.likes-post.dislikes}}</b>
+          <b>{{post.likes - post.dislikes}}</b>
           <a (click)="dislikePost(post.post_id)">
             <div class="row">
               <div *ngIf="post.isDisliked; else elseBlock124">
                 <i class="fas fa-arrow-alt-circle-down"></i>
               </div>
-              <ng-template #elseBlock124> <i class="far fa-arrow-alt-circle-down"></i></ng-template>
+              <ng-template #elseBlock124><i class="far fa-arrow-alt-circle-down"></i></ng-template>
             </div>
           </a>
         </div>
@@ -36,7 +36,9 @@
           <button type="button" class="btn btn-danger" (click)="delete(post.post_id)">Delete</button>
         </div>
       </div>
-      <a [routerLink]="['/comment/', post.post_id, 'undefined']">Add comment</a>
+      <div *ngIf="isLoggedIn">
+        <a [routerLink]="['/comment/', post.post_id, 'undefined']">Add comment</a>
+      </div>
       <div class="container bootstrap snippet">
         <div class="row">
           <div class="col-md-8">
@@ -47,8 +49,13 @@
                 <li class="clearfix">
                   <img src="{{comment.user_logo}}" class="avatar" alt="" width="100" height="100">
                   <div class="post-comments">
-                    <p class="meta">Dec 18, 2014 <a href="#">{{comment.username}}</a> says : <i class="pull-right">
-                      <a [routerLink]="['/comment/', post.post_id,comment.comment_id]"><small>Reply</small></a></i></p>
+                    <p class="meta">Dec 18, 2014 {{comment.username}} says :
+                      <i class="pull-right">
+                        <div *ngIf="isLoggedIn">
+                          <a [routerLink]="['/comment/', post.post_id,comment.comment_id]"><small>Reply</small></a>
+                        </div>
+                      </i>
+                    </p>
                     <p>
                       {{comment.text}}
                     </p>
@@ -58,7 +65,7 @@
                           <div *ngIf="comment.isLiked; else elseBlock">
                             <i class="fas fa-thumbs-up"></i>
                           </div>
-                          <ng-template #elseBlock> <i class="far fa-thumbs-up"></i></ng-template>
+                          <ng-template #elseBlock><i class="far fa-thumbs-up"></i></ng-template>
                           <small>{{comment.likes}}</small>
                         </div>
                       </a>
@@ -67,7 +74,7 @@
                           <div *ngIf="comment.isDisliked; else elseBlock1">
                             <i class="fas fa-thumbs-down"></i>
                           </div>
-                          <ng-template #elseBlock1> <i class="far fa-thumbs-down"></i></ng-template>
+                          <ng-template #elseBlock1><i class="far fa-thumbs-down"></i></ng-template>
                           <small>{{comment.dislikes}}</small>
                         </div>
                       </a>
@@ -82,9 +89,11 @@
                   <li class="clearfix" *ngFor="let comm of comment.comments">
                     <img src="{{comm.user_logo}}" class="avatar" alt="" width="100" height="100">
                     <div class="post-comments">
-                      <p class="meta">Dec 20, 2014 {{comm.username}} says : To {{comm.reply_name}}
+                      <p class="meta">{{comm.username}} says : To {{comm.reply_name}}
                         <i class="pull-right">
-                          <a [routerLink]="['/comment/', post.post_id,comm.comment_id]"><small>Reply</small></a>
+                          <div *ngIf="isLoggedIn">
+                            <a [routerLink]="['/comment/', post.post_id,comm.comment_id]"><small>Reply</small></a>
+                          </div>
                         </i>
                       </p>
                       <p>
@@ -96,7 +105,7 @@
                             <div *ngIf="comm.isLiked; else elseBlock2">
                               <i class="fas fa-thumbs-up"></i>
                             </div>
-                            <ng-template #elseBlock2> <i class="far fa-thumbs-up"></i></ng-template>
+                            <ng-template #elseBlock2><i class="far fa-thumbs-up"></i></ng-template>
                             <small>{{comm.likes}}</small>
                           </div>
                         </a>
@@ -105,7 +114,7 @@
                             <div *ngIf="comm.isDisliked; else elseBlock12">
                               <i class="fas fa-thumbs-down"></i>
                             </div>
-                            <ng-template #elseBlock12> <i class="far fa-thumbs-down"></i></ng-template>
+                            <ng-template #elseBlock12><i class="far fa-thumbs-down"></i></ng-template>
                             <small>{{comm.dislikes}}</small>
                           </div>
                         </a>

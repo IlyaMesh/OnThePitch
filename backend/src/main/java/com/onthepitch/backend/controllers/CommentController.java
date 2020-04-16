@@ -40,7 +40,6 @@ public class CommentController {
     public List<CommentResult> getComments(@PathVariable(name = "id") String id) {
 
         List<Comment> allComments = commentService.getAllCommentsForPost(Long.parseLong(id));
-
         return commentToCommentResult.convertList(allComments);
     }
 
@@ -64,8 +63,8 @@ public class CommentController {
 
     @DeleteMapping("/comments/{id}")
     public ResponseEntity<?> delete(@PathVariable String id) {
-        logService.addLog("Delete comment");
         commentService.delete(Long.valueOf(id));
+        logService.addLog("Delete comment");
         return ResponseEntity.ok(new MessageResponse("Comment deleted"));
     }
 }

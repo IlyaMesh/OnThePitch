@@ -19,4 +19,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<MessageResponse> handleIsNoSuchPostException(){
         return new ResponseEntity<>(new MessageResponse("There is no such post"), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(NoSuchClubException.class)
+    protected ResponseEntity<MessageResponse> handleIsNoSuchClubException(){
+        return new ResponseEntity<>(new MessageResponse("There is no such club"), HttpStatus.NOT_FOUND);
+    }
 }

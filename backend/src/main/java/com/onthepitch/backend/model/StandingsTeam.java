@@ -1,6 +1,4 @@
-package com.onthepitch.backend.commands;
-
-import com.onthepitch.backend.model.Club;
+package com.onthepitch.backend.model;
 
 import java.util.Objects;
 

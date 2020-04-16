@@ -18,9 +18,11 @@ import java.util.Date;
 public class Match {
     @Id
     private Long match_id;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "HOME_TEAM_ID", referencedColumnName = "CLUB_ID")
     private Club homeTeam;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "AWAY_TEAM_ID", referencedColumnName = "CLUB_ID")
     private Club awayTeam;

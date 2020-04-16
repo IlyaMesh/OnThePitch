@@ -1,6 +1,6 @@
 package com.onthepitch.backend.converter;
 
-import com.onthepitch.backend.commands.StandingsTeam;
+import com.onthepitch.backend.model.StandingsTeam;
 import com.onthepitch.shared.model.StandingModel;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

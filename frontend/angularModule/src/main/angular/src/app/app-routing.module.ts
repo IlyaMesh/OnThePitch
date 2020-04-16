@@ -8,7 +8,6 @@ import {ResultListComponent} from "./result-list/result-list.component";
 import {ClubViewComponent} from "./club-view/club-view.component";
 import {RegisterComponent} from "./register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
-import {BoardUserComponent} from "./board-user/board-user.component";
 import {UploadFilesComponent} from "./upload-files/upload-files.component";
 import {PostDetailComponent} from "./post-detail/post-detail.component";
 import {CommentFormComponent} from "./comment-form/comment-form.component";
@@ -30,7 +29,6 @@ const routes: Routes = [
   {path: 'admin',component: AdminBoardComponent},
   {path:'register',component: RegisterComponent},
   {path:'profile',component: ProfileComponent},
-  {path: 'user',component: BoardUserComponent},
   {path:'upload',component: UploadFilesComponent},
   {path: 'post-detail/:post_id',component: PostDetailComponent},
   {path: 'comment/:post_id/:reply_to',component: CommentFormComponent},
