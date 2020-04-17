@@ -2,6 +2,7 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
+import com.onthepitch.backend.soccerApi.TokenProviderService;
 import com.onthepitch.shared.model.request.FilterRequest;
 import com.onthepitch.shared.model.response.MessageResponse;
 import com.onthepitch.shared.model.response.PostResult;
@@ -20,7 +21,6 @@ public class PostController {
 
     private final PostService postService;
     private final LogService logService;
-
 
     @Autowired
     public PostController(PostService postService, LogService logService) {

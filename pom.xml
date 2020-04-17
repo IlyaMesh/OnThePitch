@@ -12,6 +12,7 @@
         <module>backend</module>
         <module>frontend</module>
         <module>shared</module>
+        <module>qulice</module>
     </modules>
     <build>
         <plugins>
