@@ -95,6 +95,7 @@ export class PostListComponent implements OnInit {
 
   onSubmit() {
     this.ifSearchPressed = true;
+    this.selectedPage = 0;
     this.filterText = new Filter();
     console.log(this.regForm.get('Name').value);
     this.filterText.text = this.regForm.get('Name').value;

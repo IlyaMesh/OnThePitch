@@ -16,8 +16,8 @@
       </ul>
     </div>
     <div class="row mx-auto">
-      <form class="form-inline my-2 my-lg-0" [formGroup]="regForm" (submit)="onSubmit()">
-        <input class="form-control mr-sm-2" formControlName="Name" type="search" placeholder="Search">
+      <form style="align-self: center" class="form-inline my-2 my-lg-0" [formGroup]="regForm" (submit)="onSubmit()">
+        <input style="align-self: center" class="form-control mr-sm-2" formControlName="Name" type="search" placeholder="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         <button *ngIf="ifSearchPressed" class="btn" (click)="removeFilter()"><i class="fas fa-times-circle"></i>
         </button>
