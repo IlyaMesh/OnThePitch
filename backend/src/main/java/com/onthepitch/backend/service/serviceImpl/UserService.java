@@ -6,7 +6,7 @@ import com.onthepitch.backend.model.Role;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.UserRepo;
 import org.springframework.data.domain.PageImpl;
-import com.onthepitch.shared.model.UserResult;
+import com.onthepitch.shared.model.response.UserResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

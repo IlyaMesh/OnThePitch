@@ -3,7 +3,7 @@ package com.onthepitch.backend.service.serviceImpl;
 import com.onthepitch.backend.exсeption.NoSuchClubException;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.UserRepo;
-import com.onthepitch.shared.model.ClubForm;
+import com.onthepitch.shared.model.response.ClubForm;
 import com.onthepitch.backend.converter.ClubFormToClub;
 import com.onthepitch.backend.repos.ClubRepository;
 import com.onthepitch.backend.model.Club;
@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClubServiceImpl implements ClubService {

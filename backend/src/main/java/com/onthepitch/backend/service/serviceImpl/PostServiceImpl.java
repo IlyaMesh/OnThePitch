@@ -7,7 +7,7 @@ import com.onthepitch.backend.model.Post;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.PostRepository;
 import com.onthepitch.backend.service.PostService;
-import com.onthepitch.shared.model.PostResult;
+import com.onthepitch.shared.model.response.PostResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

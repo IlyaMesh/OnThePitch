@@ -5,7 +5,7 @@ import com.onthepitch.backend.model.Log;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.LogRepository;
 import com.onthepitch.backend.service.LogService;
-import com.onthepitch.shared.model.LogResult;
+import com.onthepitch.shared.model.response.LogResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -13,9 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Service

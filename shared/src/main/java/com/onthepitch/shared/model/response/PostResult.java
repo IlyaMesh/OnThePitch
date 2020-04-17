@@ -1,4 +1,4 @@
-package com.onthepitch.shared.model;
+package com.onthepitch.shared.model.response;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

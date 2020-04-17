@@ -1,5 +1,6 @@
-package com.onthepitch.shared.model;
+package com.onthepitch.shared.model.response;
 
+import com.onthepitch.shared.model.response.ChildComment;
 import lombok.*;
 
 import java.util.List;

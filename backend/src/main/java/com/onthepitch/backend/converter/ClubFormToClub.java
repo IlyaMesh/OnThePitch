@@ -1,6 +1,6 @@
 package com.onthepitch.backend.converter;
 
-import com.onthepitch.shared.model.ClubForm;
+import com.onthepitch.shared.model.response.ClubForm;
 import com.onthepitch.backend.model.Club;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

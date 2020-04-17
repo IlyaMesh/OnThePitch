@@ -2,16 +2,14 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.serviceImpl.UserService;
-import com.onthepitch.shared.model.LogResult;
-import com.onthepitch.shared.model.MessageResponse;
-import com.onthepitch.shared.model.UserResult;
+import com.onthepitch.shared.model.response.LogResult;
+import com.onthepitch.shared.model.response.MessageResponse;
+import com.onthepitch.shared.model.response.UserResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")

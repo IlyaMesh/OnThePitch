@@ -1,7 +1,7 @@
 package com.onthepitch.backend.converter;
 
 import com.onthepitch.backend.model.Post;
-import com.onthepitch.shared.model.PostResult;
+import com.onthepitch.shared.model.response.PostResult;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;

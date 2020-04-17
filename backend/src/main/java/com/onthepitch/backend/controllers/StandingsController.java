@@ -5,7 +5,7 @@ import com.onthepitch.backend.converter.StandingsToModel;
 import com.onthepitch.backend.model.League;
 import com.onthepitch.backend.service.LeagueService;
 import com.onthepitch.backend.service.StandingsService;
-import com.onthepitch.shared.model.StandingModel;
+import com.onthepitch.shared.model.response.StandingModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -6,7 +6,7 @@ import com.onthepitch.backend.model.Rating;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.RatingRepository;
 import com.onthepitch.backend.repos.UserRepo;
-import com.onthepitch.shared.model.PostResult;
+import com.onthepitch.shared.model.response.PostResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.context.SecurityContextHolder;

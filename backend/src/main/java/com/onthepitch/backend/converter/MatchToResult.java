@@ -1,6 +1,6 @@
 package com.onthepitch.backend.converter;
 
-import com.onthepitch.shared.model.MatchesResult;
+import com.onthepitch.shared.model.response.MatchesResult;
 import org.springframework.core.convert.converter.Converter;
 import com.onthepitch.backend.model.Match;
 import org.springframework.stereotype.Component;

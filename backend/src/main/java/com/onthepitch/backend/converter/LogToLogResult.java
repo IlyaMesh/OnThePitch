@@ -1,15 +1,13 @@
 package com.onthepitch.backend.converter;
 
 import com.onthepitch.backend.model.Log;
-import com.onthepitch.backend.model.Role;
-import com.onthepitch.shared.model.LogResult;
+import com.onthepitch.shared.model.response.LogResult;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.TimeZone;
-import java.util.stream.Collectors;
 
 @Component
 public class LogToLogResult implements Converter<Log, LogResult> {

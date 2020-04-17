@@ -1,9 +1,7 @@
 package com.onthepitch.backend.service;
 
-import com.onthepitch.shared.model.LogResult;
+import com.onthepitch.shared.model.response.LogResult;
 import org.springframework.data.domain.Page;
-
-import java.util.List;
 
 public interface LogService {
 

@@ -1,4 +1,4 @@
-package com.onthepitch.shared.model;
+package com.onthepitch.shared.model.response;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.*;

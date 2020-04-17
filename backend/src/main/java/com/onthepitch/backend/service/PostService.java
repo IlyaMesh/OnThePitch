@@ -1,7 +1,7 @@
 package com.onthepitch.backend.service;
 
 import com.onthepitch.backend.model.Post;
-import com.onthepitch.shared.model.PostResult;
+import com.onthepitch.shared.model.response.PostResult;
 import org.springframework.data.domain.Page;
 
 public interface PostService {

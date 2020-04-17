@@ -1,4 +1,4 @@
-package com.onthepitch.shared.model;
+package com.onthepitch.shared.model.request;
 
 import lombok.Data;
 

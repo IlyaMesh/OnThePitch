@@ -1,6 +1,6 @@
 package com.onthepitch.backend.exсeption;
 
-import com.onthepitch.shared.model.MessageResponse;
+import com.onthepitch.shared.model.response.MessageResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

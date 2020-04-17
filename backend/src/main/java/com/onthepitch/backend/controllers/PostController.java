@@ -2,9 +2,9 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
-import com.onthepitch.shared.model.FilterRequest;
-import com.onthepitch.shared.model.MessageResponse;
-import com.onthepitch.shared.model.PostResult;
+import com.onthepitch.shared.model.request.FilterRequest;
+import com.onthepitch.shared.model.response.MessageResponse;
+import com.onthepitch.shared.model.response.PostResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;

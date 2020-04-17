@@ -2,7 +2,7 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.model.Club;
 import com.onthepitch.backend.service.ClubService;
-import com.onthepitch.shared.model.MessageResponse;
+import com.onthepitch.shared.model.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
