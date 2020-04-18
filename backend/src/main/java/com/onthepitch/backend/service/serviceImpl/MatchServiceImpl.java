@@ -1,5 +1,7 @@
 package com.onthepitch.backend.service.serviceImpl;
 
+import com.onthepitch.backend.converter.MatchToResult;
+import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.MatchRepository;
 import com.onthepitch.backend.model.Match;
 import com.onthepitch.backend.service.LeagueService;
@@ -8,11 +10,20 @@ import com.onthepitch.backend.service.SeasonService;
 import com.onthepitch.backend.soccerApi.EndpointProviderService;
 import com.onthepitch.backend.soccerApi.RestClientService;
 import com.onthepitch.backend.soccerApi.parser.MatchParserService;
+import com.onthepitch.shared.model.response.MatchesResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class MatchServiceImpl implements MatchService {
     @Autowired
@@ -27,10 +38,8 @@ public class MatchServiceImpl implements MatchService {
     private SeasonService seasonService;
     @Autowired
     private LeagueService leagueService;
-    @Override
-    public List<Match> loadFinished(int id) {
-        return null;
-    }
+    @Autowired
+    private MatchToResult matchToResult;
 
     @Override
     public List<Match> getFromApi(int compId) {
@@ -82,5 +91,29 @@ public class MatchServiceImpl implements MatchService {
     public List<Match> getMatchesInLeagueAndCurrentSeason(Long league_id) {
         return matchRepository.findMatchesThatGone(leagueService.getById(league_id),seasonService.loadCurrent(Math.toIntExact(league_id)));
 
+    }
+
+    @Override
+    public Page<MatchesResult> listAll(int page, int size) {
+        //soccerDataService.updateAll(); Т.к. обновлять данные пока нет смысла из-за пандемии, а можно сделать только 10 запросов
+        Date from = Date.from(LocalDate.now().minusDays(6).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date to = Date.from(LocalDate.now().plusDays(6).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        PageRequest pageRequest = PageRequest.of(page, size);
+        Page<Match> matches = matchRepository.findMatchesByMatchTimeBetweenOrderByMatchTime(from, to, pageRequest);
+        int totalElements = (int) matches.getTotalElements();
+        return new PageImpl<>(matches.stream()
+                .map(match -> matchToResult.convert(match))
+                .collect(Collectors.toList()), pageRequest, totalElements);
+    }
+
+    @Override
+    public Page<MatchesResult> getFavouriteTeamMatches(int page, int size) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        PageRequest pageRequest = PageRequest.of(page, size);
+        Page<Match> matches = matchRepository.findMatchesOfFavouriteTeam(user.getClub_id(),pageRequest);
+        int totalElements = (int) matches.getTotalElements();
+        return new PageImpl<>(matches.stream()
+                .map(match -> matchToResult.convert(match))
+                .collect(Collectors.toList()), pageRequest, totalElements);
     }
 }

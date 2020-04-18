@@ -32,8 +32,12 @@ public class AuthController {
     PasswordEncoder passwordEncoder;
     JwtUtils jwtUtils;
 
+    //TODO make order here
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager,UserRepo userRepo,PasswordEncoder passwordEncoder,JwtUtils jwtUtils) {
+    public AuthController(AuthenticationManager authenticationManager,
+                          UserRepo userRepo,
+                          PasswordEncoder passwordEncoder,
+                          JwtUtils jwtUtils) {
         this.authenticationManager = authenticationManager;
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;

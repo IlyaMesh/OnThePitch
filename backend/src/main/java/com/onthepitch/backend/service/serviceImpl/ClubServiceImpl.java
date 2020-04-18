@@ -42,7 +42,7 @@ public class ClubServiceImpl implements ClubService {
     @Override
     public List<Club> listAll() {
         List<Club> clubs = new ArrayList<>();
-        clubRepository.findAll().forEach(clubs::add);
+        clubRepository.findAllAndAndOOrderByClub_name().forEach(clubs::add);
         return clubs;
     }
 

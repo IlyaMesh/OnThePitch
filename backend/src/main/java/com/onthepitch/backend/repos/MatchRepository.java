@@ -22,4 +22,7 @@ public interface MatchRepository extends CrudRepository<Match,Long> {
 
     @Query(value="SELECT m from Match m where m.homeTeamScored is not null and m.awayTeamScored is not null and m.league = :league and m.season = :season")
     List<Match> findMatchesThatGone(@Param("league") League league,@Param("season") Season season);
+
+    @Query(value = "select m from Match m where m.homeTeam.club_id = :favTeamId or m.awayTeam.club_id = :favTeamId")
+    Page<Match> findMatchesOfFavouriteTeam(@Param("favTeamId") Long id, Pageable pageable);
 }

@@ -10,6 +10,7 @@ import com.onthepitch.shared.model.response.UserResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -37,10 +38,6 @@ public class UserService implements UserDetailsService {
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<User> all = userRepo.findAll(pageRequest);
         int totalElements = (int) all.getTotalElements();
-//        List<UserResult> result = new ArrayList<>();
-//        for(User user: all){
-//            result.add(userToUserResult.convert(user));
-//        }
         return new PageImpl<>(
                     all.stream()
                         .map(user -> userToUserResult.convert(user))
@@ -62,6 +59,10 @@ public class UserService implements UserDetailsService {
 
     public void demote(Long user_id) {
         User user = checkUserById(user_id);
+        User userCurrent = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(user.getUser_id() == userCurrent.getUser_id()){
+            return;
+        }
         if (user.getRoles().contains(Role.ADMIN)) {
             user.removeRole(Role.ADMIN);
         } else {

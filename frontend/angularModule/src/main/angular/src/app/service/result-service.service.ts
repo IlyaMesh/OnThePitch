@@ -15,9 +15,20 @@ export class ResultServiceService {
     this.matchResultUrl = "http://localhost:8080/matches";
   }
 
-  getPageClient(page:number,size:number): Observable<PageMatch> {
+  getPageMatch(page:number, size:number): Observable<PageMatch> {
     var url = this.matchResultUrl;
     url = url+'?page='+page+'&size='+size;
+    return this.http.get<PageMatch>(url)
+      .pipe(
+        map(response => {
+          const data = response;
+          console.log(data.content);
+          return data;
+        }));
+  }
+  getPageFavMatch(page:number, size:number): Observable<PageMatch> {
+    var url = this.matchResultUrl;
+    url = url+'/favourite'+'?page='+page+'&size='+size;
     return this.http.get<PageMatch>(url)
       .pipe(
         map(response => {

@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -29,7 +28,10 @@ public class CommentController {
     private LogService logService;
 
     @Autowired
-    public CommentController(CommentService commentService,PostService postService,CommentToCommentResult commentToCommentResult,LogService logService) {
+    public CommentController(CommentService commentService,
+                             PostService postService,
+                             CommentToCommentResult commentToCommentResult,
+                             LogService logService) {
         this.commentService = commentService;
         this.postService = postService;
         this.commentToCommentResult = commentToCommentResult;

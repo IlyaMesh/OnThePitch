@@ -1,12 +1,5 @@
 <div class="col-md-12">
   <div class="card card-container">
-    <img
-      id="profile-img"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card"
-      width="150"
-      height="150"
-    />
     <form
       *ngIf="!isLoggedIn"
       name="form"
@@ -69,9 +62,11 @@
         </div>
       </div>
     </form>
-
-    <div class="alert alert-success" *ngIf="isLoggedIn">
+<div *ngIf="isLoggedIn">
+    <div class="alert alert-success" >
       Logged in as {{ roles }}.
     </div>
+  <button type="button" class="btn btn-primary" [routerLink]="['']" style="align-self: center">Main page</button>
+</div>
   </div>
 </div>

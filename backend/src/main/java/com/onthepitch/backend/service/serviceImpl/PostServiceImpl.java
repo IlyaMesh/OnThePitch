@@ -34,9 +34,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public Page<PostResult> listAll(int page, int size, String text) {
         PageRequest pageRequest = PageRequest.of(page, size);
-        //Page<Post> posts = postRepository.findAll(pageRequest);
         Page<Post> first = postRepository.findPostLike(text, pageRequest);
-        //Page<Post> posts = postRepository.findPostsByRating(pageRequest);
         int totalElements = (int) first.getTotalElements();
         return new PageImpl<>(
                 first.stream()
@@ -48,8 +46,6 @@ public class PostServiceImpl implements PostService {
     public Page<PostResult> listAll(int page, int size) {
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Post> posts = postRepository.findAll(pageRequest);
-        Page<Post> first = postRepository.findPostLike("", pageRequest);
-        //Page<Post> posts = postRepository.findPostsByRating(pageRequest);
         int totalElements = (int) posts.getTotalElements();
         return new PageImpl<>(
                 posts.stream()
