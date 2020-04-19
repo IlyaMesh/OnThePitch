@@ -23,7 +23,7 @@ public class PostToPostForm implements Converter<Post, PostResult> {
     private RatingRepository ratingRepository;
     @Autowired
     private UserRepo userRepo;
-    //TODO REWRITE IT
+
     private Integer getLikes(List<Rating> ratings) {
         Long count = ratings.stream().filter(rating -> rating.isLike()).count();
         return count.intValue();
@@ -36,10 +36,7 @@ public class PostToPostForm implements Converter<Post, PostResult> {
 
     private Boolean isUserLiked(Post post, User user) {
         Rating rateByUserAndNote = ratingRepository.findRateByUserAndNote(user, post.getPost_id()).orElse(null);
-        if (rateByUserAndNote == null) {
-            return null;
-        }
-        return rateByUserAndNote.isLike();
+        return rateByUserAndNote == null ? null : rateByUserAndNote.isLike();
     }
 
     @Override
@@ -48,32 +45,21 @@ public class PostToPostForm implements Converter<Post, PostResult> {
         String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
         User currentUser = userRepo.findByUsername(UserName);
         Boolean userLiked = isUserLiked(post, currentUser);
-        Boolean isLiked;
-        Boolean isDisliked;
-        if (userLiked == null) {
-            isLiked = false;
-            isDisliked = false;
-        }
-        else{
-            isLiked = userLiked;
-            isDisliked = !userLiked;
-        }
-        Integer likes = getLikes(ratings);
-        Integer dislikes = getDislikes(ratings);
-
+        Boolean isLiked = userLiked == null ? false : userLiked;
+        Boolean isDisliked = userLiked == null ? false : !userLiked;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yy HH:mm", Locale.UK);
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
         return new PostResult(
-                post.getPost_id(),
-                post.getAuthorName(),
-                post.getHeader(),
-                post.getText(),
-                simpleDateFormat.format(post.getCreated_at()),
-                post.getComments().size(),
-                likes,
-                dislikes,
-                isLiked,
-                isDisliked
+            post.getPost_id(),
+            post.getAuthorName(),
+            post.getHeader(),
+            post.getText(),
+            simpleDateFormat.format(post.getCreated_at()),
+            post.getComments().size(),
+            getLikes(ratings),
+            getDislikes(ratings),
+            isLiked,
+            isDisliked
         );
     }
 }
