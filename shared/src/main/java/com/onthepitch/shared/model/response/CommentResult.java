@@ -1,7 +1,8 @@
 package com.onthepitch.shared.model.response;
 
-import com.onthepitch.shared.model.response.ChildComment;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -21,7 +22,17 @@ public class CommentResult {
     private Boolean isLiked;
     private Boolean isDisliked;
 
-    public CommentResult(Long comment_id, String username,String user_logo, List<CommentResult> comments, String text, Integer likes, Integer dislikes,String reply_id,String reply_name, Boolean isLiked, Boolean isDisliked) {
+    public CommentResult(Long comment_id,
+                         String username,
+                         String user_logo,
+                         List<CommentResult> comments,
+                         String text,
+                         Integer likes,
+                         Integer dislikes,
+                         String reply_id,
+                         String reply_name,
+                         Boolean isLiked,
+                         Boolean isDisliked) {
         this.comment_id = comment_id;
         this.username = username;
         this.user_logo= user_logo;

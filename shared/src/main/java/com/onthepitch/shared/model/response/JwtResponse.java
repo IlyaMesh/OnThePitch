@@ -22,7 +22,14 @@ public class JwtResponse {
         this.user_pic = user_pic;
     }
 
-    public JwtResponse(String accessToken, Long id, String username, String email, String user_pic, String reg_time, List<String> roles, Long club_id) {
+    public JwtResponse(String accessToken,
+                       Long id,
+                       String username,
+                       String email,
+                       String user_pic,
+                       String reg_time,
+                       List<String> roles,
+                       Long club_id) {
         this.token = accessToken;
         this.id = id;
         this.username = username;

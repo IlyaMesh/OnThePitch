@@ -6,7 +6,6 @@ import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.service.CommentService;
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
-import com.onthepitch.shared.model.response.ChildComment;
 import com.onthepitch.shared.model.response.CommentResult;
 import com.onthepitch.shared.model.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,9 +46,7 @@ public class CommentController {
 
     @PostMapping("/comments/{id}")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
-    public void addComment(@PathVariable(name = "id") String id, @RequestBody ChildComment commentResult) {
-//        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
-//        User user = userRepo.findByUsername(UserName);
+    public void addComment(@PathVariable(name = "id") String id, @RequestBody CommentResult commentResult) {
         User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Comment newComment = new Comment();
         newComment.setAuthor(user);

@@ -12,13 +12,9 @@ import java.io.IOException;
 @Component
 public class RestAccessDeniedHandler implements AccessDeniedHandler {
     @Override
-    public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
-//        ResponseEntity<MessageResponse> forbidden = new ResponseEntity<>(new MessageResponse("You have no rights to do that"), HttpStatus.FORBIDDEN);
-//        OutputStream out = httpServletResponse.getOutputStream();
-//        ObjectMapper mapper = new ObjectMapper();
-//        mapper.writeValue(out, forbidden);
-//        out.flush();
+    public void handle(HttpServletRequest httpServletRequest,
+                       HttpServletResponse httpServletResponse,
+                       AccessDeniedException e) throws IOException, ServletException {
        httpServletResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Error: Forbidden");
-
     }
 }

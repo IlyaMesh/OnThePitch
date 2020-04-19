@@ -16,7 +16,7 @@ import java.util.List;
 public class SeasonController {
 
     public SoccerDataService soccerDataService;
-    //TODO подгружать счеты уже состоявшихся матчей(на случай переноса даты обновлять).Сделать все это в фоновом режиме на главной стр, на ней отображать ближайшие матчи из топ лиг
+
 
     @Autowired
     public SeasonController(SoccerDataService soccerDataService) {
@@ -26,12 +26,12 @@ public class SeasonController {
     @GetMapping("/competitions/{id}/seasons")
     public List<Season> leagueSeasons(@PathVariable String id){
         List<Season> seasons = soccerDataService.seasons(Integer.parseInt(id));
-        Season currentSeason = soccerDataService.getCurrentSeason(Integer.parseInt(id));
         for(Season season : seasons){
         soccerDataService.save(season);
         }
         return seasons;
     }
+
     @GetMapping("/competitions/{id}/teams")
     public List<Club> getClubs(@PathVariable String id){
         List<Club> clubs = soccerDataService.clubs(Integer.parseInt(id));
@@ -40,9 +40,9 @@ public class SeasonController {
         }
         return clubs;
     }
+
     @GetMapping("/competitions/{id}/matches")
     public List<Match> getMatches(@PathVariable String id){
-        //List<Match> matches = new ArrayList<>();
         List<Match> matches = soccerDataService.matches(Integer.parseInt(id));
         for(Match match: matches){
             soccerDataService.save(match);

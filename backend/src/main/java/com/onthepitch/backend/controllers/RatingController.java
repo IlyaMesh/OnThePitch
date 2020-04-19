@@ -26,24 +26,22 @@ public class RatingController {
     public List<Rating> showAll(){
         return ratingService.findAll();
     }
+
     @GetMapping("/note/{id}/like")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void addLiketoNote(@PathVariable("id") String id){
-       // String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
         ratingService.createRating(Long.parseLong(id),true);
     }
 
     @GetMapping("/note/{id}/dislike")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void addDisliketoNote(@PathVariable("id") String id){
-        //String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
         ratingService.createRating(Long.parseLong(id),false);
     }
 
     @GetMapping("/note/{id}/delete")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void delRatingtoNote(@PathVariable("id") String id){
-       // String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
         ratingService.removeRating(Long.parseLong(id));
     }
 

@@ -23,7 +23,7 @@ public class PostToPostForm implements Converter<Post, PostResult> {
     private RatingRepository ratingRepository;
     @Autowired
     private UserRepo userRepo;
-
+    //TODO REWRITE IT
     private Integer getLikes(List<Rating> ratings) {
         Long count = ratings.stream().filter(rating -> rating.isLike()).count();
         return count.intValue();

@@ -38,7 +38,6 @@ public class LogServiceImpl implements LogService {
     public void addLog(String text) {
 
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        //User user = userRepo.findByUsername(UserName);
         Log log = new Log();
         log.setText(text);
         log.setUser(user);

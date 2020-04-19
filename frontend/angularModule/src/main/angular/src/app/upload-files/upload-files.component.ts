@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpEventType, HttpResponse} from "@angular/common/http";
 import {UploadFileService} from "../service/upload-file.service";
+import {TokenStorageService} from "../service/token-storage.service";
+import {User} from "../model/user";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-upload-files',
@@ -13,9 +16,10 @@ export class UploadFilesComponent implements OnInit {
   currentFile: File;
   progress = 0;
   message = '';
+  private currentUser: User;
 
 
-  constructor(private uploadService: UploadFileService) { }
+  constructor(private token: TokenStorageService,private uploadService: UploadFileService,private router: Router,) { }
 
   ngOnInit(): void {
 
@@ -42,7 +46,12 @@ export class UploadFilesComponent implements OnInit {
         if (event.type === HttpEventType.UploadProgress) {
           this.progress = Math.round(100 * event.loaded / event.total);
         } else if (event instanceof HttpResponse) {
-          this.message = event.body.message;
+          this.message = 'Successfully uploaded';
+          this.currentUser = this.token.getUser();
+          this.currentUser.user_pic = event.body.message;
+          this.token.saveUser(this.currentUser);
+          this.gotoProfile();
+
         }
       },
       err => {
@@ -52,6 +61,9 @@ export class UploadFilesComponent implements OnInit {
       });
 
     this.selectedFiles = undefined;
+  }
+  gotoProfile() {
+    this.router.navigate(['/profile']);
   }
 
 }

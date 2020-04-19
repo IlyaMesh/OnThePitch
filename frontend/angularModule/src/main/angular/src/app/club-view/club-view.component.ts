@@ -21,7 +21,6 @@ export class ClubViewComponent implements OnInit {
   errorMessage = '';
 
   constructor(
-    private token: TokenStorageService,
     private route: ActivatedRoute,
     private clubService: ClubServiceService,
     private tokenStorageService: TokenStorageService,
@@ -30,7 +29,7 @@ export class ClubViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
-    this.currentUser = this.token.getUser();
+    this.currentUser = this.tokenStorageService.getUser();
     this.club = new Club();
     this.club_id = this.route.snapshot.params['club_id'];
     this.clubService.getById(this.club_id).subscribe(data => {
@@ -46,8 +45,12 @@ export class ClubViewComponent implements OnInit {
     if(!this.isLoggedIn){
       this.gotoLoginForm();
     }
+    else {
     this.isPressed = true;
     this.clubService.update(this.club_id).subscribe(result => this.reloadPage());
+    this.currentUser.club_id = this.club_id;
+    this.tokenStorageService.saveUser(this.currentUser);
+    }
   }
   gotoLoginForm() {
     this.router.navigate(['/login']);

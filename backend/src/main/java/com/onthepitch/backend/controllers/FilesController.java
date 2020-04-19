@@ -34,7 +34,7 @@ public class FilesController {
         //photoStorageService.save(file);
         String url = cloudinaryConfig.uploadFile(file);
         userService.updatePhoto(UserName, url);
-        return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse("Uploaded the photo successfully"));
+        return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse(url));
 
     }
 }

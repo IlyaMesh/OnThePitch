@@ -27,7 +27,9 @@ public class StandingsController {
     private final StandingsService standingsService;
 
     @Autowired
-    public StandingsController(StandingsToModel standingsToModel, StandingsService standingsService, LeagueService leagueService) {
+    public StandingsController(StandingsToModel standingsToModel,
+                               StandingsService standingsService,
+                               LeagueService leagueService) {
         this.standingsToModel = standingsToModel;
         this.standingsService = standingsService;
         this.leagueService = leagueService;

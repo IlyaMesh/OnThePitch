@@ -3,6 +3,7 @@ package com.onthepitch.backend.model;
 import java.util.Objects;
 
 public class StandingsTeam {
+    //TODO ADD LOMBOK
     private Club club;
     private Integer matchesPlayed;
     private Integer wins;

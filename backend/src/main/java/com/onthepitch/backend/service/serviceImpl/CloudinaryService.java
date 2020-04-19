@@ -29,7 +29,6 @@ public class CloudinaryService {
 
     public String uploadFile(MultipartFile file) {
         try {
-            //File uploadedFile = convertMultiPartToFile(file);
             Map uploadResult = cloudinaryConfig.uploader().upload(file.getBytes(), ObjectUtils.emptyMap());
             return  uploadResult.get("url").toString();
         } catch (Exception e) {

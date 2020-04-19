@@ -3,7 +3,6 @@ package com.onthepitch.backend.service.serviceImpl;
 import com.onthepitch.backend.exсeption.NoSuchClubException;
 import com.onthepitch.backend.model.User;
 import com.onthepitch.backend.repos.UserRepo;
-import com.onthepitch.shared.model.response.ClubForm;
 import com.onthepitch.backend.converter.ClubFormToClub;
 import com.onthepitch.backend.repos.ClubRepository;
 import com.onthepitch.backend.model.Club;
@@ -30,7 +29,12 @@ public class ClubServiceImpl implements ClubService {
     private final ClubFormToClub clubFormToClub;
 
     @Autowired
-    public ClubServiceImpl(ClubParserService parser, UserRepo userRepo, EndpointProviderService endpointProviderService, RestClientService restClientService, ClubRepository clubRepository, ClubFormToClub clubFormToClub) {
+    public ClubServiceImpl(ClubParserService parser,
+                           UserRepo userRepo,
+                           EndpointProviderService endpointProviderService,
+                           RestClientService restClientService,
+                           ClubRepository clubRepository,
+                           ClubFormToClub clubFormToClub) {
         this.parser = parser;
         this.userRepo = userRepo;
         this.endpointProviderService =endpointProviderService;
@@ -60,13 +64,6 @@ public class ClubServiceImpl implements ClubService {
     @Override
     public void delete(Long id) {
     clubRepository.deleteById(id);
-    }
-
-    @Override
-    public Club saveOrUpdatePostForm(ClubForm clubForm) {
-        Club savedClub = saveOrUpdate(clubFormToClub.convert(clubForm));
-        System.out.println("Saved product id+ "+savedClub.getClub_id());
-        return savedClub;
     }
 
     @Override

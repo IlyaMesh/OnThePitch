@@ -2,7 +2,6 @@ package com.onthepitch.backend.controllers;
 
 import com.onthepitch.backend.service.LogService;
 import com.onthepitch.backend.service.PostService;
-import com.onthepitch.backend.soccerApi.TokenProviderService;
 import com.onthepitch.shared.model.request.FilterRequest;
 import com.onthepitch.shared.model.response.MessageResponse;
 import com.onthepitch.shared.model.response.PostResult;
@@ -43,6 +42,7 @@ public class PostController {
     public Page<PostResult> getFilteredPosts(@RequestParam(defaultValue = "0") int page, @RequestParam("size") int size,@RequestBody FilterRequest req) {
         return postService.listAll(page, size,req.getText());
     }
+
     /**
      * Controller method for saving the post
      *
@@ -51,21 +51,12 @@ public class PostController {
     @PostMapping("/posts")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public ResponseEntity<?> addPost(@RequestBody PostResult post) {
-//        String UserName = SecurityContextHolder.getContext().getAuthentication().getName();
-//        User user = userRepo.findByUsername(UserName);
         postService.addPost(post);
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        Post newPost = postFormToPost.convert(post);
-//        newPost.setAuthor(user);
-//        newPost.setCreated_at(new Date());
-//        postRepository.save(newPost);
         return ResponseEntity.ok(new MessageResponse("Post created successfully"));
     }
 
     @GetMapping("/post/{id}")
     public PostResult getPost(@PathVariable(name = "id") String id) {
-//        Post post = postRepository.findById(Long.parseLong(id)).get();
-//        return postToPostForm.convert(post);
         return postService.getById(Long.parseLong(id));
     }
 
@@ -75,6 +66,5 @@ public class PostController {
     public void deletePost(@PathVariable("id") String id) {
         postService.delete(Long.parseLong(id));
         logService.addLog("Delete post");
-        //postRepository.deleteById(Long.parseLong(id));
     }
 }

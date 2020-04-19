@@ -16,6 +16,7 @@ public class LeagueServiceImpl implements LeagueService {
 
     @Autowired
     public LeagueServiceImpl(LeagueRepository leagueRepository) {
+
         this.leagueRepository = leagueRepository;
     }
 
@@ -28,9 +29,6 @@ public class LeagueServiceImpl implements LeagueService {
 
     @Override
     public League getById(Long id) {
-      //  List<League> leagues = listAll();
-       // return leagues.stream().filter(league -> league.getLeague_id().equals(id)).findFirst().get();
-        //return leagueRepository.findByLeague_id(id);
         return leagueRepository.findById(id).get();
     }
 

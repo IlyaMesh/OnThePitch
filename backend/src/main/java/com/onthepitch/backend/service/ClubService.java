@@ -14,8 +14,6 @@ public interface ClubService {
 
     void delete(Long id);
 
-    Club saveOrUpdatePostForm(ClubForm clubForm);
-
     List<Club> getFromApi(Long id);
 
     void updateClubForUser(long parseLong);
