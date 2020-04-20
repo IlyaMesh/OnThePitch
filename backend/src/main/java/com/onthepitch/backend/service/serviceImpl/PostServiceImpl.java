@@ -45,12 +45,13 @@ public class PostServiceImpl implements PostService {
     @Override
     public Page<PostResult> listAll(int page, int size) {
         PageRequest pageRequest = PageRequest.of(page, size);
-        Page<Post> posts = postRepository.findAll(pageRequest);
-        int totalElements = (int) posts.getTotalElements();
-        return new PageImpl<>(
-                posts.stream()
-                        .map(post -> postToPostForm.convert(post))
-                        .collect(Collectors.toList()), pageRequest, totalElements);
+        //Page<Post> posts = postRepository.findAll(pageRequest);
+        return postRepository.findPostsWithRating(pageRequest);
+//        int totalElements = (int) posts.getTotalElements();
+//        return new PageImpl<>(
+//                posts.stream()
+//                        .map(post -> postToPostForm.convert(post))
+//                        .collect(Collectors.toList()), pageRequest, totalElements);
     }
 
     @Override
