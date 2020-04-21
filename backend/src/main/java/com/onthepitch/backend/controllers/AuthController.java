@@ -1,26 +1,18 @@
 package com.onthepitch.backend.controllers;
 
-import com.onthepitch.backend.model.Role;
-import com.onthepitch.backend.model.User;
-import com.onthepitch.backend.repos.UserRepo;
-import com.onthepitch.backend.security.jwt.JwtUtils;
-import com.onthepitch.shared.model.response.JwtResponse;
+import com.onthepitch.backend.service.AuthService;
 import com.onthepitch.shared.model.request.LoginRequest;
-import com.onthepitch.shared.model.response.MessageResponse;
 import com.onthepitch.shared.model.request.SignupRequest;
+import com.onthepitch.shared.model.response.JwtResponse;
+import com.onthepitch.shared.model.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -28,73 +20,26 @@ import java.util.stream.Collectors;
 public class AuthController {
 
     AuthenticationManager authenticationManager;
-    UserRepo userRepo;
-    PasswordEncoder passwordEncoder;
-    JwtUtils jwtUtils;
+    AuthService authService;
 
-    //TODO make order here
     @Autowired
     public AuthController(AuthenticationManager authenticationManager,
-                          UserRepo userRepo,
-                          PasswordEncoder passwordEncoder,
-                          JwtUtils jwtUtils) {
+                          AuthService authService) {
         this.authenticationManager = authenticationManager;
-        this.userRepo = userRepo;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtUtils = jwtUtils;
+        this.authService = authService;
     }
 
     @PostMapping("/signin")
     public ResponseEntity<?> authUser(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginRequest.getUsername(), loginRequest.getPassword()));
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yy HH:mm", Locale.UK);
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = jwtUtils.generateJwtToken(authentication);
-        User userDetails = (User) authentication.getPrincipal();
-            //String principal = SecurityContextHolder.getContext().getAuthentication().getName();
-        List<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
-                .collect(Collectors.toList());
-        return ResponseEntity.ok(new JwtResponse(
-                jwt,
-                userDetails.getUser_id(),
-                userDetails.getUsername(),
-                userDetails.getEmail(),
-                userDetails.getUser_pic(),
-                simpleDateFormat.format(userDetails.getRegistration_time()),
-                roles,
-                userDetails.getClub_id()
-        ));
+        JwtResponse jwtResponse = authService.authUser(authentication);
+        return ResponseEntity.ok(jwtResponse);
     }
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (userRepo.existsByUsername(signUpRequest.getUsername())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Username is already taken!"));
-        }
-
-        if (userRepo.existsByEmail(signUpRequest.getEmail())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Email is already in use!"));
-        }
-
-        // Create new user's account
-        User user = new User();
-        user.setUsername(signUpRequest.getUsername());
-        user.setEmail(signUpRequest.getEmail());
-        user.setUser_password(passwordEncoder.encode(signUpRequest.getPassword()));
-        user.setClub_id(Long.parseLong(signUpRequest.getClub_id()));
-        Set<Role> userRole = Collections.singleton(Role.USER);
-        user.setRoles(userRole);
-        user.setActive(true);
-        user.setRegistration_time(new Date());
-        userRepo.save(user);
-
+        authService.regisrateUser(signUpRequest);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 }

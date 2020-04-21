@@ -49,7 +49,7 @@
                 <li class="clearfix">
                   <img src="{{comment.user_logo}}" class="avatar" alt="" width="100" height="100">
                   <div class="post-comments">
-                    <p class="meta">Dec 18, 2014 {{comment.username}} says :
+                    <p class="meta">{{comment.username}} says :
                       <i class="pull-right">
                         <div *ngIf="isLoggedIn">
                           <a [routerLink]="['/comment/', post.post_id,comment.comment_id]"><small>Reply</small></a>

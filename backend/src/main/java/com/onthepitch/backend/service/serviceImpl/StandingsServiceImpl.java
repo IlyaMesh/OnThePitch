@@ -7,9 +7,7 @@ import com.onthepitch.backend.service.StandingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,48 +18,41 @@ public class StandingsServiceImpl implements StandingsService {
     @Override
     public List<StandingsTeam> getStandings(Long leagueId) {
         List<Match> matches = matchService.getMatchesInLeagueAndCurrentSeason(leagueId);
-        List<StandingsTeam> result = new ArrayList<>();
+        Set<StandingsTeam> result = new HashSet<>();
         //перебирать матчи, добавляем обе команды в список
         for (Match match : matches) {
-            //если нет в множетсве клубов добавляем
-            if(!result.contains(new StandingsTeam(match.getHomeTeam()))){//!!!!
-                StandingsTeam homeTeam = new StandingsTeam(match.getHomeTeam());
-                result.add(homeTeam);
-            }
-            if(!result.contains(new StandingsTeam(match.getAwayTeam()))){
-                StandingsTeam awayTeam = new StandingsTeam(match.getAwayTeam());
-                result.add(awayTeam);
-            }
 
+            result.add(new StandingsTeam(match.getHomeTeam()));
+            result.add(new StandingsTeam(match.getAwayTeam()));
 
             //блок парсинга результатов матча
-            StandingsTeam homeeTeam = result.stream()
+            StandingsTeam homeTeam = result.stream()
                     .filter(standingsTeam -> match.getHomeTeam().getClub_name().equals(standingsTeam.getClub().getClub_name()))
                     .findAny()
                     .orElse(null);
-            StandingsTeam awayyTeam = result.stream()
+            StandingsTeam awayTeam = result.stream()
                     .filter(standingsTeam -> match.getAwayTeam().getClub_name().equals(standingsTeam.getClub().getClub_name()))
                     .findAny()
                     .orElse(null);
             if (getResult(match) > 0) {
                 //победа домашней команды
-                homeeTeam.setWins(homeeTeam.getWins() + 1);
-                awayyTeam.setLoses(awayyTeam.getLoses() + 1);
+                homeTeam.setWins(homeTeam.getWins() + 1);
+                awayTeam.setLoses(awayTeam.getLoses() + 1);
             } else if (getResult(match) < 0) {
                 //поражение домашней команды
-                homeeTeam.setLoses(homeeTeam.getLoses() + 1);
-                awayyTeam.setWins(awayyTeam.getWins() + 1);
+                homeTeam.setLoses(homeTeam.getLoses() + 1);
+                awayTeam.setWins(awayTeam.getWins() + 1);
             } else {
                 //ничейка
-                homeeTeam.setDraws(homeeTeam.getDraws() + 1);
-                awayyTeam.setDraws(awayyTeam.getDraws() + 1);
+                homeTeam.setDraws(homeTeam.getDraws() + 1);
+                awayTeam.setDraws(awayTeam.getDraws() + 1);
             }
-            homeeTeam.setGoalsScored(homeeTeam.getGoalsScored() + match.getHomeTeamScored());
-            homeeTeam.setGoalsAgainst(homeeTeam.getGoalsAgainst() + match.getAwayTeamScored());
-            awayyTeam.setGoalsScored(awayyTeam.getGoalsScored() + match.getAwayTeamScored());
-            awayyTeam.setGoalsAgainst(awayyTeam.getGoalsAgainst() + match.getHomeTeamScored());
-            homeeTeam.setMatchesPlayed(homeeTeam.getMatchesPlayed() + 1);
-            awayyTeam.setMatchesPlayed(awayyTeam.getMatchesPlayed() + 1);
+            homeTeam.setGoalsScored(homeTeam.getGoalsScored() + match.getHomeTeamScored());
+            homeTeam.setGoalsAgainst(homeTeam.getGoalsAgainst() + match.getAwayTeamScored());
+            awayTeam.setGoalsScored(awayTeam.getGoalsScored() + match.getAwayTeamScored());
+            awayTeam.setGoalsAgainst(awayTeam.getGoalsAgainst() + match.getHomeTeamScored());
+            homeTeam.setMatchesPlayed(homeTeam.getMatchesPlayed() + 1);
+            awayTeam.setMatchesPlayed(awayTeam.getMatchesPlayed() + 1);
 
         }
         //подсчет очков

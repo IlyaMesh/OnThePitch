@@ -24,4 +24,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<MessageResponse> handleIsNoSuchClubException(){
         return new ResponseEntity<>(new MessageResponse("There is no such club"), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(EmailIsAlreadyExists.class)
+    protected ResponseEntity<?> handleEmailIsAlreadyExists(){
+        return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!!"));
+    }
+
+    @ExceptionHandler(UsernameIsAlreadyTaken.class)
+    protected ResponseEntity<?> handleUsernameIsAlreadyTaken(){
+        return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!!"));
+    }
 }
