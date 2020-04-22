@@ -22,17 +22,14 @@ import java.util.List;
 public class CommentController {
 
     private CommentService commentService;
-    private PostService postService;
     private CommentToCommentResult commentToCommentResult;
     private LogService logService;
 
     @Autowired
     public CommentController(CommentService commentService,
-                             PostService postService,
                              CommentToCommentResult commentToCommentResult,
                              LogService logService) {
         this.commentService = commentService;
-        this.postService = postService;
         this.commentToCommentResult = commentToCommentResult;
         this.logService = logService;
     }
@@ -47,20 +44,13 @@ public class CommentController {
     @PostMapping("/comments/{id}")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public void addComment(@PathVariable(name = "id") String id, @RequestBody CommentResult commentResult) {
-        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Comment newComment = new Comment();
-        newComment.setAuthor(user);
-        newComment.setText(commentResult.getText());
-        newComment.setPost(postService.getPostById(Long.parseLong(id)));
-        if (commentResult.getReply_id().matches("[-+]?\\d+")) {
-            newComment.setReplyTo(commentService.getById(Long.parseLong(commentResult.getReply_id())));
-        } else {
-            newComment.setReplyTo(null);
-        }
-        commentService.saveOrUpdate(newComment);
+
+        commentService.addComment(Long.parseLong(id), commentResult);
+
     }
 
     @DeleteMapping("/comments/{id}")
+    @PreAuthorize("hasAuthority('MODERATOR') or hasAuthority('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable String id) {
         commentService.delete(Long.valueOf(id));
         logService.addLog("Delete comment");

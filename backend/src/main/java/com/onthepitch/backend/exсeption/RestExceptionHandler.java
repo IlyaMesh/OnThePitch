@@ -34,4 +34,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<?> handleUsernameIsAlreadyTaken(){
         return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!!"));
     }
+
+    @ExceptionHandler(UserBannedException.class)
+    protected ResponseEntity<MessageResponse> handleUserBannedException(){
+        return new ResponseEntity<>(new MessageResponse("You banned"), HttpStatus.FORBIDDEN);
+    }
 }

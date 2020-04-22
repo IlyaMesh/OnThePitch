@@ -14,6 +14,8 @@ export class CommentFormComponent implements OnInit {
   comment:Comment;
   post_id:number;
   reply_to:number;
+  isError = false;
+  errorMessage = '';
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -22,7 +24,12 @@ export class CommentFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.commentService.saveComment(this.comment,this.post_id).subscribe(result => this.gotoPostList());
+    this.commentService.saveComment(this.comment,this.post_id).subscribe(
+      result => {this.gotoPostList()},
+      error => {
+        this.errorMessage = error.error.message;
+        this.isError = true;
+      });
   }
 
   gotoPostList() {

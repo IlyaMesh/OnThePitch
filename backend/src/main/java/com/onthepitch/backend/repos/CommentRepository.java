@@ -11,7 +11,6 @@ public interface CommentRepository extends CrudRepository<Comment,Long> {
     @Query(value = QueryUtils.FIND_ROOT_COMMENTS)
     Iterable<Comment> findRootComments(@Param("id") long id);
 
-    //@Query(value = "select c from Comment c where c.post.post_id = :id order by c.replyTo.comment_id nulls last")
     @Query(QueryUtils.FIND_ALL_COMMENTS_OF_POST)
     Iterable<Comment> findAllCommentsOfPost(@Param("id") long id);
 

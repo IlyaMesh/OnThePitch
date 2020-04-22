@@ -38,7 +38,7 @@ public class JwtUtils {
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
             return true;
         } catch (Exception e) {
-            //here should be a logger
+            //here should be a logger catch shouldn't be empty
        }
 
         return false;

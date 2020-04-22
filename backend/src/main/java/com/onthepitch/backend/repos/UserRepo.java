@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface UserRepo extends JpaRepository<User,Long> {
+    @Query("select u from User u where u.active = true ")
     Page<User> findAll(Pageable pageable);
 
     User findByUsername(String username);

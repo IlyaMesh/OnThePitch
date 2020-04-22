@@ -8,17 +8,15 @@ public class QueryUtils {
 
     public static final String FIND_All_CLUBS = "select c from Club c order by c.club_name";
 
-    //use string because i need Const
     public static final String
         FIND_POSTS_WITH_RATING = "select p.* from POST p" +
         "    left join (\n" +
-        "        select rat.note_id, count(rat.is_like) as likes \n" +
+        "        select rat.note_id, sum(case when rat.is_like = 1 then 1 else -1 end) as likes \n" +
         "        from RATING rat\n" +
-        "        where rat.is_like = 1\n" +
         "        group by rat.note_id\n" +
         "    ) r on\n" +
         "    r.note_id = p.post_id\n" +
-        "order by r.likes";
+        "order by r.likes desc nulls last";
 
     public static final String PAGEABLE_COUNT_FOR_POSTS = "select count(*) from POST";
 
@@ -29,7 +27,7 @@ public class QueryUtils {
         "select c from Comment c where c.replyTo is null and c.post.post_id = :id";
 
     public static final String FIND_MATCHES_OF_FAV_TEAM =
-        "select m from Match m where m.homeTeam.club_id = :favTeamId or m.awayTeam.club_id = :favTeamId";
+        "select m from Match m where m.homeTeam.club_id = :favTeamId or m.awayTeam.club_id = :favTeamId order by m.matchTime";
 
     public static final String FIND_MATCHES_NEEDED_TO_UPDATE =
         "SELECT m FROM Match m where m.lastUpdated < m.matchTime and m.matchTime<:today";

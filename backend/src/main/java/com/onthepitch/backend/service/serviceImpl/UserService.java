@@ -72,7 +72,9 @@ public class UserService implements UserDetailsService {
 
     public void ban(Long user_id) {
         User user = checkUserById(user_id);
-        userRepo.delete(user);
+        user.setActive(false);
+        userRepo.save(user);
+        //userRepo.delete(user);
     }
 
     private User checkUserById(Long user_id) {

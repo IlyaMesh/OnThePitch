@@ -87,6 +87,7 @@ export class PostListComponent implements OnInit {
         }
       );
     }
+    this.reloadPage();
   }
 
   reloadPage() {
