@@ -47,28 +47,22 @@ public class MatchServiceImpl implements MatchService {
         String s = restClientService.get(endpoint);
         return parser.toMatches(s);
     }
+    @Override
+    public void saveOrUpdate(Match match) {
+        matchRepository.save(match);
+    }
 
-    private Match getMatch(int match_id){
+    private Match getMatch(int match_id) {
         String match = endpointProviderService.getMatch(match_id);
         String s = restClientService.get(match);
         return parser.getMatch(s);
     }
 
     @Override
-    public void saveOrUpdate(Match match) {
-        matchRepository.save(match);
-    }
-
-    @Override
-    public void updateMatches() throws InterruptedException {
+    public void updateMatches() {
         Date date = new Date();
         List<Match> matchesNeedToBeUpdated = matchRepository.findMatchesNeedToBeUpdated(date);//матчи из бд, взять их айдишники и найти каждый матч через api, данные обновить
-        int i =0;
         for(Match match: matchesNeedToBeUpdated){
-            if(i == 8){
-                Thread.sleep(1002);
-                i=0;
-            }
             Long match_id = match.getMatch_id();
             Match matchInfo = getMatch(Math.toIntExact(match_id));
             if(matchInfo == null)
@@ -80,8 +74,6 @@ public class MatchServiceImpl implements MatchService {
             match.setMatchTime(matchInfo.getMatchTime());
             match.setLastUpdated(date);
             matchRepository.save(match);
-            String t = "";
-            i++;
         }
 
 

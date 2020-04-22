@@ -19,6 +19,6 @@ public interface PostRepository extends CrudRepository<Post, Long> {
             nativeQuery = true)
     Page<Post> findPostsWithRating(Pageable pageable);
 
-    @Query(value = "select p from Post p where p.header like %:text% or p.text like %:text%")
+    @Query(value = QueryUtils.FIND_POST_BY_TEXT)
     Page<Post> findPostLike(@Param("text") String text, Pageable pageable);
 }

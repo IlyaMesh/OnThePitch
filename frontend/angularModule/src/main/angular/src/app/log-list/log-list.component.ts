@@ -12,7 +12,7 @@ export class LogListComponent implements OnInit {
 
   logPage:PageLog;
   selectedPage: number = 0;
-  size: number = 5;
+  size: number = 15;
   page: number = 1;
   logs:Log[];
 

@@ -34,6 +34,10 @@ export class ClubViewComponent implements OnInit {
     this.club_id = this.route.snapshot.params['club_id'];
     this.clubService.getById(this.club_id).subscribe(data => {
       this.club = data;
+    },
+    error=>{
+      this.errorMessage = error.error.message;
+      this.isError = true;
     })
     if(this.currentUser.club_id == this.club_id){
       this.isPressed = true;

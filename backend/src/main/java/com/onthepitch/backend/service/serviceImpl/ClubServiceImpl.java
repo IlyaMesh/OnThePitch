@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClubServiceImpl implements ClubService {
@@ -52,7 +53,11 @@ public class ClubServiceImpl implements ClubService {
 
     @Override
     public Club getById(Long id) {
-        return clubRepository.findById(id).get();
+        Club club = clubRepository.findById(id).orElse(null);
+        if(club == null){
+            throw new NoSuchClubException();
+        }
+        return club;
     }
 
     @Override

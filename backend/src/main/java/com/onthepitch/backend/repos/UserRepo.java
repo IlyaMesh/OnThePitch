@@ -1,6 +1,7 @@
 package com.onthepitch.backend.repos;
 
 import com.onthepitch.backend.model.User;
+import com.onthepitch.backend.repos.query.QueryUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,6 +19,6 @@ public interface UserRepo extends JpaRepository<User,Long> {
     Boolean existsByEmail(String email);
 
     @Modifying(clearAutomatically = true)
-    @Query("update User u set u.user_pic = :link where u.username = :username" )
+    @Query(QueryUtils.UPDATE_USER)
     void updatePhoto(@Param("username") String username, @Param("link") String link);
 }

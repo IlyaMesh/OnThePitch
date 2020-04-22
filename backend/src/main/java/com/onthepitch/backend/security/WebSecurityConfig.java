@@ -49,11 +49,6 @@ public class WebSecurityConfig extends
         return super.authenticationManagerBean();
     }
 
-//    @Bean
-//    public RestAccessDeniedHandler accessDeniedHandler() {
-//        return new RestAccessDeniedHandler();
-//    }
-
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder(8);
