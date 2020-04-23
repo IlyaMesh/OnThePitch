@@ -52,4 +52,7 @@ public class QueryUtils {
 
     public static final String UPDATE_USER =
         "update User u set u.user_pic = :link where u.username = :username";
+
+    public static final String FIND_ALL_LOGS =
+        "select l from Log l order by l.created_at desc";
 }

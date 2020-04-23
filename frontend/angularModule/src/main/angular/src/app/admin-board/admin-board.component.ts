@@ -53,14 +53,15 @@ export class AdminBoardComponent implements OnInit {
           //если в ролях не админ вызваем метод с клиента!
           this.userService.promote(user_id).subscribe(
             x => {
-              this.reloadPage()
+              console.log("success");
+              this.reloadPage();
             },
             error => {
               this.errorMessage = error.error.message;
               this.isError = true;
             }
           );
-          // this.reloadPage();
+
         }
 
       }
@@ -82,8 +83,15 @@ export class AdminBoardComponent implements OnInit {
         //user finded
         if (this.findRole(user, 'MODERATOR')) {
           //если в ролях модератор есть(а значит что и админ)  вызваем метод с клиента!
-          this.userService.demote(user_id).subscribe(x => this.reloadPage());
-          this.reloadPage();
+          this.userService.demote(user_id).subscribe(x => {
+              console.log("success");
+              this.reloadPage();
+            }
+            , error => {
+              this.errorMessage = error.error.message;
+              this.isError = true;
+            });
+
         }
 
       }
@@ -92,8 +100,16 @@ export class AdminBoardComponent implements OnInit {
 
   ban(user_id: number) {
     if (confirm("Are you sure to ban this user")) {
-      this.userService.ban(user_id).subscribe(x => this.reloadPage());
-      this.reloadPage();
+      this.userService.ban(user_id).subscribe(x => {
+          console.log("success");
+          this.reloadPage();
+        }
+        ,
+        error => {
+          this.errorMessage = error.error.message;
+          this.isError = true;
+        });
+
     }
   }
 

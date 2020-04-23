@@ -107,4 +107,8 @@ export class PostListComponent implements OnInit {
     this.ifSearchPressed = false;
     this.reloadPage();
   }
+
+  checkEmpty(){
+    return this.postPage.content.length == 0
+  }
 }

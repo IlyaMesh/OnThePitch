@@ -21,10 +21,8 @@ public class StandingsServiceImpl implements StandingsService {
         Set<StandingsTeam> result = new HashSet<>();
         //перебирать матчи, добавляем обе команды в список
         for (Match match : matches) {
-
             result.add(new StandingsTeam(match.getHomeTeam()));
             result.add(new StandingsTeam(match.getAwayTeam()));
-
             //блок парсинга результатов матча
             StandingsTeam homeTeam = result.stream()
                     .filter(standingsTeam -> match.getHomeTeam().getClub_name().equals(standingsTeam.getClub().getClub_name()))

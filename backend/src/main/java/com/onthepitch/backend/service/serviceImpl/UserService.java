@@ -1,6 +1,7 @@
 package com.onthepitch.backend.service.serviceImpl;
 
 import com.onthepitch.backend.converter.UserToUserResult;
+import com.onthepitch.backend.exсeption.CantChangeSelfAuthoritiesException;
 import com.onthepitch.backend.exсeption.NoSuchUserException;
 import com.onthepitch.backend.model.Role;
 import com.onthepitch.backend.model.User;
@@ -59,10 +60,7 @@ public class UserService implements UserDetailsService {
 
     public void demote(Long user_id) {
         User user = checkUserById(user_id);
-        User userCurrent = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(user.getUser_id() == userCurrent.getUser_id()){
-            return;
-        }
+
         if (user.getRoles().contains(Role.ADMIN)) {
             user.removeRole(Role.ADMIN);
         } else {
@@ -81,6 +79,10 @@ public class UserService implements UserDetailsService {
         User user = userRepo.findById(user_id).orElse(null);
         if (user == null) {
             throw new NoSuchUserException();
+        }
+        User userCurrent = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(user.getUser_id() == userCurrent.getUser_id()){
+            throw new CantChangeSelfAuthoritiesException();
         }
         return user;
     }

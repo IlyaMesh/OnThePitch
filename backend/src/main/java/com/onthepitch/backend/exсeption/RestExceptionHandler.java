@@ -39,4 +39,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<MessageResponse> handleUserBannedException(){
         return new ResponseEntity<>(new MessageResponse("You banned"), HttpStatus.FORBIDDEN);
     }
+
+    @ExceptionHandler(CantChangeSelfAuthoritiesException.class)
+    protected ResponseEntity<MessageResponse> handleCantChangeSelfAuthoritiesException(){
+        return new ResponseEntity<>(new MessageResponse("You can't change your authorities"), HttpStatus.FORBIDDEN);
+    }
 }

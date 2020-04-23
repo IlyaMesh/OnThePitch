@@ -24,6 +24,9 @@
       </form>
     </div>
     <div class="container-fluid">
+      <div class="alert alert-info" *ngIf="checkEmpty()">
+        <p>No posts!</p>
+      </div>
       <div class="row align-items-center" *ngFor="let post of postPage.content">
         <div class="well col-sm-8">
           <hr>

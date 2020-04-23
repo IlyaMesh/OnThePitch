@@ -32,9 +32,9 @@
             </div>
           </a>
         </div>
-        <div class="well col-sm-4" *ngIf="showModeratorBoard">
-          <button type="button" class="btn btn-danger" (click)="delete(post.post_id)">Delete</button>
-        </div>
+<!--        <div class="well col-sm-4" *ngIf="showModeratorBoard">-->
+<!--          <button type="button" class="btn btn-danger" (click)="delete(post.post_id)">Delete</button>-->
+<!--        </div>-->
       </div>
       <div *ngIf="isLoggedIn">
         <a [routerLink]="['/comment/', post.post_id, 'undefined']">Add comment</a>
